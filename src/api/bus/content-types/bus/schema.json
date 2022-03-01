@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buses",
+  "info": {
+    "singularName": "bus",
+    "pluralName": "buses",
+    "displayName": "bus",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vehicle_number": {
+      "type": "string"
+    },
+    "colour": {
+      "type": "string"
+    },
+    "seating_capacity": {
+      "type": "integer"
+    },
+    "rc_certificate": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "reject"
+      ]
+    },
+    "contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contractor.contractor"
+    },
+    "uuid": {
+      "type": "uid",
+      "targetField": "vehicle_number"
+    }
+  }
+}

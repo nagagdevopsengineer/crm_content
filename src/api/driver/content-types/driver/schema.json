@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "drivers",
+  "info": {
+    "singularName": "driver",
+    "pluralName": "drivers",
+    "displayName": "driver",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "driving_licence_number": {
+      "type": "string"
+    },
+    "aadhar": {
+      "type": "string"
+    },
+    "aadhar_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "driving_licence_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contractor.contractor"
+    },
+    "uid": {
+      "type": "uid",
+      "targetField": "driving_licence_number"
+    }
+  }
+}

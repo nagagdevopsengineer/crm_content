@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contractors",
+  "info": {
+    "singularName": "contractor",
+    "pluralName": "contractors",
+    "displayName": "contractor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "password": {
+      "type": "password"
+    },
+    "contactnumber": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "gst": {
+      "type": "string"
+    },
+    "reg_number": {
+      "type": "string"
+    },
+    "gst_certificate": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client"
+    }
+  }
+}
