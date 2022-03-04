@@ -29,6 +29,16 @@
     },
     "vaccination_certificate_url": {
       "type": "string"
+    },
+    "route": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route.route"
+    },
+    "stop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stop.stop"
     }
   }
 }
