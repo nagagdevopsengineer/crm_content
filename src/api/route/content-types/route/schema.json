@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "routes",
+  "info": {
+    "singularName": "route",
+    "pluralName": "routes",
+    "displayName": "route"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "stops": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::stop.stop"
+    }
+  }
+}
