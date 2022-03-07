@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "notification": {
+      "type": "boolean"
+    },
+    "driver_journey_started": {
+      "type": "boolean"
+    },
+    "previous_stop_alert": {
+      "type": "boolean"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    }
+  }
+}

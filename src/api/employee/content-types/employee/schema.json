@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "contact": {
+      "type": "biginteger"
+    },
+    "is_activated": {
+      "type": "boolean"
+    },
+    "profile_url": {
+      "type": "string"
+    },
+    "vaccination_certificate_url": {
+      "type": "string"
+    },
+    "route": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route.route"
+    },
+    "stop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stop.stop"
+    }
+  }
+}

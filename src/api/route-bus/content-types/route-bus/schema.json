@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "route_buses",
+  "info": {
+    "singularName": "route-bus",
+    "pluralName": "route-buses",
+    "displayName": "route_bus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bus": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bus.bus"
+    },
+    "route": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route.route"
+    },
+    "from_date": {
+      "type": "date"
+    },
+    "to_date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    }
+  }
+}
