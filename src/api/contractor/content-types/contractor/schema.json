@@ -16,13 +16,17 @@
       "type": "string"
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true,
+      "unique": true
     },
     "password": {
       "type": "password"
     },
     "contactnumber": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "status": {
       "type": "enumeration",
@@ -53,6 +57,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::client.client"
+    },
+    "uuid": {
+      "type": "uid"
     }
   }
 }

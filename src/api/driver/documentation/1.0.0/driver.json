@@ -1962,6 +1962,11 @@
                                                       "uuid": {
                                                         "type": "string"
                                                       },
+                                                      "mobile": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -2265,6 +2270,9 @@
                                               }
                                             }
                                           },
+                                          "uuid": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -2319,6 +2327,15 @@
                               },
                               "uid": {
                                 "type": "string"
+                              },
+                              "email": {
+                                "type": "string",
+                                "format": "email"
+                              },
+                              "mobile": {
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -4591,6 +4608,11 @@
                                                     "uuid": {
                                                       "type": "string"
                                                     },
+                                                    "mobile": {
+                                                      "type": "string",
+                                                      "pattern": "^\\d*$",
+                                                      "example": "123456789"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -4894,6 +4916,9 @@
                                             }
                                           }
                                         },
+                                        "uuid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -4948,6 +4973,15 @@
                             },
                             "uid": {
                               "type": "string"
+                            },
+                            "email": {
+                              "type": "string",
+                              "format": "email"
+                            },
+                            "mobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -5166,90 +5200,14 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "name": {
-                        "type": "string"
-                      },
-                      "age": {
-                        "type": "integer"
-                      },
-                      "driving_licence_number": {
-                        "type": "string"
-                      },
-                      "aadhar": {
-                        "type": "string"
-                      },
-                      "aadhar_image": {
-                        "type": "array",
-                        "items": {
-                          "oneOf": [
-                            {
-                              "type": "integer"
-                            },
-                            {
-                              "type": "string"
-                            }
-                          ],
-                          "example": "string or id"
-                        }
-                      },
-                      "driving_licence_image": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "contractor": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "uid": {
-                        "type": "string"
-                      },
-                      "createdAt": {
+                      "email": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "email"
                       },
-                      "updatedAt": {
+                      "mobile": {
                         "type": "string",
-                        "format": "date-time"
-                      },
-                      "publishedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "createdBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "updatedBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       }
                     }
                   }
@@ -7220,6 +7178,11 @@
                                                     "uuid": {
                                                       "type": "string"
                                                     },
+                                                    "mobile": {
+                                                      "type": "string",
+                                                      "pattern": "^\\d*$",
+                                                      "example": "123456789"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -7523,6 +7486,9 @@
                                             }
                                           }
                                         },
+                                        "uuid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -7577,6 +7543,15 @@
                             },
                             "uid": {
                               "type": "string"
+                            },
+                            "email": {
+                              "type": "string",
+                              "format": "email"
+                            },
+                            "mobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -9758,6 +9733,11 @@
                                                     "uuid": {
                                                       "type": "string"
                                                     },
+                                                    "mobile": {
+                                                      "type": "string",
+                                                      "pattern": "^\\d*$",
+                                                      "example": "123456789"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -10061,6 +10041,9 @@
                                             }
                                           }
                                         },
+                                        "uuid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -10115,6 +10098,15 @@
                             },
                             "uid": {
                               "type": "string"
+                            },
+                            "email": {
+                              "type": "string",
+                              "format": "email"
+                            },
+                            "mobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -10394,6 +10386,15 @@
                       },
                       "uid": {
                         "type": "string"
+                      },
+                      "email": {
+                        "type": "string",
+                        "format": "email"
+                      },
+                      "mobile": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",

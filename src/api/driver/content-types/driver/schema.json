@@ -54,6 +54,16 @@
     "uid": {
       "type": "uid",
       "targetField": "driving_licence_number"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "mobile": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
     }
   }
 }

@@ -453,6 +453,9 @@
                                   }
                                 }
                               },
+                              "uuid": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -1215,6 +1218,9 @@
                                 }
                               }
                             },
+                            "uuid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -1432,9 +1438,6 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "name": {
-                        "type": "string"
-                      },
                       "email": {
                         "type": "string",
                         "format": "email"
@@ -1443,71 +1446,6 @@
                         "type": "string",
                         "pattern": "^\\d*$",
                         "example": "123456789"
-                      },
-                      "is_activated": {
-                        "type": "boolean"
-                      },
-                      "profile_url": {
-                        "type": "string"
-                      },
-                      "vaccination_certificate_url": {
-                        "type": "string"
-                      },
-                      "route": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "stop": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "updatedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "publishedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "createdBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "updatedBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
                       }
                     }
                   }
@@ -1968,6 +1906,9 @@
                                   }
                                 }
                               }
+                            },
+                            "uuid": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -2640,6 +2581,9 @@
                                 }
                               }
                             },
+                            "uuid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -2910,6 +2854,9 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "uuid": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",

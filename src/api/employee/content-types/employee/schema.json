@@ -16,10 +16,14 @@
       "type": "string"
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "unique": true,
+      "required": true
     },
     "contact": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "unique": true,
+      "required": true
     },
     "is_activated": {
       "type": "boolean"
@@ -39,6 +43,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::stop.stop"
+    },
+    "uuid": {
+      "type": "uid"
     }
   }
 }

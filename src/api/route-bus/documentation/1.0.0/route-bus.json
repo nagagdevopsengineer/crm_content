@@ -1609,6 +1609,11 @@
                                                                   "uuid": {
                                                                     "type": "string"
                                                                   },
+                                                                  "mobile": {
+                                                                    "type": "string",
+                                                                    "pattern": "^\\d*$",
+                                                                    "example": "123456789"
+                                                                  },
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -1911,6 +1916,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "uuid": {
+                                                        "type": "string"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -4095,6 +4103,11 @@
                                                                 "uuid": {
                                                                   "type": "string"
                                                                 },
+                                                                "mobile": {
+                                                                  "type": "string",
+                                                                  "pattern": "^\\d*$",
+                                                                  "example": "123456789"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -4397,6 +4410,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "uuid": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -6565,6 +6581,11 @@
                                                                 "uuid": {
                                                                   "type": "string"
                                                                 },
+                                                                "mobile": {
+                                                                  "type": "string",
+                                                                  "pattern": "^\\d*$",
+                                                                  "example": "123456789"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -6867,6 +6888,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "uuid": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -8960,6 +8984,11 @@
                                                                 "uuid": {
                                                                   "type": "string"
                                                                 },
+                                                                "mobile": {
+                                                                  "type": "string",
+                                                                  "pattern": "^\\d*$",
+                                                                  "example": "123456789"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -9262,6 +9291,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "uuid": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",

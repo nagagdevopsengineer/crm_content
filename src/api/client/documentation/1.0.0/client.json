@@ -786,6 +786,11 @@
                               "uuid": {
                                 "type": "string"
                               },
+                              "mobile": {
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -2132,6 +2137,11 @@
                             "uuid": {
                               "type": "string"
                             },
+                            "mobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -2600,93 +2610,14 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "name": {
-                        "type": "string"
-                      },
                       "email": {
                         "type": "string",
                         "format": "email"
                       },
-                      "password": {
+                      "mobile": {
                         "type": "string",
-                        "format": "password",
-                        "example": "*******"
-                      },
-                      "registration_number": {
-                        "type": "string"
-                      },
-                      "gstnumber": {
-                        "type": "string"
-                      },
-                      "gstimage": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "gst_certificate": {
-                        "type": "array",
-                        "items": {
-                          "oneOf": [
-                            {
-                              "type": "integer"
-                            },
-                            {
-                              "type": "string"
-                            }
-                          ],
-                          "example": "string or id"
-                        }
-                      },
-                      "status": {
-                        "type": "string",
-                        "enum": [
-                          "pending",
-                          "approved",
-                          "rejected"
-                        ]
-                      },
-                      "uuid": {
-                        "type": "string"
-                      },
-                      "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "updatedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "publishedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "createdBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "updatedBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       }
                     }
                   }
@@ -3480,6 +3411,11 @@
                             },
                             "uuid": {
                               "type": "string"
+                            },
+                            "mobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -4736,6 +4672,11 @@
                             "uuid": {
                               "type": "string"
                             },
+                            "mobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -5268,6 +5209,11 @@
                       },
                       "uuid": {
                         "type": "string"
+                      },
+                      "mobile": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",

@@ -16,7 +16,9 @@
       "type": "string"
     },
     "contact_number": {
-      "type": "biginteger"
+      "type": "biginteger",
+      "required": true,
+      "unique": true
     },
     "aadhar": {
       "type": "media",
@@ -51,6 +53,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::contractor.contractor"
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
     }
   }
 }

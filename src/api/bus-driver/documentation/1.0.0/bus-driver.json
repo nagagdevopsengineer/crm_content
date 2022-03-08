@@ -1609,6 +1609,11 @@
                                                                   "uuid": {
                                                                     "type": "string"
                                                                   },
+                                                                  "mobile": {
+                                                                    "type": "string",
+                                                                    "pattern": "^\\d*$",
+                                                                    "example": "123456789"
+                                                                  },
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -1911,6 +1916,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "uuid": {
+                                                        "type": "string"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -2806,6 +2814,15 @@
                                           "uid": {
                                             "type": "string"
                                           },
+                                          "email": {
+                                            "type": "string",
+                                            "format": "email"
+                                          },
+                                          "mobile": {
+                                            "type": "string",
+                                            "pattern": "^\\d*$",
+                                            "example": "123456789"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -3657,6 +3674,10 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "email": {
+                                            "type": "string",
+                                            "format": "email"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -5628,6 +5649,11 @@
                                                                 "uuid": {
                                                                   "type": "string"
                                                                 },
+                                                                "mobile": {
+                                                                  "type": "string",
+                                                                  "pattern": "^\\d*$",
+                                                                  "example": "123456789"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -5930,6 +5956,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "uuid": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -6825,6 +6854,15 @@
                                         "uid": {
                                           "type": "string"
                                         },
+                                        "email": {
+                                          "type": "string",
+                                          "format": "email"
+                                        },
+                                        "mobile": {
+                                          "type": "string",
+                                          "pattern": "^\\d*$",
+                                          "example": "123456789"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -7676,6 +7714,10 @@
                                               }
                                             }
                                           }
+                                        },
+                                        "email": {
+                                          "type": "string",
+                                          "format": "email"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -9642,6 +9684,11 @@
                                                                 "uuid": {
                                                                   "type": "string"
                                                                 },
+                                                                "mobile": {
+                                                                  "type": "string",
+                                                                  "pattern": "^\\d*$",
+                                                                  "example": "123456789"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -9944,6 +9991,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "uuid": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -10839,6 +10889,15 @@
                                         "uid": {
                                           "type": "string"
                                         },
+                                        "email": {
+                                          "type": "string",
+                                          "format": "email"
+                                        },
+                                        "mobile": {
+                                          "type": "string",
+                                          "pattern": "^\\d*$",
+                                          "example": "123456789"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -11690,6 +11749,10 @@
                                               }
                                             }
                                           }
+                                        },
+                                        "email": {
+                                          "type": "string",
+                                          "format": "email"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -13570,6 +13633,11 @@
                                                                 "uuid": {
                                                                   "type": "string"
                                                                 },
+                                                                "mobile": {
+                                                                  "type": "string",
+                                                                  "pattern": "^\\d*$",
+                                                                  "example": "123456789"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -13872,6 +13940,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "uuid": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -14767,6 +14838,15 @@
                                         "uid": {
                                           "type": "string"
                                         },
+                                        "email": {
+                                          "type": "string",
+                                          "format": "email"
+                                        },
+                                        "mobile": {
+                                          "type": "string",
+                                          "pattern": "^\\d*$",
+                                          "example": "123456789"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -15618,6 +15698,10 @@
                                               }
                                             }
                                           }
+                                        },
+                                        "email": {
+                                          "type": "string",
+                                          "format": "email"
                                         },
                                         "createdAt": {
                                           "type": "string",

@@ -16,7 +16,9 @@
       "type": "string"
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "unique": true,
+      "required": true
     },
     "password": {
       "type": "password"
@@ -59,6 +61,11 @@
     },
     "uuid": {
       "type": "uid"
+    },
+    "mobile": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
     }
   }
 }
