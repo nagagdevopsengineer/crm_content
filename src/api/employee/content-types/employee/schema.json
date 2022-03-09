@@ -46,6 +46,11 @@
     },
     "uuid": {
       "type": "uid"
+    },
+    "bus": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bus.bus"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "stop",
     "pluralName": "stops",
-    "displayName": "stop"
+    "displayName": "stop",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,11 @@
     },
     "latitude": {
       "type": "float"
+    },
+    "route": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route.route"
     }
   }
 }
