@@ -5,7 +5,7 @@
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
-
+const axios = require('axios');
 module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
     
     async create(ctx) {
@@ -18,9 +18,12 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
         userObj.login= response.data.attributes.email;
         userObj.firstName = response.data.attributes.name;
         userObj.lastName = response.data.attributes.name;
-        userObj.mobile = response.data.attributes.contact;
+        userObj.mobile = Number(response.data.attributes.contact);
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_EMPLOYEE"];  
+
+        console.log("USer Obj",userObj);
+
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
         +strapi.config.get('remote.userapi');
         var updateObj = response.data;
