@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "routechanges",
+  "info": {
+    "singularName": "routechange",
+    "pluralName": "routechanges",
+    "displayName": "routechange"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bus": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bus.bus"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "route": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route.route"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    }
+  }
+}

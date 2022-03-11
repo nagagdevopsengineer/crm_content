@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calanders",
+  "info": {
+    "singularName": "calander",
+    "pluralName": "calanders",
+    "displayName": "calander",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uuid": {
+      "type": "integer"
+    },
+    "datelist": {
+      "type": "date"
+    }
+  }
+}
