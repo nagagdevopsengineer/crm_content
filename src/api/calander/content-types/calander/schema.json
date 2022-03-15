@@ -16,7 +16,7 @@
       "type": "date"
     },
     "uuid": {
-      "type": "uid"
+      "type": "string"
     }
   }
 }
