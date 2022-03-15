@@ -19,12 +19,12 @@
                           "attributes": {
                             "type": "object",
                             "properties": {
-                              "uuid": {
-                                "type": "integer"
-                              },
                               "datelist": {
                                 "type": "string",
                                 "format": "date"
+                              },
+                              "uuid": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -605,12 +605,12 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "uuid": {
-                              "type": "integer"
-                            },
                             "datelist": {
                               "type": "string",
                               "format": "date"
+                            },
+                            "uuid": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -1080,12 +1080,12 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "uuid": {
-                        "type": "integer"
-                      },
                       "datelist": {
                         "type": "string",
                         "format": "date"
+                      },
+                      "uuid": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -1147,12 +1147,12 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "uuid": {
-                              "type": "integer"
-                            },
                             "datelist": {
                               "type": "string",
                               "format": "date"
+                            },
+                            "uuid": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -1642,12 +1642,12 @@
                         "attributes": {
                           "type": "object",
                           "properties": {
-                            "uuid": {
-                              "type": "integer"
-                            },
                             "datelist": {
                               "type": "string",
                               "format": "date"
+                            },
+                            "uuid": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -2128,12 +2128,12 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "uuid": {
-                        "type": "integer"
-                      },
                       "datelist": {
                         "type": "string",
                         "format": "date"
+                      },
+                      "uuid": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",

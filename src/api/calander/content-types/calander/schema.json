@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "uuid": {
-      "type": "integer"
-    },
     "datelist": {
       "type": "date"
+    },
+    "uuid": {
+      "type": "uid"
     }
   }
 }
