@@ -66,6 +66,16 @@
       "type": "biginteger",
       "required": true,
       "unique": true
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

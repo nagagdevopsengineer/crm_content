@@ -51,6 +51,16 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::bus.bus"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
