@@ -61,6 +61,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "employeeotps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employeeotp.employeeotp",
+      "mappedBy": "employee"
     }
   }
 }

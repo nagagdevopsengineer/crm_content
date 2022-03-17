@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employeeotps",
+  "info": {
+    "singularName": "employeeotp",
+    "pluralName": "employeeotps",
+    "displayName": "employeeotp",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "otp_date": {
+      "type": "date"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employee.employee",
+      "inversedBy": "employeeotps"
+    },
+    "isBoarded": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "boardedtime": {
+      "type": "datetime"
+    },
+    "stop": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::stop.stop",
+      "inversedBy": "employeeotps"
+    }
+  }
+}

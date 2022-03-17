@@ -25,6 +25,12 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::route.route"
+    },
+    "employeeotps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employeeotp.employeeotp",
+      "mappedBy": "stop"
     }
   }
 }
