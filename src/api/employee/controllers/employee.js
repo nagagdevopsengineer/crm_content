@@ -89,7 +89,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                tripdate:{
                $gte : todayDate
       }
-}          
+     }          
 
           });
 
@@ -100,6 +100,27 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
         dataRes.bus = busDriver[0]
         dataRes.trip = routeTrip;
         return dataRes;
+      },
+
+      async findPreviousTrips(ctx){
+        const { uuid } = ctx.params;
+        var todayDate = new Date().toISOString().slice(0, 10);
+        console.log(todayDate);
+       const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
+            filters:{
+                 /**  'route-bus' :{
+                   id:routeBuses[0].id
+                 },*/
+            tripdate:{
+            $lt : todayDate
+         }
+       }          
+
+       });
+       return routeTrip;
+
       }
+
+
 
 }));
