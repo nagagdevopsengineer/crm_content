@@ -49,6 +49,43 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
         console.log("     updated response  response ",response);
         return response;
+      },
+
+
+      async findEmployeeDetils(ctx){
+
+        const { uuid } = ctx.params;
+
+        const entry = await strapi.entityService.findMany('api::employee.employee',  {
+          filters: { uuid : uuid },
+          populate:{
+            route:true,
+            bus: true,
+            stop:true
+          }
+          
+        });
+
+        
+
+        const busDriver = await strapi.entityService.findMany('api::bus-driver.bus-driver',  {
+          filters: { bus : 
+            {
+              id: entry[0].bus.id
+            } 
+          },
+
+          populate : {driver:true,helper:true}
+          
+        });
+        console.log("  sadfdsfdsfdsfds f dsf ds f ds fds fsd f sdf  busDriver ",busDriver);
+
+        var dataRes = {};
+
+        dataRes.employee = entry[0];
+        dataRes.bus = busDriver[0]
+
+        return dataRes;
       }
 
 }));

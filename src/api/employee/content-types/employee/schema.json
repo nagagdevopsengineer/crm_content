@@ -74,6 +74,17 @@
       "max": "999999999999"
     },
     "aadharimage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "vaccinationcertificate": {
       "allowedTypes": [
         "images",
         "files",
