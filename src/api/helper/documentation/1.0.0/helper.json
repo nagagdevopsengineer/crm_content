@@ -2343,6 +2343,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "address": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -3019,6 +3022,9 @@
                                               }
                                             }
                                           },
+                                          "address": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -3444,6 +3450,11 @@
                                     }
                                   }
                                 }
+                              },
+                              "aadharnumber": {
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -6097,6 +6108,9 @@
                                                         }
                                                       }
                                                     },
+                                                    "address": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -6773,6 +6787,9 @@
                                             }
                                           }
                                         },
+                                        "address": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -7198,6 +7215,11 @@
                                   }
                                 }
                               }
+                            },
+                            "aadharnumber": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -9775,6 +9797,9 @@
                                                         }
                                                       }
                                                     },
+                                                    "address": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -10451,6 +10476,9 @@
                                             }
                                           }
                                         },
+                                        "address": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -10876,6 +10904,11 @@
                                   }
                                 }
                               }
+                            },
+                            "aadharnumber": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -13438,6 +13471,9 @@
                                                         }
                                                       }
                                                     },
+                                                    "address": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -14114,6 +14150,9 @@
                                             }
                                           }
                                         },
+                                        "address": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -14540,6 +14579,11 @@
                                 }
                               }
                             },
+                            "aadharnumber": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -14833,6 +14877,11 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "aadharnumber": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",

@@ -1573,6 +1573,9 @@
                                               }
                                             }
                                           },
+                                          "address": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -2248,6 +2251,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "address": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -4131,6 +4137,9 @@
                                             }
                                           }
                                         },
+                                        "address": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -4806,6 +4815,9 @@
                                   }
                                 }
                               }
+                            },
+                            "address": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -6611,6 +6623,9 @@
                                             }
                                           }
                                         },
+                                        "address": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -7286,6 +7301,9 @@
                                   }
                                 }
                               }
+                            },
+                            "address": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -9078,6 +9096,9 @@
                                             }
                                           }
                                         },
+                                        "address": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -9754,6 +9775,9 @@
                                 }
                               }
                             },
+                            "address": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -10049,6 +10073,9 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "address": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",

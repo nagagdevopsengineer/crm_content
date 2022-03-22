@@ -60,14 +60,19 @@
       "unique": true
     },
     "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "aadharnumber": {
+      "type": "biginteger",
+      "max": "999999999999"
     }
   }
 }

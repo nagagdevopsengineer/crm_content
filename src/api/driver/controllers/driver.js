@@ -46,6 +46,90 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
 
         console.log("     updated response  response ",response);
         return response;
+      },
+
+async findDriverDetils(ctx){
+
+  const { uuid } = ctx.params;
+
+  const entry = await strapi.entityService.findMany('api::driver.driver',  {
+    filters: { uid : uuid }
+    
+  });
+
+const driverBuses = await strapi.entityService.findMany('api::bus-driver.bus-driver',{
+  filters:{
+    driver:{
+    id:entry[0].id
+  },
+},
+populate :  { bus:true}
+});
+
+const routeBuses = await strapi.entityService.findMany('api::route-bus.route-bus',{
+  filters:{
+    bus:{
+    id:driverBuses[0].bus.id
+  },
+},
+populate :  {route:true}
+});
+
+console.log(routeBuses[0].id , " ..... routeBuses ",routeBuses);
+
+const routeStops = await strapi.entityService.findMany('api::stop.stop',{
+  filters:{
+    route:{
+    id:routeBuses[0].route.id
+  },
+}
+});
+
+
+const routeEmployees = await strapi.entityService.findMany('api::employee.employee',{
+  filters:{
+    route:{
+    id:routeBuses[0].route.id
+  },
+}
+});
+
+var todayDate = new Date().toISOString().slice(0, 10);
+console.log(todayDate);
+const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
+  filters:{
+ /**  'route-bus' :{
+    id:routeBuses[0].id
+  },*/
+      tripdate:{
+        $gte : todayDate
       }
+}
+});
+
+
+
+
+console.log(" routeTrip " , routeTrip);
+
+
+
+var dataRes = {};
+
+dataRes.driver = entry[0];
+dataRes.bus = driverBuses[0].bus;
+dataRes.route = routeBuses[0].route;
+dataRes.stops = routeStops;
+dataRes.trips = routeTrip;
+dataRes.commuters = routeEmployees;
+console.log(dataRes);
+const { data, meta } = dataRes ;
+
+return dataRes;
+
+}
+
+
+
 
 }));

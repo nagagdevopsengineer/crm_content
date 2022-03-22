@@ -11,15 +11,15 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
     
     async create(ctx) {
 
-        console.log(" Creating trips  ");
-        const map1 = new Map();
-     const entry =   await strapi.entityService.findMany('api::route-bus.route-bus',{
+       console.log(" Creating trips  ",ctx);
+       const map1 = new Map();
+       const entry =   await strapi.entityService.findMany('api::route-bus.route-bus',{
             populate: ['route','bus']
         });
 
         let busIds = [];
         let routeBus = "";
-        entry.forEach(element => {
+    await    entry.forEach(element => {
 
             if(element.bus != undefined && element.bus.id != null 
                 && element.route != undefined 
@@ -30,7 +30,7 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
           });
 
 
-          map1.forEach(async(values,keys)=>{
+      await    map1.forEach(async(values,keys)=>{
            
 
             console.log(values , "  values   ",keys);
@@ -56,29 +56,24 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
             }
           });
 
-
-  
-  
-            console.log(" busr deiver mapping ==>>>   ",busDriver);
-  
-  
           let trip = {
               tripdate : new Date(),
               uuid : uuid(),
               bus : busDriver.bus,
               driver : busDriver.driver,
               helper : busDriver.helper,
-              route : route,
-              createdAt: '2022-03-03T04:30:13.393Z',
-              updatedAt: '2022-03-03T04:44:47.303Z',
-              publishedAt: '2022-03-03T04:30:13.391Z'
+              route : route
          
     };
-  
+
+        console.log(" at last 1");
   
         const response =  await strapi.service('api::trip.trip').create(trip); 
         
+        console.log(" at last 2 ");
+
         return response;
+
 
           });
 

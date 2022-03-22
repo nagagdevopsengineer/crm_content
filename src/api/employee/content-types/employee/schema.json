@@ -53,6 +53,27 @@
       "target": "api::bus.bus"
     },
     "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "employeeotps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employeeotp.employeeotp",
+      "mappedBy": "employee"
+    },
+    "aadhar": {
+      "type": "biginteger",
+      "max": "999999999999"
+    },
+    "aadharimage": {
       "allowedTypes": [
         "images",
         "files",
@@ -60,13 +81,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false
-    },
-    "employeeotps": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::employeeotp.employeeotp",
-      "mappedBy": "employee"
+      "multiple": true
     }
   }
 }
