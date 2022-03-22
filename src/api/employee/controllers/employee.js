@@ -78,13 +78,27 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
           populate : {driver:true,helper:true}
           
         });
-        console.log("  sadfdsfdsfdsfds f dsf ds f ds fds fsd f sdf  busDriver ",busDriver);
+        
+        var todayDate = new Date().toISOString().slice(0, 10);
+           console.log(todayDate);
+          const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
+               filters:{
+                    /**  'route-bus' :{
+                      id:routeBuses[0].id
+                    },*/
+               tripdate:{
+               $gte : todayDate
+      }
+}          
+
+          });
 
         var dataRes = {};
 
+
         dataRes.employee = entry[0];
         dataRes.bus = busDriver[0]
-
+        dataRes.trip = routeTrip;
         return dataRes;
       }
 
