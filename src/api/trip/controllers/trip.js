@@ -130,8 +130,27 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
 
      return routeTrip;
 
-    }
+    },
+async findTripById(ctx){
 
+  const { id } = ctx.params;
+  console.log(" id ",id);
+  const trip =    await strapi.entityService.findOne('api::trip.trip',id,{
+    populate:{ route_bus: {
+      populate :{route:true,bus:{
+        populate :{driver:true,helper:true}
+      }
+     }
+    } ,
+    bus_driver :{
+      populate:{driver:true,helper:true}
+    }
+  }
+
+  });
+
+return trip;
+}
 
 
 }));
