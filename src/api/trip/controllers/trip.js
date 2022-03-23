@@ -104,31 +104,31 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
  populate:{ route_bus: {
    populate :{route:true,bus:{
      populate :{driver:true,helper:true}
-   }}
- } }
+   }
+  }
+ } ,
+ bus_driver :{
+   populate:{driver:true,helper:true}
+ }
+
+}
 
      });
 
-     const driverBuses = await strapi.entityService.findMany('api::bus-driver.bus-driver',{
+   /** const driverBuses = await strapi.entityService.findMany('api::bus-driver.bus-driver',{
       filters:{
         bus:{
         id:routeTrip[0].route_bus.bus.id
       },
     },
     populate :  { driver:true,helper:true}
-    });
+    }); **/
 
-     
+    
 
-     var dataRes = {};
+     console.log("  current tirps   ",routeTrip);
 
-     dataRes.trip = routeTrip[0];
-     dataRes.driver = driverBuses[0].driver;
-     dataRes.helper = driverBuses[0].helper;
-
-     console.log("  current tirps   ",dataRes);
-
-     return dataRes;
+     return routeTrip;
 
     }
 
