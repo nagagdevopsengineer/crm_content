@@ -37,10 +37,12 @@
       ]
     },
     "gst": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "reg_number": {
-      "type": "string"
+      "type": "string",
+      "unique": true
     },
     "gst_certificate": {
       "type": "media",
