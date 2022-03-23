@@ -103,8 +103,13 @@ const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
   },*/
       tripdate:{
         $gte : todayDate
+      },
+      isended:{
+        $eq : false
       }
-}
+
+},
+orderBy: { id: 'asc' },
 });
 
 
@@ -121,6 +126,7 @@ dataRes.bus = driverBuses[0].bus;
 dataRes.route = routeBuses[0].route;
 dataRes.stops = routeStops;
 dataRes.trips = routeTrip;
+dataRes.currentTrip = routeTrip[0];
 dataRes.commuters = routeEmployees;
 console.log(dataRes);
 const { data, meta } = dataRes ;

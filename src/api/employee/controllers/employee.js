@@ -86,9 +86,16 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                     /**  'route-bus' :{
                       id:routeBuses[0].id
                     },*/
-               tripdate:{
-               $gte : todayDate
-      }
+                    tripdate:{
+                      $gte : todayDate
+                    },
+                    isended:{
+                      $eq : false
+                    },
+                    isstarted :{
+                      $eq:true
+                    }
+      
      }          
 
           });
@@ -98,7 +105,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
         dataRes.employee = entry[0];
         dataRes.bus = busDriver[0]
-        dataRes.trip = routeTrip;
+        dataRes.trip = routeTrip[0];
         return dataRes;
       },
 

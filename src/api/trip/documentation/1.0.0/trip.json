@@ -2938,6 +2938,12 @@
                                   }
                                 }
                               },
+                              "isstarted": {
+                                "type": "boolean"
+                              },
+                              "isended": {
+                                "type": "boolean"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -6185,6 +6191,12 @@
                                 }
                               }
                             },
+                            "isstarted": {
+                              "type": "boolean"
+                            },
+                            "isended": {
+                              "type": "boolean"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -6402,65 +6414,11 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "tripdate": {
-                        "type": "string",
-                        "format": "date"
+                      "isstarted": {
+                        "type": "boolean"
                       },
-                      "uuid": {
-                        "type": "string"
-                      },
-                      "starttime": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "endtime": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "route_bus": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "createdAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "updatedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "publishedAt": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "createdBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
-                      },
-                      "updatedBy": {
-                        "oneOf": [
-                          {
-                            "type": "integer"
-                          },
-                          {
-                            "type": "string"
-                          }
-                        ],
-                        "example": "string or id"
+                      "isended": {
+                        "type": "boolean"
                       }
                     }
                   }
@@ -9406,6 +9364,12 @@
                                   }
                                 }
                               }
+                            },
+                            "isstarted": {
+                              "type": "boolean"
+                            },
+                            "isended": {
+                              "type": "boolean"
                             },
                             "createdAt": {
                               "type": "string",
@@ -12563,6 +12527,12 @@
                                 }
                               }
                             },
+                            "isstarted": {
+                              "type": "boolean"
+                            },
+                            "isended": {
+                              "type": "boolean"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -12816,6 +12786,12 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "isstarted": {
+                        "type": "boolean"
+                      },
+                      "isended": {
+                        "type": "boolean"
                       },
                       "createdAt": {
                         "type": "string",
