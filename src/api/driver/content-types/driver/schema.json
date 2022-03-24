@@ -66,6 +66,25 @@
       "unique": true
     },
     "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "vaccinationstatus": {
+      "type": "enumeration",
+      "enum": [
+        "NO",
+        "Partial",
+        "Vaccinated"
+      ]
+    },
+    "vaccinationcertificate": {
       "allowedTypes": [
         "images",
         "files",
@@ -73,7 +92,21 @@
         "audios"
       ],
       "type": "media",
-      "multiple": false
+      "multiple": true
+    },
+    "dob": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Created",
+        "Approved",
+        "Rejected"
+      ]
+    },
+    "statusreason": {
+      "type": "text"
     }
   }
 }

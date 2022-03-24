@@ -73,6 +73,33 @@
     "aadharnumber": {
       "type": "biginteger",
       "max": "999999999999"
+    },
+    "DOB": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Created",
+        "Approved",
+        "Rejected"
+      ]
+    },
+    "statusreason": {
+      "type": "text"
+    },
+    "drivinglicense": {
+      "type": "string"
+    },
+    "drivinglicensefile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }

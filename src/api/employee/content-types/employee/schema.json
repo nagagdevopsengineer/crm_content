@@ -97,6 +97,20 @@
     },
     "address": {
       "type": "text"
+    },
+    "dob": {
+      "type": "date"
+    },
+    "vaccinestatus": {
+      "type": "enumeration",
+      "enum": [
+        "No",
+        "Partial",
+        "Vaccinated"
+      ]
+    },
+    "employeeid": {
+      "type": "string"
     }
   }
 }

@@ -48,6 +48,29 @@
     "uuid": {
       "type": "uid",
       "targetField": "vehicle_number"
+    },
+    "puc": {
+      "type": "string"
+    },
+    "puccertificate": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "fitnesscertificate": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
