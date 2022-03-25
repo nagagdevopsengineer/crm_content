@@ -82,6 +82,11 @@
     },
     "address": {
       "type": "text"
+    },
+    "companyname": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

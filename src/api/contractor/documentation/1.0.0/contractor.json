@@ -1576,6 +1576,9 @@
                                           "address": {
                                             "type": "string"
                                           },
+                                          "companyname": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -4140,6 +4143,9 @@
                                         "address": {
                                           "type": "string"
                                         },
+                                        "companyname": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -6626,6 +6632,9 @@
                                         "address": {
                                           "type": "string"
                                         },
+                                        "companyname": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -9097,6 +9106,9 @@
                                           }
                                         },
                                         "address": {
+                                          "type": "string"
+                                        },
+                                        "companyname": {
                                           "type": "string"
                                         },
                                         "createdAt": {

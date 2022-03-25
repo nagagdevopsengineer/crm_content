@@ -44,6 +44,10 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::bus-driver.bus-driver"
+    },
+    "scheduledtime": {
+      "type": "datetime",
+      "required": true
     }
   }
 }

@@ -2017,6 +2017,9 @@
                                                                               "address": {
                                                                                 "type": "string"
                                                                               },
+                                                                              "companyname": {
+                                                                                "type": "string"
+                                                                              },
                                                                               "createdAt": {
                                                                                 "type": "string",
                                                                                 "format": "date-time"
@@ -7007,6 +7010,10 @@
                                   }
                                 }
                               },
+                              "scheduledtime": {
+                                "type": "string",
+                                "format": "date-time"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -9333,6 +9340,9 @@
                                                                             "address": {
                                                                               "type": "string"
                                                                             },
+                                                                            "companyname": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -14323,6 +14333,10 @@
                                 }
                               }
                             },
+                            "scheduledtime": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -14545,6 +14559,10 @@
                       },
                       "isended": {
                         "type": "boolean"
+                      },
+                      "scheduledtime": {
+                        "type": "string",
+                        "format": "date-time"
                       }
                     }
                   }
@@ -16570,6 +16588,9 @@
                                                                             "address": {
                                                                               "type": "string"
                                                                             },
+                                                                            "companyname": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -21559,6 +21580,10 @@
                                   }
                                 }
                               }
+                            },
+                            "scheduledtime": {
+                              "type": "string",
+                              "format": "date-time"
                             },
                             "createdAt": {
                               "type": "string",
@@ -23795,6 +23820,9 @@
                                                                             "address": {
                                                                               "type": "string"
                                                                             },
+                                                                            "companyname": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -28785,6 +28813,10 @@
                                 }
                               }
                             },
+                            "scheduledtime": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -29055,6 +29087,10 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "scheduledtime": {
+                        "type": "string",
+                        "format": "date-time"
                       },
                       "createdAt": {
                         "type": "string",

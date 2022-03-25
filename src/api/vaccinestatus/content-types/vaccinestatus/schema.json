@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vaccinestatuses",
+  "info": {
+    "singularName": "vaccinestatus",
+    "pluralName": "vaccinestatuses",
+    "displayName": "vaccinestatus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "No",
+        "Partial",
+        "Vaccinated"
+      ]
+    }
+  }
+}

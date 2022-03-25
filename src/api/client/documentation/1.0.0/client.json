@@ -1167,6 +1167,9 @@
                               "address": {
                                 "type": "string"
                               },
+                              "companyname": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -2894,6 +2897,9 @@
                             "address": {
                               "type": "string"
                             },
+                            "companyname": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -3370,6 +3376,9 @@
                         "type": "string",
                         "pattern": "^\\d*$",
                         "example": "123456789"
+                      },
+                      "companyname": {
+                        "type": "string"
                       }
                     }
                   }
@@ -4543,6 +4552,9 @@
                               }
                             },
                             "address": {
+                              "type": "string"
+                            },
+                            "companyname": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -6181,6 +6193,9 @@
                             "address": {
                               "type": "string"
                             },
+                            "companyname": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -6734,6 +6749,9 @@
                         }
                       },
                       "address": {
+                        "type": "string"
+                      },
+                      "companyname": {
                         "type": "string"
                       },
                       "createdAt": {
