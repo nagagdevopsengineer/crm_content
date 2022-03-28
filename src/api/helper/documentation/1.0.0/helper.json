@@ -773,8 +773,9 @@
                               "vaccination_status": {
                                 "type": "string",
                                 "enum": [
-                                  "partial",
-                                  "fully"
+                                  "No",
+                                  "Partial",
+                                  "Vaccinated"
                                 ]
                               },
                               "contractor": {
@@ -4932,8 +4933,9 @@
                             "vaccination_status": {
                               "type": "string",
                               "enum": [
-                                "partial",
-                                "fully"
+                                "No",
+                                "Partial",
+                                "Vaccinated"
                               ]
                             },
                             "contractor": {
@@ -9015,8 +9017,9 @@
                             "vaccination_status": {
                               "type": "string",
                               "enum": [
-                                "partial",
-                                "fully"
+                                "No",
+                                "Partial",
+                                "Vaccinated"
                               ]
                             },
                             "contractor": {
@@ -13083,8 +13086,9 @@
                             "vaccination_status": {
                               "type": "string",
                               "enum": [
-                                "partial",
-                                "fully"
+                                "No",
+                                "Partial",
+                                "Vaccinated"
                               ]
                             },
                             "contractor": {
@@ -16424,8 +16428,9 @@
                       "vaccination_status": {
                         "type": "string",
                         "enum": [
-                          "partial",
-                          "fully"
+                          "No",
+                          "Partial",
+                          "Vaccinated"
                         ]
                       },
                       "contractor": {

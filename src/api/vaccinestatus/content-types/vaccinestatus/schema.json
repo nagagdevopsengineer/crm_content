@@ -4,7 +4,8 @@
   "info": {
     "singularName": "vaccinestatus",
     "pluralName": "vaccinestatuses",
-    "displayName": "vaccinestatus"
+    "displayName": "vaccinestatus",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,8 @@
         "No",
         "Partial",
         "Vaccinated"
-      ]
+      ],
+      "default": "No"
     }
   }
 }

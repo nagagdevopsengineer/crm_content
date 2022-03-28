@@ -45,8 +45,9 @@
     "vaccination_status": {
       "type": "enumeration",
       "enum": [
-        "partial",
-        "fully"
+        "No",
+        "Partial",
+        "Vaccinated"
       ]
     },
     "contractor": {
@@ -92,14 +93,15 @@
       "type": "string"
     },
     "drivinglicensefile": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }
