@@ -29,11 +29,13 @@
     "boardedtime": {
       "type": "datetime"
     },
-    "stop": {
+    "trip": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::stop.stop",
-      "inversedBy": "employeeotps"
+      "relation": "oneToOne",
+      "target": "api::trip.trip"
+    },
+    "otp": {
+      "type": "integer"
     }
   }
 }

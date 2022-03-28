@@ -55,7 +55,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
       async findEmployeeDetils(ctx){
 
         const { uuid } = ctx.params;
-
+        var dataRes = {};
         const entry = await strapi.entityService.findMany('api::employee.employee',  {
           filters: { uuid : uuid },
           populate:{
@@ -66,7 +66,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
           
         });
 
-        
+        dataRes.employee = entry[0]; 
 
         const busDriver = await strapi.entityService.findMany('api::bus-driver.bus-driver',  {
           filters: { bus : 
@@ -79,6 +79,9 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
           
         });
         
+
+        dataRes.bus = busDriver[0];
+
         var todayDate = new Date().toISOString().slice(0, 10);
            console.log(todayDate);
           const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
@@ -96,16 +99,50 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                       $eq:true
                     }
       
-     }          
+          }          
 
           });
+         
+          if(routeTrip != null && routeTrip.length > 0 ){ 
+            dataRes.trip = routeTrip[0];
+          const employeeTripOTP =  await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+            filters:{
+                 /**  'route-bus' :{
+                   id:routeBuses[0].id
+                 },*/
+                 trip:{
+                   id:{
+                   $eq : routeTrip[0].id
+                   }
+                 }
+       }          
 
-        var dataRes = {};
+       });
+
+       dataRes.tripOTP = employeeTripOTP[0];
+      }
 
 
-        dataRes.employee = entry[0];
-        dataRes.bus = busDriver[0]
-        dataRes.trip = routeTrip[0];
+          const upcomingTrips = await strapi.entityService.findMany('api::trip.trip',{
+            filters:{
+                 /**  'route-bus' :{
+                   id:routeBuses[0].id
+                 },*/
+                 tripdate:{
+                   $gte : todayDate
+                 },
+                 isended:{
+                   $eq : false
+                 },
+                 isstarted :{
+                   $eq:false
+                 }
+   
+  } ,
+  orderBy: { id: 'asc' }         
+
+       });
+       dataRes.upcomingTrip = upcomingTrips[0];
         return dataRes;
       },
 
