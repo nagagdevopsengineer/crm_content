@@ -10,8 +10,6 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
     
     async create(ctx) {
        
-        const response = await super.create(ctx);
-    
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
         userObj.email= response.data.attributes.email;
@@ -26,28 +24,23 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
         +strapi.config.get('remote.userapi');
-        var updateObj = response.data;
+        
       await  axios.post(API_URL , userObj)
         .catch((error) => {
             console.log(" exception  ",error);
+            return  Promise.reject(error);
         }).then(function(dataUser){
 
             console.log("  response from user mgmt ==== >> ",dataUser);
            
-            updateObj.attributes.uuid=dataUser.data.userId;
+            //updateObj.attributes.uuid=dataUser.data.userId;
             
-
+            ctx.request.body.data.uuid = dataUser.data.userId;
           
         });
 
-
-        const entry = await strapi.entityService.update('api::employee.employee', response.data.id  , {
-            data: {
-              uuid : updateObj.attributes.uuid,
-            },
-          });
-
-        console.log("     updated response  response ",response);
+        const response = await super.create(ctx);
+       
         return response;
       },
 

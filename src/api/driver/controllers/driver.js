@@ -9,9 +9,7 @@ const axios = require('axios');
 module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
     
     async create(ctx) {
-       
-        const response = await super.create(ctx);
-    
+      
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
         userObj.email= response.data.attributes.email;
@@ -23,28 +21,20 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
         userObj.authorities = ["ROLE_DRIVER"];  
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
         +strapi.config.get('remote.userapi');
-        var updateObj = response.data;
+       
       await  axios.post(API_URL , userObj)
         .catch((error) => {
             console.log(" exception  ",error);
+            return  Promise.reject(error);
         }).then(function(dataUser){
 
             console.log("  response from user mgmt ==== >> ",dataUser);
-           
-            updateObj.attributes.uuid=dataUser.data.userId;
-            
-
-          
+            ctx.request.body.data.uid = dataUser.data.userId;
+            //updateObj.attributes.uuid=dataUser.data.userId; 
         });
 
-
-        const entry = await strapi.entityService.update('api::driver.driver', response.data.id  , {
-            data: {
-              uid : updateObj.attributes.uuid,
-            },
-          });
-
-        console.log("     updated response  response ",response);
+        const response = await super.create(ctx);
+    
         return response;
       },
 
