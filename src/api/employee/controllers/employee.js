@@ -181,9 +181,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
         });
 
-        console.log(" employees  ",employees);
-
-
+        console.log(" employees  by stop ",employees);
         return employees;
 
       }
