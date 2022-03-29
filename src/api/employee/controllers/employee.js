@@ -183,6 +183,9 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
         console.log(" employees  ",employees);
 
+
+        return employees;
+
       }
 
 
