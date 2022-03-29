@@ -6710,6 +6710,9 @@
                                               }
                                             }
                                           },
+                                          "uuid": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -13781,6 +13784,9 @@
                                             }
                                           }
                                         },
+                                        "uuid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -20847,6 +20853,9 @@
                                             }
                                           }
                                         },
+                                        "uuid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -27826,6 +27835,9 @@
                                               }
                                             }
                                           }
+                                        },
+                                        "uuid": {
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",

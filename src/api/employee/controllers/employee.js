@@ -163,7 +163,30 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
        });
        return routeTrip;
 
+      },
+
+      async employeesByStop(ctx){
+        const { stopid } = ctx.params;
+
+        console.log(" stop id  ",stopid);
+
+        const employees = await strapi.entityService.findMany('api::employee.employee',{
+            
+          filters:{
+            stop:{
+             id : stopid
+          }
+        }
+      
+
+        });
+
+        console.log(" employees  ",employees);
+
       }
+
+
+
 
 
 

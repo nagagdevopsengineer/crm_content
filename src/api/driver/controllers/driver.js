@@ -40,7 +40,7 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
 
         const entry = await strapi.entityService.update('api::driver.driver', response.data.id  , {
             data: {
-              uuid : updateObj.attributes.uuid,
+              uid : updateObj.attributes.uuid,
             },
           });
 

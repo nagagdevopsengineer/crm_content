@@ -9,6 +9,11 @@ module.exports = {
         method: 'GET',
         path: '/employees/previoustrips/:uuid',
         handler: 'employee.findPreviousTrips',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/employees/es/:stopid',
+        handler: 'employee.employeesByStop',
       }
     ]
   }

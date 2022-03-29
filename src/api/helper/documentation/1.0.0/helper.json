@@ -3851,6 +3851,9 @@
                                   }
                                 }
                               },
+                              "uuid": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -8011,6 +8014,9 @@
                                 }
                               }
                             },
+                            "uuid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -12095,6 +12101,9 @@
                                 }
                               }
                             },
+                            "uuid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -16164,6 +16173,9 @@
                                 }
                               }
                             },
+                            "uuid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -16495,6 +16507,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "uuid": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
