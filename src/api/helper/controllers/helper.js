@@ -14,11 +14,11 @@ module.exports = createCoreController('api::helper.helper', ({ env }) =>  ({
     
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
-        userObj.email= response.data.attributes.email;
-        userObj.login= response.data.attributes.email;
-        userObj.firstName = response.data.attributes.name;
-        userObj.lastName = response.data.attributes.name;
-        userObj.mobile = response.data.attributes.contact_number;
+        userObj.email= ctx.request.body.data.email;
+        userObj.login= ctx.request.body.data.email;
+        userObj.firstName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.name;
+        userObj.mobile = ctx.request.body.data.contact_number;
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_HELPER"];  
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')

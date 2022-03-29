@@ -12,15 +12,13 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
        
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
-        userObj.email= response.data.attributes.email;
-        userObj.login= response.data.attributes.email;
-        userObj.firstName = response.data.attributes.name;
-        userObj.lastName = response.data.attributes.name;
-        userObj.mobile = Number(response.data.attributes.contact);
+        userObj.email= ctx.request.body.data.email;
+        userObj.login= ctx.request.body.data.email;
+        userObj.firstName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.name;
+        userObj.mobile = Number(ctx.request.body.data.contact);
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_EMPLOYEE"];  
-
-        console.log("USer Obj",userObj);
 
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
         +strapi.config.get('remote.userapi');

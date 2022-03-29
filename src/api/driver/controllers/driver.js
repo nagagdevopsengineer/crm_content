@@ -12,12 +12,12 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
       
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
-        userObj.email= response.data.attributes.email;
-        userObj.login= response.data.attributes.email;
-        userObj.firstName = response.data.attributes.name;
-        userObj.lastName = response.data.attributes.name;
+        userObj.email= ctx.request.body.data.email;
+        userObj.login= ctx.request.body.data.email;
+        userObj.firstName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.name;
         userObj.password = 'temp';
-        userObj.mobile = response.data.attributes.mobile;
+        userObj.mobile = ctx.request.body.data.mobile;
         userObj.authorities = ["ROLE_DRIVER"];  
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
         +strapi.config.get('remote.userapi');
