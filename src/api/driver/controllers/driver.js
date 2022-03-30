@@ -96,7 +96,8 @@ const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
       },
       isended:{
         $eq : false
-      }
+      },
+      orderBy:{id : asc}
 
 },
 orderBy: { id: 'asc' },
@@ -122,6 +123,14 @@ console.log(dataRes);
 const { data, meta } = dataRes ;
 
 return dataRes;
+
+},
+
+async findAvailableDrivers(ctx){
+
+
+
+
 
 }
 
