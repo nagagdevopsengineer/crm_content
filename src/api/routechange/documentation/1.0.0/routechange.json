@@ -5873,7 +5873,7 @@
                                                                                             "vaccinationstatus": {
                                                                                               "type": "string",
                                                                                               "enum": [
-                                                                                                "NO",
+                                                                                                "No",
                                                                                                 "Partial",
                                                                                                 "Vaccinated"
                                                                                               ]
@@ -15136,7 +15136,7 @@
                                                                                           "vaccinationstatus": {
                                                                                             "type": "string",
                                                                                             "enum": [
-                                                                                              "NO",
+                                                                                              "No",
                                                                                               "Partial",
                                                                                               "Vaccinated"
                                                                                             ]
@@ -24389,7 +24389,7 @@
                                                                                           "vaccinationstatus": {
                                                                                             "type": "string",
                                                                                             "enum": [
-                                                                                              "NO",
+                                                                                              "No",
                                                                                               "Partial",
                                                                                               "Vaccinated"
                                                                                             ]
@@ -33561,7 +33561,7 @@
                                                                                           "vaccinationstatus": {
                                                                                             "type": "string",
                                                                                             "enum": [
-                                                                                              "NO",
+                                                                                              "No",
                                                                                               "Partial",
                                                                                               "Vaccinated"
                                                                                             ]

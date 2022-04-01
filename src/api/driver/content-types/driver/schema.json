@@ -78,7 +78,7 @@
     "vaccinationstatus": {
       "type": "enumeration",
       "enum": [
-        "NO",
+        "No",
         "Partial",
         "Vaccinated"
       ]
