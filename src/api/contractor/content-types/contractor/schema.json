@@ -50,9 +50,7 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "client": {
@@ -69,13 +67,25 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "address": {
       "type": "text"
+    },
+    "pancard": {
+      "type": "string",
+      "maxLength": 10,
+      "minLength": 10
+    },
+    "pancardimage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
