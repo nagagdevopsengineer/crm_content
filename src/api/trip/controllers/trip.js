@@ -176,6 +176,7 @@ async endTrip(ctx){
   
   const response = await await strapi.entityService.update('api::trip.trip',id,
   {
+    
     data: {
       endtime: new Date(),
       isended: ctx.request.body.isended
