@@ -153,8 +153,17 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
             tripdate:{
             $lte : todayDate
          },
-         populate : {route_bus : true}
-       }          
+         isstarted : true,
+         isended : true
+       } ,
+       populate : {
+         route_bus :  {
+           populate : {route:true,bus:true}
+          },
+          bus_driver :{
+            populate : {driver:true,helper:true}
+          }
+        }         
 
        });
        return routeTrip;
