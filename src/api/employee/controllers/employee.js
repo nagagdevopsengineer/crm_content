@@ -115,6 +115,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
 
           const upcomingTrips = await strapi.entityService.findMany('api::trip.trip',{
+            orderBy: { id: 'asc' },
             filters:{
                  /**  'route-bus' :{
                    id:routeBuses[0].id
@@ -129,10 +130,13 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                    $eq:false
                  }
    
-  } ,
-  orderBy: { id: 'asc' }         
+  } 
+        
 
        });
+
+       console.log("  upcomgin trip    ",upcomingTrips);
+
        dataRes.upcomingTrip = upcomingTrips[0];
         return dataRes;
       },
