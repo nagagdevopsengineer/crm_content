@@ -4,7 +4,8 @@
   "info": {
     "singularName": "routechange",
     "pluralName": "routechanges",
-    "displayName": "routechange"
+    "displayName": "routechange",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -33,6 +34,26 @@
         "approved",
         "rejected"
       ]
+    },
+    "stop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stop.stop"
+    },
+    "pbus": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bus.bus"
+    },
+    "proute": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::route.route"
+    },
+    "pstop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stop.stop"
     }
   }
 }

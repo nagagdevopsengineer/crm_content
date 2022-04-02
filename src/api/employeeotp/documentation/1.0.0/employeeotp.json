@@ -8042,6 +8042,19 @@
                                                         "otp": {
                                                           "type": "integer"
                                                         },
+                                                        "employeename": {
+                                                          "type": "string"
+                                                        },
+                                                        "employeemobile": {
+                                                          "type": "string",
+                                                          "pattern": "^\\d*$",
+                                                          "example": "123456789"
+                                                        },
+                                                        "helperid": {
+                                                          "type": "string",
+                                                          "pattern": "^\\d*$",
+                                                          "example": "123456789"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -8942,6 +8955,19 @@
                               },
                               "otp": {
                                 "type": "integer"
+                              },
+                              "employeename": {
+                                "type": "string"
+                              },
+                              "employeemobile": {
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
+                              },
+                              "helperid": {
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -17294,6 +17320,19 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
+                                                      "employeename": {
+                                                        "type": "string"
+                                                      },
+                                                      "employeemobile": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
+                                                      "helperid": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -18194,6 +18233,19 @@
                             },
                             "otp": {
                               "type": "integer"
+                            },
+                            "employeename": {
+                              "type": "string"
+                            },
+                            "employeemobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
+                            "helperid": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -26464,6 +26516,19 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
+                                                      "employeename": {
+                                                        "type": "string"
+                                                      },
+                                                      "employeemobile": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
+                                                      "helperid": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -27364,6 +27429,19 @@
                             },
                             "otp": {
                               "type": "integer"
+                            },
+                            "employeename": {
+                              "type": "string"
+                            },
+                            "employeemobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
+                            "helperid": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -35625,6 +35703,19 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
+                                                      "employeename": {
+                                                        "type": "string"
+                                                      },
+                                                      "employeemobile": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
+                                                      "helperid": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -36526,6 +36617,19 @@
                             "otp": {
                               "type": "integer"
                             },
+                            "employeename": {
+                              "type": "string"
+                            },
+                            "employeemobile": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
+                            "helperid": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -36789,6 +36893,19 @@
                       },
                       "otp": {
                         "type": "integer"
+                      },
+                      "employeename": {
+                        "type": "string"
+                      },
+                      "employeemobile": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
+                      },
+                      "helperid": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",

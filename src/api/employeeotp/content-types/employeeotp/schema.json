@@ -36,6 +36,15 @@
     },
     "otp": {
       "type": "integer"
+    },
+    "employeename": {
+      "type": "string"
+    },
+    "employeemobile": {
+      "type": "biginteger"
+    },
+    "helperid": {
+      "type": "biginteger"
     }
   }
 }

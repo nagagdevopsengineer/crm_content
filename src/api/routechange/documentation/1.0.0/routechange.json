@@ -8055,6 +8055,19 @@
                                                         "otp": {
                                                           "type": "integer"
                                                         },
+                                                        "employeename": {
+                                                          "type": "string"
+                                                        },
+                                                        "employeemobile": {
+                                                          "type": "string",
+                                                          "pattern": "^\\d*$",
+                                                          "example": "123456789"
+                                                        },
+                                                        "helperid": {
+                                                          "type": "string",
+                                                          "pattern": "^\\d*$",
+                                                          "example": "123456789"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -8953,6 +8966,74 @@
                                   "approved",
                                   "rejected"
                                 ]
+                              },
+                              "stop": {
+                                "type": "object",
+                                "properties": {
+                                  "data": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "pbus": {
+                                "type": "object",
+                                "properties": {
+                                  "data": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "proute": {
+                                "type": "object",
+                                "properties": {
+                                  "data": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "pstop": {
+                                "type": "object",
+                                "properties": {
+                                  "data": {
+                                    "type": "object",
+                                    "properties": {
+                                      "id": {
+                                        "type": "string"
+                                      },
+                                      "attributes": {
+                                        "type": "object",
+                                        "properties": {}
+                                      }
+                                    }
+                                  }
+                                }
                               },
                               "createdAt": {
                                 "type": "string",
@@ -17318,6 +17399,19 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
+                                                      "employeename": {
+                                                        "type": "string"
+                                                      },
+                                                      "employeemobile": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
+                                                      "helperid": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -18217,6 +18311,74 @@
                                 "rejected"
                               ]
                             },
+                            "stop": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "pbus": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "proute": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "pstop": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -18474,6 +18636,50 @@
                           "approved",
                           "rejected"
                         ]
+                      },
+                      "stop": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "pbus": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "proute": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "pstop": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
                       },
                       "createdAt": {
                         "type": "string",
@@ -26571,6 +26777,19 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
+                                                      "employeename": {
+                                                        "type": "string"
+                                                      },
+                                                      "employeemobile": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
+                                                      "helperid": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -27469,6 +27688,74 @@
                                 "approved",
                                 "rejected"
                               ]
+                            },
+                            "stop": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "pbus": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "proute": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "pstop": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
                             },
                             "createdAt": {
                               "type": "string",
@@ -35743,6 +36030,19 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
+                                                      "employeename": {
+                                                        "type": "string"
+                                                      },
+                                                      "employeemobile": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
+                                                      "helperid": {
+                                                        "type": "string",
+                                                        "pattern": "^\\d*$",
+                                                        "example": "123456789"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -36642,6 +36942,74 @@
                                 "rejected"
                               ]
                             },
+                            "stop": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "pbus": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "proute": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "pstop": {
+                              "type": "object",
+                              "properties": {
+                                "data": {
+                                  "type": "object",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "attributes": {
+                                      "type": "object",
+                                      "properties": {}
+                                    }
+                                  }
+                                }
+                              }
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -36910,6 +37278,50 @@
                           "approved",
                           "rejected"
                         ]
+                      },
+                      "stop": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "pbus": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "proute": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
+                      },
+                      "pstop": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "example": "string or id"
                       },
                       "createdAt": {
                         "type": "string",

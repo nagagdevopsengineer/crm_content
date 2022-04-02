@@ -151,8 +151,9 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                    id:routeBuses[0].id
                  },*/
             tripdate:{
-            $lt : todayDate
-         }
+            $lte : todayDate
+         },
+         populate : {route_bus : true}
        }          
 
        });
