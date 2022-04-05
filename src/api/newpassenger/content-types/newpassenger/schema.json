@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newpassengers",
+  "info": {
+    "singularName": "newpassenger",
+    "pluralName": "newpassengers",
+    "displayName": "newpassenger",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "reason": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "mobile": {
+      "type": "biginteger",
+      "required": true
+    },
+    "boardingtime": {
+      "type": "datetime"
+    },
+    "isboarded": {
+      "type": "boolean",
+      "default": false
+    },
+    "trip": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::trip.trip"
+    },
+    "stop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stop.stop"
+    },
+    "helper": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::helper.helper"
+    }
+  }
+}

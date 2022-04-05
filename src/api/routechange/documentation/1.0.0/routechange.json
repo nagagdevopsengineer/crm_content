@@ -8055,18 +8055,27 @@
                                                         "otp": {
                                                           "type": "integer"
                                                         },
-                                                        "employeename": {
-                                                          "type": "string"
-                                                        },
-                                                        "employeemobile": {
-                                                          "type": "string",
-                                                          "pattern": "^\\d*$",
-                                                          "example": "123456789"
-                                                        },
                                                         "helperid": {
                                                           "type": "string",
                                                           "pattern": "^\\d*$",
                                                           "example": "123456789"
+                                                        },
+                                                        "stop": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "data": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "id": {
+                                                                  "type": "string"
+                                                                },
+                                                                "attributes": {
+                                                                  "type": "object",
+                                                                  "properties": {}
+                                                                }
+                                                              }
+                                                            }
+                                                          }
                                                         },
                                                         "createdAt": {
                                                           "type": "string",
@@ -17399,18 +17408,27 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
-                                                      "employeename": {
-                                                        "type": "string"
-                                                      },
-                                                      "employeemobile": {
-                                                        "type": "string",
-                                                        "pattern": "^\\d*$",
-                                                        "example": "123456789"
-                                                      },
                                                       "helperid": {
                                                         "type": "string",
                                                         "pattern": "^\\d*$",
                                                         "example": "123456789"
+                                                      },
+                                                      "stop": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "data": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "id": {
+                                                                "type": "string"
+                                                              },
+                                                              "attributes": {
+                                                                "type": "object",
+                                                                "properties": {}
+                                                              }
+                                                            }
+                                                          }
+                                                        }
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -26777,18 +26795,27 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
-                                                      "employeename": {
-                                                        "type": "string"
-                                                      },
-                                                      "employeemobile": {
-                                                        "type": "string",
-                                                        "pattern": "^\\d*$",
-                                                        "example": "123456789"
-                                                      },
                                                       "helperid": {
                                                         "type": "string",
                                                         "pattern": "^\\d*$",
                                                         "example": "123456789"
+                                                      },
+                                                      "stop": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "data": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "id": {
+                                                                "type": "string"
+                                                              },
+                                                              "attributes": {
+                                                                "type": "object",
+                                                                "properties": {}
+                                                              }
+                                                            }
+                                                          }
+                                                        }
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -36030,18 +36057,27 @@
                                                       "otp": {
                                                         "type": "integer"
                                                       },
-                                                      "employeename": {
-                                                        "type": "string"
-                                                      },
-                                                      "employeemobile": {
-                                                        "type": "string",
-                                                        "pattern": "^\\d*$",
-                                                        "example": "123456789"
-                                                      },
                                                       "helperid": {
                                                         "type": "string",
                                                         "pattern": "^\\d*$",
                                                         "example": "123456789"
+                                                      },
+                                                      "stop": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "data": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "id": {
+                                                                "type": "string"
+                                                              },
+                                                              "attributes": {
+                                                                "type": "object",
+                                                                "properties": {}
+                                                              }
+                                                            }
+                                                          }
+                                                        }
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
