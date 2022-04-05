@@ -8064,6 +8064,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "isboardedwotp": {
+                                                          "type": "boolean"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -8986,6 +8989,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "isboardedwotp": {
+                                "type": "boolean"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -17360,6 +17366,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "isboardedwotp": {
+                                                        "type": "boolean"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -18283,6 +18292,9 @@
                                 }
                               }
                             },
+                            "isboardedwotp": {
+                              "type": "boolean"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -18501,6 +18513,9 @@
                     "type": "object",
                     "properties": {
                       "isBoarded": {
+                        "type": "boolean"
+                      },
+                      "isboardedwotp": {
                         "type": "boolean"
                       }
                     }
@@ -26574,6 +26589,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "isboardedwotp": {
+                                                        "type": "boolean"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -27496,6 +27514,9 @@
                                   }
                                 }
                               }
+                            },
+                            "isboardedwotp": {
+                              "type": "boolean"
                             },
                             "createdAt": {
                               "type": "string",
@@ -35779,6 +35800,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "isboardedwotp": {
+                                                        "type": "boolean"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -36702,6 +36726,9 @@
                                 }
                               }
                             },
+                            "isboardedwotp": {
+                              "type": "boolean"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -36981,6 +37008,9 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "isboardedwotp": {
+                        "type": "boolean"
                       },
                       "createdAt": {
                         "type": "string",

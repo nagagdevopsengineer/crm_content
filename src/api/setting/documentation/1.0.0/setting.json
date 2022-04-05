@@ -8069,6 +8069,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "isboardedwotp": {
+                                                          "type": "boolean"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -17321,6 +17324,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "isboardedwotp": {
+                                                        "type": "boolean"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -26542,6 +26548,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "isboardedwotp": {
+                                                        "type": "boolean"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -35702,6 +35711,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "isboardedwotp": {
+                                                        "type": "boolean"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
