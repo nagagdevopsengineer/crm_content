@@ -127,6 +127,49 @@ dataRes.currentTrip = routeTrip[0];
 dataRes.passangers = employees.length;
 
 return dataRes;
+      },
+
+      async  findAvailableHelpers(ctx){
+
+        const { contractorid } = ctx.params;
+
+        const mappedDriversAndHelpers = await strapi.entityService.findMany('api::bus-driver.bus-driver',  {
+          filters:{
+            driver:{
+              contractor:{
+               id:contractorid
+              }
+          }
+        },
+          populate : {driver:true, helper:true}
+        });
+      
+        let drivers = [];
+        let helpers = [];
+        await    mappedDriversAndHelpers.forEach(element => {
+        
+          drivers.push(element.driver.id);
+          helpers.push(element.driver.id);
+      
+        });
+        
+      
+        const availableHelpers  = await strapi.entityService.findMany('api::helper.helper',  {
+          filters:{
+      
+            contractor:{
+              id:contractorid
+            },
+      
+            id:{
+              $notIn : helpers
+            }
+      
+          }
+        });
+      
+      return availableHelpers;
+
       }
 
 }));

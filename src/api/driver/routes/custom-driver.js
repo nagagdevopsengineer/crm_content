@@ -7,7 +7,7 @@ module.exports = {
       },
       { // Path defined with a URL parameter
         method: 'GET',
-        path: '/drivers/nmdrivers/:uuid',
+        path: '/drivers/nmdrivers/:contractorid',
         handler: 'driver.findAvailableDrivers',
       }
     ]

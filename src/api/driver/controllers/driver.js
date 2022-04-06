@@ -126,25 +126,44 @@ return dataRes;
 
 async findAvailableDrivers(ctx){
 
-  const { uuid } = ctx.params;
+  const { contractorid } = ctx.params;
 
-  const mappedDriversAndHelpers = await strapi.entityService.findMany('api::bus_driver.bus_driver',  {
+  const mappedDriversAndHelpers = await strapi.entityService.findMany('api::bus-driver.bus-driver',  {
+    filters:{
+      driver:{
+        contractor:{
+         id:contractorid
+        }
+    }
+  },
     populate : {driver:true, helper:true}
   });
 
+  let drivers = [];
+  let helpers = [];
+  await    mappedDriversAndHelpers.forEach(element => {
+  
+    drivers.push(element.driver.id);
+    helpers.push(element.driver.id);
 
-  console.log(mappedDriversAndHelpers);
+  });
+  
 
+  const availableDrivers  = await strapi.entityService.findMany('api::driver.driver',  {
+    filters:{
 
-  const entry = await strapi.entityService.findMany('api::driver.driver',  {
-    filters: { uid : uuid }
-    
+      contractor:{
+        id:contractorid
+      },
+
+      id:{
+        $notIn : drivers
+      }
+
+    }
   });
 
-
-
-
-
+return availableDrivers;
 }
 
 }));
