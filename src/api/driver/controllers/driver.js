@@ -126,6 +126,21 @@ return dataRes;
 
 async findAvailableDrivers(ctx){
 
+  const { uuid } = ctx.params;
+
+  const mappedDriversAndHelpers = await strapi.entityService.findMany('api::bus_driver.bus_driver',  {
+    populate : {driver:true, helper:true}
+  });
+
+
+  console.log(mappedDriversAndHelpers);
+
+
+  const entry = await strapi.entityService.findMany('api::driver.driver',  {
+    filters: { uid : uuid }
+    
+  });
+
 
 
 
