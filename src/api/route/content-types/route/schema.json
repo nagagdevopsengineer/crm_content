@@ -17,6 +17,11 @@
     },
     "description": {
       "type": "string"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client"
     }
   }
 }

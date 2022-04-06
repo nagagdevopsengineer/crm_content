@@ -3955,6 +3955,23 @@
                                                       "description": {
                                                         "type": "string"
                                                       },
+                                                      "client": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "data": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "id": {
+                                                                "type": "string"
+                                                              },
+                                                              "attributes": {
+                                                                "type": "object",
+                                                                "properties": {}
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -4046,6 +4063,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "order": {
+                                                        "type": "integer"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -8902,6 +8922,23 @@
                                           "employeeid": {
                                             "type": "string"
                                           },
+                                          "client": {
+                                            "type": "object",
+                                            "properties": {
+                                              "data": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "id": {
+                                                    "type": "string"
+                                                  },
+                                                  "attributes": {
+                                                    "type": "object",
+                                                    "properties": {}
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -13311,6 +13348,23 @@
                                                     "description": {
                                                       "type": "string"
                                                     },
+                                                    "client": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "data": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "id": {
+                                                              "type": "string"
+                                                            },
+                                                            "attributes": {
+                                                              "type": "object",
+                                                              "properties": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -13402,6 +13456,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "order": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -18257,6 +18314,23 @@
                                         },
                                         "employeeid": {
                                           "type": "string"
+                                        },
+                                        "client": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "object",
+                                              "properties": {
+                                                "id": {
+                                                  "type": "string"
+                                                },
+                                                "attributes": {
+                                                  "type": "object",
+                                                  "properties": {}
+                                                }
+                                              }
+                                            }
+                                          }
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -22701,6 +22775,23 @@
                                                     "description": {
                                                       "type": "string"
                                                     },
+                                                    "client": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "data": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "id": {
+                                                              "type": "string"
+                                                            },
+                                                            "attributes": {
+                                                              "type": "object",
+                                                              "properties": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -22792,6 +22883,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "order": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -27647,6 +27741,23 @@
                                         },
                                         "employeeid": {
                                           "type": "string"
+                                        },
+                                        "client": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "object",
+                                              "properties": {
+                                                "id": {
+                                                  "type": "string"
+                                                },
+                                                "attributes": {
+                                                  "type": "object",
+                                                  "properties": {}
+                                                }
+                                              }
+                                            }
+                                          }
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -31966,6 +32077,23 @@
                                                     "description": {
                                                       "type": "string"
                                                     },
+                                                    "client": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "data": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "id": {
+                                                              "type": "string"
+                                                            },
+                                                            "attributes": {
+                                                              "type": "object",
+                                                              "properties": {}
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -32057,6 +32185,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "order": {
+                                                      "type": "integer"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -36912,6 +37043,23 @@
                                         },
                                         "employeeid": {
                                           "type": "string"
+                                        },
+                                        "client": {
+                                          "type": "object",
+                                          "properties": {
+                                            "data": {
+                                              "type": "object",
+                                              "properties": {
+                                                "id": {
+                                                  "type": "string"
+                                                },
+                                                "attributes": {
+                                                  "type": "object",
+                                                  "properties": {}
+                                                }
+                                              }
+                                            }
+                                          }
                                         },
                                         "createdAt": {
                                           "type": "string",
