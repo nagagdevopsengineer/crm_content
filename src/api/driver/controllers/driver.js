@@ -144,7 +144,7 @@ async findAvailableDrivers(ctx){
   await    mappedDriversAndHelpers.forEach(element => {
   
     drivers.push(element.driver.id);
-    helpers.push(element.driver.id);
+    helpers.push(element.helper.id);
 
   });
   
