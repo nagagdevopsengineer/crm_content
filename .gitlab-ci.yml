@@ -40,7 +40,7 @@ deploy-arrivnow:
         sleep 60
         kubectl get pods -n crm-content --field-selector=status.phase=Running -o wide 
         kubectl get svc -n crm-content -o wide
-      fi
+      #fi
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
       when: always
