@@ -150,6 +150,41 @@ async findTripById(ctx){
   });
 
 return trip;
+},
+
+async updateStartTrip(ctx){
+
+  const {id} = ctx.params;
+
+  console.log(" id ",ctx.request.body.isstarted);
+
+
+  const response = await await strapi.entityService.update('api::trip.trip',id,
+  {
+    data: {
+    starttime: new Date(),
+    isstarted: ctx.request.body.isstarted
+  }
+});
+
+  return response;
+
+},
+
+async endTrip(ctx){
+  const {id} = ctx.params;
+  
+  const response = await await strapi.entityService.update('api::trip.trip',id,
+  {
+    
+    data: {
+      endtime: new Date(),
+      isended: ctx.request.body.isended
+
+  }
+});
+  return response;
+
 }
 
 

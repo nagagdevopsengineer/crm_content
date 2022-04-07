@@ -58,9 +58,7 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "employeeotps": {
@@ -79,9 +77,7 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "vaccinationcertificate": {
@@ -90,9 +86,7 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "address": {
@@ -110,7 +104,13 @@
       ]
     },
     "employeeid": {
-      "type": "string"
+      "type": "string",
+      "unique": false
+    },
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client"
     }
   }
 }

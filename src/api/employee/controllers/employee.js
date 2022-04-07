@@ -10,44 +10,35 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
     
     async create(ctx) {
        
-        const response = await super.create(ctx);
-    
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
-        userObj.email= response.data.attributes.email;
-        userObj.login= response.data.attributes.email;
-        userObj.firstName = response.data.attributes.name;
-        userObj.lastName = response.data.attributes.name;
-        userObj.mobile = Number(response.data.attributes.contact);
+        userObj.email= ctx.request.body.data.email;
+        userObj.login= ctx.request.body.data.email;
+        userObj.firstName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.name;
+        userObj.mobile = Number(ctx.request.body.data.contact);
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_EMPLOYEE"];  
 
-        console.log("USer Obj",userObj);
-
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
         +strapi.config.get('remote.userapi');
-        var updateObj = response.data;
+        
       await  axios.post(API_URL , userObj)
         .catch((error) => {
             console.log(" exception  ",error);
+            return  Promise.reject(error);
         }).then(function(dataUser){
 
             console.log("  response from user mgmt ==== >> ",dataUser);
            
-            updateObj.attributes.uuid=dataUser.data.userId;
+            //updateObj.attributes.uuid=dataUser.data.userId;
             
-
+            ctx.request.body.data.uuid = dataUser.data.userId;
           
         });
 
-
-        const entry = await strapi.entityService.update('api::employee.employee', response.data.id  , {
-            data: {
-              uuid : updateObj.attributes.uuid,
-            },
-          });
-
-        console.log("     updated response  response ",response);
+        const response = await super.create(ctx);
+       
         return response;
       },
 
@@ -124,6 +115,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
 
           const upcomingTrips = await strapi.entityService.findMany('api::trip.trip',{
+            orderBy: { id: 'asc' },
             filters:{
                  /**  'route-bus' :{
                    id:routeBuses[0].id
@@ -138,10 +130,13 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                    $eq:false
                  }
    
-  } ,
-  orderBy: { id: 'asc' }         
+  } 
+        
 
        });
+
+       console.log("  upcomgin trip    ",upcomingTrips);
+
        dataRes.upcomingTrip = upcomingTrips[0];
         return dataRes;
       },
@@ -156,14 +151,54 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                    id:routeBuses[0].id
                  },*/
             tripdate:{
-            $lt : todayDate
-         }
-       }          
+            $lte : todayDate
+         },
+         isstarted : true,
+         isended : true
+       } ,
+       populate : {
+         route_bus :  {
+           populate : {route:true,bus:true}
+          },
+          bus_driver :{
+            populate : {driver:true,helper:true}
+          }
+        }         
 
        });
        return routeTrip;
 
+      },
+
+      async employeesByStop(ctx){
+        const { stopid } = ctx.params;
+
+        console.log(" stop id  ",stopid);
+
+        const employees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+            
+          filters:{
+            employee:{
+              
+                stop :{
+                  id : stopid
+               
+              }
+             
+          }
+        },
+        populate:{employee:true}
+      
+
+        });
+
+        console.log(" employees  by stop ",employees);
+        return employees;
+
       }
+
+
+
 
 
 

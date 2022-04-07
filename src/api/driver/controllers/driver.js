@@ -9,42 +9,32 @@ const axios = require('axios');
 module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
     
     async create(ctx) {
-       
-        const response = await super.create(ctx);
-    
+      
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
-        userObj.email= response.data.attributes.email;
-        userObj.login= response.data.attributes.email;
-        userObj.firstName = response.data.attributes.name;
-        userObj.lastName = response.data.attributes.name;
+        userObj.email= ctx.request.body.data.email;
+        userObj.login= ctx.request.body.data.email;
+        userObj.firstName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.name;
         userObj.password = 'temp';
-        userObj.mobile = response.data.attributes.mobile;
+        userObj.mobile = ctx.request.body.data.mobile;
         userObj.authorities = ["ROLE_DRIVER"];  
         const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
         +strapi.config.get('remote.userapi');
-        var updateObj = response.data;
+       
       await  axios.post(API_URL , userObj)
         .catch((error) => {
             console.log(" exception  ",error);
+            return  Promise.reject(error);
         }).then(function(dataUser){
 
             console.log("  response from user mgmt ==== >> ",dataUser);
-           
-            updateObj.attributes.uuid=dataUser.data.userId;
-            
-
-          
+            ctx.request.body.data.uid = dataUser.data.userId;
+            //updateObj.attributes.uuid=dataUser.data.userId; 
         });
 
-
-        const entry = await strapi.entityService.update('api::driver.driver', response.data.id  , {
-            data: {
-              uuid : updateObj.attributes.uuid,
-            },
-          });
-
-        console.log("     updated response  response ",response);
+        const response = await super.create(ctx);
+    
         return response;
       },
 
@@ -107,7 +97,6 @@ const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
       isended:{
         $eq : false
       }
-
 },
 orderBy: { id: 'asc' },
 });
@@ -133,6 +122,48 @@ const { data, meta } = dataRes ;
 
 return dataRes;
 
+},
+
+async findAvailableDrivers(ctx){
+
+  const { contractorid } = ctx.params;
+
+  const mappedDriversAndHelpers = await strapi.entityService.findMany('api::bus-driver.bus-driver',  {
+    filters:{
+      driver:{
+        contractor:{
+         id:contractorid
+        }
+    }
+  },
+    populate : {driver:true, helper:true}
+  });
+
+  let drivers = [];
+  let helpers = [];
+  await    mappedDriversAndHelpers.forEach(element => {
+  
+    drivers.push(element.driver.id);
+    helpers.push(element.helper.id);
+
+  });
+  
+
+  const availableDrivers  = await strapi.entityService.findMany('api::driver.driver',  {
+    filters:{
+
+      contractor:{
+        id:contractorid
+      },
+
+      id:{
+        $notIn : drivers
+      }
+
+    }
+  });
+
+return availableDrivers;
 }
 
 }));

@@ -52,8 +52,7 @@
       "target": "api::contractor.contractor"
     },
     "uid": {
-      "type": "uid",
-      "targetField": "driving_licence_number"
+      "type": "uid"
     },
     "email": {
       "type": "email",
@@ -79,20 +78,21 @@
     "vaccinationstatus": {
       "type": "enumeration",
       "enum": [
-        "NO",
+        "No",
         "Partial",
         "Vaccinated"
       ]
     },
     "vaccinationcertificate": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "dob": {
       "type": "date"

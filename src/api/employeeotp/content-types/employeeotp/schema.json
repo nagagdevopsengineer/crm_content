@@ -36,6 +36,19 @@
     },
     "otp": {
       "type": "integer"
+    },
+    "helperid": {
+      "type": "biginteger"
+    },
+    "stop": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::stop.stop"
+    },
+    "isboardedwotp": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

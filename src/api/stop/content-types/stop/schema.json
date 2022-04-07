@@ -25,6 +25,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::route.route"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

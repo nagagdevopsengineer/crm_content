@@ -37,20 +37,7 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "gst_certificate": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "status": {
@@ -75,9 +62,7 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "address": {
@@ -87,6 +72,20 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "pancard": {
+      "type": "string",
+      "maxLength": 10,
+      "minLength": 10
+    },
+    "pancardimage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
