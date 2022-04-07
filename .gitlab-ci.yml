@@ -23,7 +23,6 @@ docker-build-image:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master'
       changes:
-        - arrivnow/*
         - Dockerfile
       when: always
 
