@@ -6,6 +6,7 @@ metadata:
   labels:
     app: crm-content
 spec:
+  type: LoadBalancer
   ports:
   - name: https
     port: 1337
