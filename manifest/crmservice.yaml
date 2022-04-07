@@ -11,6 +11,6 @@ spec:
   - name: https
     port: 1337
     targetPort: 1337
+    type: LoadBalancer
   selector:
     app: crm-content
-    type: LoadBalancer 
