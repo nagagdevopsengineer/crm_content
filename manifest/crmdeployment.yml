@@ -16,7 +16,7 @@ spec:
         app: crm-content
     spec:
       containers:
-      - name: crm-content
+      - name: arrivnow
         image: vapprtech/arrivnow-reactjs:latest
         imagePullPolicy: Always
         ports:

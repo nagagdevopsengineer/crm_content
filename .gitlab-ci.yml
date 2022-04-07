@@ -33,20 +33,20 @@ deploy-arrivnow:
   image: vapprtech/awskubectl:latest
   before_script:
     - aws eks update-kubeconfig --name arrivnow --region us-east-2 
-    - kubectl create namespace arrivnow  --dry-run=client -o yaml | kubectl apply -f -   
+    - kubectl create namespace crm-content  --dry-run=client -o yaml | kubectl apply -f -   
   script:
     - >
-      if [[ $(kubectl get deployment arrivnow -n arrivnow 2>&1) != "No resources found*" ]]; then
+      if [[ $(kubectl get deployment crm-content -n crm-content 2>&1) != "No resources found*" ]]; then
         echo "Updating deployment with new image"
-        kubectl set image deployment/arrivnow -n arrivnow arrivnow=vapprtech/arrivnow-reactjs:latest
+        kubectl set image deployment/crm-content -n crm-content arrivnow=vapprtech/arrivnow-reactjs:latest
         sleep 180
-        kubectl get all -n arrivnow -o wide
+        kubectl get all -n crm-content -o wide
       else
-        echo "Deploying arrivnow application"
+        echo "Deploying crm-content application"
         kubectl apply -f manifest
         sleep 60
-        kubectl get pods -n arrivnow --field-selector=status.phase=Running -o wide 
-        kubectl get svc -n arrivnow -o wide
+        kubectl get pods -n crm-content --field-selector=status.phase=Running -o wide 
+        kubectl get svc -n crm-content -o wide
       fi
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "develop"'
