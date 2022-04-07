@@ -1,0 +1,53 @@
+image: docker:19.03.12
+
+variables:
+  BUILD_IMAGE: "vapprtech/arrivnow-reactjs:${CI_COMMIT_SHORT_SHA}"
+  DOCKER_TLS_CERTDIR: "/certs"
+
+services:
+  - docker:19.03.12-dind
+
+stages:          # List of stages for jobs, and their order of execution
+  - build_image
+  - deploy_arrivnow
+
+docker-build-image:
+  stage: build_image
+  script:
+    - docker info
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker build -t ${BUILD_IMAGE} -f Dockerfile .
+    - docker tag ${BUILD_IMAGE} vapprtech/arrivnow-reactjs:latest
+    - docker push ${BUILD_IMAGE}
+    - docker push vapprtech/arrivnow-reactjs:latest
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "develop"'
+      changes:
+        - arrivnow/*
+        - Dockerfile
+      when: always
+
+deploy-arrivnow:
+  stage: deploy_arrivnow
+  #needs: ["docker-build-image"]
+  image: vapprtech/awskubectl:latest
+  before_script:
+    - aws eks update-kubeconfig --name arrivnow --region us-east-2 
+    - kubectl create namespace arrivnow  --dry-run=client -o yaml | kubectl apply -f -   
+  script:
+    - >
+      if [[ $(kubectl get deployment arrivnow -n arrivnow 2>&1) != "No resources found*" ]]; then
+        echo "Updating deployment with new image"
+        kubectl set image deployment/arrivnow -n arrivnow arrivnow=vapprtech/arrivnow-reactjs:latest
+        sleep 180
+        kubectl get all -n arrivnow -o wide
+      else
+        echo "Deploying arrivnow application"
+        kubectl apply -f manifest
+        sleep 60
+        kubectl get pods -n arrivnow --field-selector=status.phase=Running -o wide 
+        kubectl get svc -n arrivnow -o wide
+      fi
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "develop"'
+      when: always
