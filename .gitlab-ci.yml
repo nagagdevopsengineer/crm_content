@@ -37,7 +37,7 @@ deploy-arrivnow:
     - >
       if [[ $(kubectl get deployment crm-content -n crm-content 2>&1) != "No resources found*" ]]; then
         echo "Updating deployment with new image"
-        kubectl set image deployment/crm-content -n crm-content arrivnow=vapprtech/arrivnow-reactjs:latest
+        kubectl set image deployment/crm-content -n crm-content crm-content=vapprtech/arrivnow-reactjs:latest
         sleep 180
         kubectl get all -n crm-content -o wide
       else
