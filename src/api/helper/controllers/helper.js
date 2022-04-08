@@ -100,6 +100,7 @@ const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
 
 },
 orderBy: { id: 'asc' },
+poplate : {trip:true}
 });
 
 
