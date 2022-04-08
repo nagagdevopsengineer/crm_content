@@ -103,7 +103,7 @@ orderBy: { id: 'asc' },
 poplate : {trip:true}
 });
 
-
+console.log(" trips   ",routeTrip);
 const employees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
   filters:{
     trip:{
