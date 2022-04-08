@@ -107,7 +107,7 @@ console.log(" trips   ",routeTrip);
 const routeEmployees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
   filters:{
     trip:{
-    id:routeTrip[0].trip.id
+    id:routeTrip[0].id
   },
 }
 });
@@ -115,7 +115,7 @@ const routeEmployees = await strapi.entityService.findMany('api::employeeotp.emp
 const newPassangers = await strapi.entityService.findMany('api::newpassenger.newpassenger',{
   filters:{
     trip:{
-    id:routeTrip[0].trip.id
+    id:routeTrip[0].id
   },
 }
 });
