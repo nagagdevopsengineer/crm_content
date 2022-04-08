@@ -76,13 +76,13 @@ const routeStops = await strapi.entityService.findMany('api::stop.stop',{
 });
 
 
-const routeEmployees = await strapi.entityService.findMany('api::employee.employee',{
+/**const routeEmployees = await strapi.entityService.findMany('api::employee.employee',{
   filters:{
     route:{
     id:routeBuses[0].route.id
   },
 }
-});
+});**/
 
 var todayDate = new Date().toISOString().slice(0, 10);
 console.log(todayDate);
@@ -101,7 +101,21 @@ const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
 orderBy: { id: 'asc' },
 });
 
+const routeEmployees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+  filters:{
+    trip:{
+    id:routeTrip[0].trip.id
+  },
+}
+});
 
+const newPassangers = await strapi.entityService.findMany('api::newpassenger.newpassenger',{
+  filters:{
+    trip:{
+    id:routeTrip[0].trip.id
+  },
+}
+});
 
 
 console.log(" routeTrip " , routeTrip);
@@ -117,6 +131,7 @@ dataRes.stops = routeStops;
 dataRes.trips = routeTrip;
 dataRes.currentTrip = routeTrip[0];
 dataRes.commuters = routeEmployees;
+dataRes.addedPax = newPassangers;
 console.log(dataRes);
 const { data, meta } = dataRes ;
 
