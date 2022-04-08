@@ -12,7 +12,7 @@ module.exports = {
       },
       { // Path defined with a URL parameter
         method: 'GET',
-        path: '/employees/es/:stopid',
+        path: '/employees/es/:stopid/:tripid',
         handler: 'employee.employeesByStop',
       }
     ]

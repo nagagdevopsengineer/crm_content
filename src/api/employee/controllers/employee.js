@@ -171,21 +171,30 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
       },
 
       async employeesByStop(ctx){
-        const { stopid } = ctx.params;
+        const { stopid ,tripid} = ctx.params;
 
-        console.log(" stop id  ",stopid);
+        console.log(tripid," stop id  ",stopid);
 
         const employees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
             
           filters:{
-            employee:{
+           
               
-                stop :{
+                stop :{ 
+                
                   id : stopid
-               
-              }
+
              
-          }
+                
+              },
+             
+                trip: {
+              
+                id : tripid
+              }
+              
+             
+         
         },
         populate:{employee:true}
       
