@@ -70,14 +70,7 @@ const routeBuses = await strapi.entityService.findMany('api::route-bus.route-bus
 populate :  {route:true}
 });
 
-const employees = await strapi.entityService.findMany('api::employee.employee',{
-  filters:{
-    route:{
-    id:routeBuses[0].route.id
-  },
-},
-populate :  {route:true}
-});
+
 
 console.log(routeBuses[0].id , " ..... routeBuses ",routeBuses);
 
@@ -110,9 +103,21 @@ orderBy: { id: 'asc' },
 });
 
 
+const employees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+  filters:{
+    trip:{
+    id:routeTrip[0].trip.id
+  },
+}
+});
 
-
-console.log(" routeTrip " , routeTrip);
+const newPassangers = await strapi.entityService.findMany('api::newpassenger.newpassenger',{
+  filters:{
+    trip:{
+    id:routeTrip[0].trip.id
+  },
+}
+});
 
 
 
@@ -124,7 +129,8 @@ dataRes.route = routeBuses[0].route;
 dataRes.stops = routeStops;
 dataRes.trips = routeTrip;
 dataRes.currentTrip = routeTrip[0];
-dataRes.passangers = employees.length;
+
+dataRes.passangers = employees.length + newPassangers.length;
 
 return dataRes;
       },
