@@ -88,9 +88,9 @@ var todayDate = new Date().toISOString().slice(0, 10);
 console.log(todayDate);
 const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
   filters:{
- /**  'route-bus' :{
+  route_bus :{
     id:routeBuses[0].id
-  },*/
+  },
       tripdate:{
         $gte : todayDate
       },

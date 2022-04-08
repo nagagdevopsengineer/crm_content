@@ -159,13 +159,15 @@ async updateStartTrip(ctx){
   console.log(" id ",ctx.request.body.isstarted);
 
 
-  const response = await await strapi.entityService.update('api::trip.trip',id,
+  const response = await  strapi.entityService.update('api::trip.trip',id,
   {
     data: {
     starttime: new Date(),
     isstarted: ctx.request.body.isstarted
   }
 });
+
+console.log("  update response  ",response);
 
   return response;
 
@@ -174,7 +176,7 @@ async updateStartTrip(ctx){
 async endTrip(ctx){
   const {id} = ctx.params;
   
-  const response = await await strapi.entityService.update('api::trip.trip',id,
+  const response = await  strapi.entityService.update('api::trip.trip',id,
   {
     
     data: {

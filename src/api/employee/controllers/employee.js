@@ -77,9 +77,9 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
            console.log(todayDate);
           const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
                filters:{
-                    /**  'route-bus' :{
-                      id:routeBuses[0].id
-                    },*/
+                    route_bus :{
+                       id:routeBuses[0].id
+                    },
                     tripdate:{
                       $gte : todayDate
                     },
