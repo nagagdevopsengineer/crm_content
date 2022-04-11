@@ -16,7 +16,7 @@ docker-build-image:
   script:
     - docker info
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - docker build -t ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA} --file Dockerfile .
+    - docker build --file Dockerfile . -t ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA} 
     - docker tag ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA} vapprtech/arrivnow-reactjs:latest
     - docker push ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA}
     - docker push vapprtech/arrivnow-reactjs:latest
