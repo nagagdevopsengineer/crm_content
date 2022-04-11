@@ -47,6 +47,13 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::helper.helper"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
