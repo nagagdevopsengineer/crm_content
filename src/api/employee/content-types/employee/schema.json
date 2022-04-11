@@ -111,6 +111,13 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::client.client"
+    },
+    "pushtoken": {
+      "type": "string",
+      "unique": true
+    },
+    "playerid": {
+      "type": "string"
     }
   }
 }

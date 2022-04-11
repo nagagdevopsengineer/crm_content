@@ -19,6 +19,11 @@ module.exports = {
         method: 'PUT',
         path: '/trips/endtrip/:id',
         handler: 'trip.endTrip',
+      },
+      { // Path defined with a URL parameter
+        method: 'POST',
+        path: '/trips/createtrip/:driveid',
+        handler: 'trip.createTrip',
       }
     ]
   }

@@ -8931,6 +8931,12 @@
                                               }
                                             }
                                           },
+                                          "pushtoken": {
+                                            "type": "string"
+                                          },
+                                          "playerid": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -18223,6 +18229,12 @@
                                             }
                                           }
                                         },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -27484,6 +27496,12 @@
                                             }
                                           }
                                         },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -36684,6 +36702,12 @@
                                               }
                                             }
                                           }
+                                        },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",

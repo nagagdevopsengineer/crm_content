@@ -76,21 +76,21 @@ const routeStops = await strapi.entityService.findMany('api::stop.stop',{
 });
 
 
-const routeEmployees = await strapi.entityService.findMany('api::employee.employee',{
+/**const routeEmployees = await strapi.entityService.findMany('api::employee.employee',{
   filters:{
     route:{
     id:routeBuses[0].route.id
   },
 }
-});
+});**/
 
 var todayDate = new Date().toISOString().slice(0, 10);
 console.log(todayDate);
 const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
   filters:{
- /**  'route-bus' :{
+  route_bus :{
     id:routeBuses[0].id
-  },*/
+  },
       tripdate:{
         $gte : todayDate
       },
@@ -99,9 +99,26 @@ const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
       }
 },
 orderBy: { id: 'asc' },
+poplate : {trip:true}
 });
 
+console.log(" trips   ",routeTrip);
 
+const routeEmployees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+  filters:{
+    trip:{
+    id:routeTrip[0].id
+  },
+}
+});
+
+const newPassangers = await strapi.entityService.findMany('api::newpassenger.newpassenger',{
+  filters:{
+    trip:{
+    id:routeTrip[0].id
+  },
+}
+});
 
 
 console.log(" routeTrip " , routeTrip);
@@ -117,6 +134,7 @@ dataRes.stops = routeStops;
 dataRes.trips = routeTrip;
 dataRes.currentTrip = routeTrip[0];
 dataRes.commuters = routeEmployees;
+dataRes.addedPax = newPassangers;
 console.log(dataRes);
 const { data, meta } = dataRes ;
 

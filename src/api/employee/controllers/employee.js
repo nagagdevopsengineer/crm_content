@@ -74,12 +74,16 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
         dataRes.bus = busDriver[0];
 
         var todayDate = new Date().toISOString().slice(0, 10);
-           console.log(todayDate);
+           console.log(busDriver[0].id);
           const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
                filters:{
-                    /**  'route-bus' :{
-                      id:routeBuses[0].id
-                    },*/
+                bus_driver :{ 
+                 
+                    id : busDriver[0].id
+                  
+                   
+                      
+                    },
                     tripdate:{
                       $gte : todayDate
                     },
@@ -98,9 +102,9 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
             dataRes.trip = routeTrip[0];
           const employeeTripOTP =  await strapi.entityService.findMany('api::employeeotp.employeeotp',{
             filters:{
-                 /**  'route-bus' :{
-                   id:routeBuses[0].id
-                 },*/
+                  employee :{
+                   id:dataRes.employee.id
+                 },
                  trip:{
                    id:{
                    $eq : routeTrip[0].id
@@ -171,21 +175,30 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
       },
 
       async employeesByStop(ctx){
-        const { stopid } = ctx.params;
+        const { stopid ,tripid} = ctx.params;
 
-        console.log(" stop id  ",stopid);
+        console.log(tripid," stop id  ",stopid);
 
         const employees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
             
           filters:{
-            employee:{
+           
               
-                stop :{
+                stop :{ 
+                
                   id : stopid
-               
-              }
+
              
-          }
+                
+              },
+             
+                trip: {
+              
+                id : tripid
+              }
+              
+             
+         
         },
         populate:{employee:true}
       
