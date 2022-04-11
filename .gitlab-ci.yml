@@ -35,9 +35,9 @@ deploy-arrivnow:
     - kubectl create namespace crm-content  --dry-run=client -o yaml | kubectl apply -f -   
   script:
       - sed -i 's/<VERSION>/'${CI_COMMIT_SHORT_SHA}'/g' crmdeployment.yaml
-        kubectl apply -f manifest
-        kubectl get pods -n crm-content 
-        kubectl get svc -n crm-content -o wide
+      - kubectl apply -f manifest
+      - kubectl get pods -n crm-content 
+      - kubectl get svc -n crm-content -o wide
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
       when: always
