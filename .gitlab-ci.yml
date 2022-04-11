@@ -1,8 +1,7 @@
 image: docker:19.03.12
 
 variables:
-  CONTAINER_TAG: ${CI_COMMIT_SHORT_SHA}
-  REPO_DOCKERHUB: ${CI_REGISTRY_USER}/vapprtech/arrivnow-reactjs"
+  CONTAINER_IMAGE: vapprtech/arrivnow-reactjs:${CI_COMMIT_SHORT_SHA}"
   DOCKER_TLS_CERTDIR: "/certs"
 
 services:
@@ -17,10 +16,10 @@ docker-build-image:
   script:
     - docker info
     - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
-    - docker build -t ${REPO_DOCKERHUB} ${CONTAINER_TAG} .
-    - docker tag ${REPO_DOCKERHUB}:${CONTAINER_TAG} ${REPO_DOCKERHUB}:${CONTAINER_TAG}
-    - docker tag ${REPO_DOCKERHUB}:${CONTAINER_TAG} vapprtech/arrivnow-reactjs:latest
-    - docker push ${REPO_DOCKERHUB}:${CONTAINER_TAG}t
+    - docker build -t ${CONTAINER_IMAGE} .
+    - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
+    - docker tag ${CONTAINER_IMAGE} vapprtech/arrivnow-reactjs:latest
+    - docker push ${CONTAINER_IMAGE}
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
       changes:
