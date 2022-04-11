@@ -17,7 +17,7 @@ docker-build-image:
   script:
     - docker info
     - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
-    - docker build -t ${REPO_DOCKERHUB}:${CONTAINER_TAG} .
+    - docker build -t ${REPO_DOCKERHUB} ${CONTAINER_TAG} .
     - docker tag ${REPO_DOCKERHUB}:${CONTAINER_TAG} ${REPO_DOCKERHUB}:${CONTAINER_TAG}
     - docker tag ${REPO_DOCKERHUB}:${CONTAINER_TAG} vapprtech/arrivnow-reactjs:latest
     - docker push ${REPO_DOCKERHUB}:${CONTAINER_TAG}t
