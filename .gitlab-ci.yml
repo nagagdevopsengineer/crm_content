@@ -1,7 +1,7 @@
 image: docker:19.03.12
 
 variables:
-  CONTAINER_IMAGE: vapprtech/arrivnow-reactjs:${CI_COMMIT_SHORT_SHA}"
+  CONTAINER_IMAGE: "vapprtech/arrivnow-reactjs:${CI_COMMIT_SHORT_SHA}"
   DOCKER_TLS_CERTDIR: "/certs"
 
 services:
