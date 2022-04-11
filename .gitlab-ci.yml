@@ -1,6 +1,7 @@
 image: docker:19.03.12
 
 variables:
+  CONTAINER_TAG: ${CI_COMMIT_SHORT_SHA}
   BUILD_IMAGE: "vapprtech/arrivnow-reactjs:${CI_COMMIT_SHORT_SHA}"
   DOCKER_TLS_CERTDIR: "/certs"
 
@@ -15,7 +16,7 @@ docker-build-image:
   stage: build_image
   script:
     - docker info
-    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker build --file Dockerfile . -t ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA} 
     - docker tag ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA} vapprtech/arrivnow-reactjs:latest
     - docker push ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA}
