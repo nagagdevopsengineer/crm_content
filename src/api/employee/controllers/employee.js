@@ -102,9 +102,9 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
             dataRes.trip = routeTrip[0];
           const employeeTripOTP =  await strapi.entityService.findMany('api::employeeotp.employeeotp',{
             filters:{
-                 /**  'route-bus' :{
-                   id:routeBuses[0].id
-                 },*/
+                  employee :{
+                   id:dataRes.employee.id
+                 },
                  trip:{
                    id:{
                    $eq : routeTrip[0].id
