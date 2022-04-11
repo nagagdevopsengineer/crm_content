@@ -20,11 +20,10 @@ docker-build-image:
     - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
     - docker tag ${CONTAINER_IMAGE} vapprtech/arrivnow-reactjs:latest
     - docker push ${CONTAINER_IMAGE}
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
-      changes:
-        - Dockerfile
-      when: always
+  when: always
+  only: 
+    - master
+
 
 deploy-arrivnow:
   stage: deploy_arrivnow
@@ -38,6 +37,6 @@ deploy-arrivnow:
       - kubectl apply -f manifest
       - kubectl get pods -n crm-content 
       - kubectl get svc -n crm-content -o wide
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
-      when: always
+  when: always
+  only: 
+    - master
