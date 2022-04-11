@@ -36,7 +36,7 @@ deploy-arrivnow:
   script:
       - sed -i 's/<VERSION>/'${CI_COMMIT_SHORT_SHA}'/g' crmdeployment.yaml
         kubectl apply -f manifest
-        kubectl get pods -n crm-content --field-selector=status.phase=Running -o wide 
+        kubectl get pods -n crm-content 
         kubectl get svc -n crm-content -o wide
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
