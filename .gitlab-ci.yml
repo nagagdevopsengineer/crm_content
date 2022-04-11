@@ -16,9 +16,9 @@ docker-build-image:
   script:
     - docker info
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - docker build -t ${BUILD_IMAGE} -f Dockerfile .
-    - docker tag ${BUILD_IMAGE} vapprtech/arrivnow-reactjs:latest
-    - docker push ${BUILD_IMAGE}
+    - docker build -t ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA} -f Dockerfile .
+    - docker tag ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA} vapprtech/arrivnow-reactjs:latest
+    - docker push ${BUILD_IMAGE}:${CI_COMMIT_SHORT_SHA}
     - docker push vapprtech/arrivnow-reactjs:latest
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
@@ -34,19 +34,10 @@ deploy-arrivnow:
     - aws eks update-kubeconfig --name arrivnow --region us-east-2 
     - kubectl create namespace crm-content  --dry-run=client -o yaml | kubectl apply -f -   
   script:
-    - >
-      if [[ $(kubectl get deployment crm-content -n crm-content 2>&1) != "No resources found*" ]]; then
-        echo "Updating deployment with new image"
-        kubectl set image deployment/crm-content -n crm-content crm-content=vapprtech/arrivnow-reactjs:latest
-        sleep 180
-        kubectl get all -n crm-content -o wide
-      else
-        echo "Deploying crm-content application"
+        sed -i 's/<VERSION>/'${CI_COMMIT_SHORT_SHA}'/g' crmdeployment.yaml
         kubectl apply -f manifest
-        sleep 60
         kubectl get pods -n crm-content --field-selector=status.phase=Running -o wide 
         kubectl get svc -n crm-content -o wide
-       fi
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event" || $CI_COMMIT_BRANCH == "master"'
       when: always
