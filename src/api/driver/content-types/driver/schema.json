@@ -107,6 +107,12 @@
     },
     "statusreason": {
       "type": "text"
+    },
+    "pushtoken": {
+      "type": "string"
+    },
+    "playerid": {
+      "type": "string"
     }
   }
 }

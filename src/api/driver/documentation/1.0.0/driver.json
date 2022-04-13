@@ -4234,6 +4234,12 @@
                               "statusreason": {
                                 "type": "string"
                               },
+                              "pushtoken": {
+                                "type": "string"
+                              },
+                              "playerid": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -8777,6 +8783,12 @@
                             "statusreason": {
                               "type": "string"
                             },
+                            "pushtoken": {
+                              "type": "string"
+                            },
+                            "playerid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -13244,6 +13256,12 @@
                             "statusreason": {
                               "type": "string"
                             },
+                            "pushtoken": {
+                              "type": "string"
+                            },
+                            "playerid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -17696,6 +17714,12 @@
                             "statusreason": {
                               "type": "string"
                             },
+                            "pushtoken": {
+                              "type": "string"
+                            },
+                            "playerid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -18030,6 +18054,12 @@
                         ]
                       },
                       "statusreason": {
+                        "type": "string"
+                      },
+                      "pushtoken": {
+                        "type": "string"
+                      },
+                      "playerid": {
                         "type": "string"
                       },
                       "createdAt": {

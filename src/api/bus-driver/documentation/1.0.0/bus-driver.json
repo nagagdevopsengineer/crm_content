@@ -5466,6 +5466,12 @@
                                           "statusreason": {
                                             "type": "string"
                                           },
+                                          "pushtoken": {
+                                            "type": "string"
+                                          },
+                                          "playerid": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -7090,6 +7096,12 @@
                                             }
                                           },
                                           "uuid": {
+                                            "type": "string"
+                                          },
+                                          "pushtoken": {
+                                            "type": "string"
+                                          },
+                                          "playerid": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -12919,6 +12931,12 @@
                                         "statusreason": {
                                           "type": "string"
                                         },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -14543,6 +14561,12 @@
                                           }
                                         },
                                         "uuid": {
+                                          "type": "string"
+                                        },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -20367,6 +20391,12 @@
                                         "statusreason": {
                                           "type": "string"
                                         },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -21991,6 +22021,12 @@
                                           }
                                         },
                                         "uuid": {
+                                          "type": "string"
+                                        },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -27729,6 +27765,12 @@
                                         "statusreason": {
                                           "type": "string"
                                         },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -29353,6 +29395,12 @@
                                           }
                                         },
                                         "uuid": {
+                                          "type": "string"
+                                        },
+                                        "pushtoken": {
+                                          "type": "string"
+                                        },
+                                        "playerid": {
                                           "type": "string"
                                         },
                                         "createdAt": {

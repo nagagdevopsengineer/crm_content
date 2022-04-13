@@ -105,6 +105,12 @@
     },
     "uuid": {
       "type": "uid"
+    },
+    "pushtoken": {
+      "type": "string"
+    },
+    "playerid": {
+      "type": "string"
     }
   }
 }
