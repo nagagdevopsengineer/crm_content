@@ -161,11 +161,40 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
         const { uuid } = ctx.params;
         var todayDate = new Date().toISOString().slice(0, 10);
         console.log(todayDate);
-       const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
+
+        const employeeTrips = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+          filters:{
+            employee :{
+              id:uuid
+            },
+            trip :{
+       tripdate:{
+       $lte : todayDate
+    },
+    isstarted : true,
+    isended : true
+  }
+  } ,
+  populate : {
+    trip:{ populate :{
+    route_bus :  {
+      populate : {route:true,bus:true}
+     },
+     bus_driver :{
+       populate : {driver:true,helper:true}
+     }
+   } 
+  }
+  },
+  orderBy:{id:'desc'}
+
+        });
+
+    /***    const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
             filters:{
                  /**  'route-bus' :{
                    id:routeBuses[0].id
-                 },*/
+                 },
             tripdate:{
             $lte : todayDate
          },
@@ -181,8 +210,8 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
           }
         }         
 
-       });
-       return routeTrip;
+       }); **/
+       return employeeTrips;
 
       },
 
