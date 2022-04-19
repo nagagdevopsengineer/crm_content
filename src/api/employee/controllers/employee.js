@@ -66,7 +66,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
             } 
           },
 
-          populate : {driver:true,helper:true}
+          populate : {driver: {populate:'*'},helper:{populate:'*'}}
           
         });
         
