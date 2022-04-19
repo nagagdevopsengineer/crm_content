@@ -46,7 +46,38 @@ module.exports = createCoreController('api::route.route', ({ env }) =>  ({
         });
       
       return avaialbeRoutes;
-    }
+    },
+    async find(ctx) {
+      // some custom logic here
+      //ctx.query = { ...ctx.query, local: 'en' }
+      
+      // Calling the default core action
+      const { data, meta } = await super.find(ctx);
+      var routIds = [];
+      var data2 = data;
+
+      for(let i=0; i< data2.length; i++) {
+     console.log(data2[i].id);
+          
+      const stops = await strapi.entityService.findMany('api::stop.stop',{
+          filters :{ 
+              route :{ 
+                id :  data2[i].id
+              },
+          },
+          orderBy :{order:'asc'}
+      });
+
+      
+      //element.attributes.route.data.stops = stops;
+      data[i].stops = stops;
+
+
+        };
+
+    
+      return { data, meta };
+    },
 
 
 
