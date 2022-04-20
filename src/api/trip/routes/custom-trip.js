@@ -2,7 +2,7 @@ module.exports = {
     routes: [
       { // Path defined with a URL parameter
         method: 'GET',
-        path: '/trips/ct',
+        path: '/trips/ct/:clientId',
         handler: 'trip.findCurrentTrips',
       },
       { // Path defined with a URL parameter

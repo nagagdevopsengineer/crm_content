@@ -80,7 +80,7 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
     },
 
     async findCurrentTrips(ctx){
-
+      const {clientId} = ctx.params;
       var todayDate = new Date().toISOString().slice(0, 10);
       console.log(todayDate);
      const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
@@ -96,8 +96,19 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
                },
                isstarted :{
                  $eq:true
-               }
- 
+               },
+                 route_bus:{
+                   route:{
+                     client:{
+                       id:{
+                       $eq:clientId
+                       }
+                     }
+                   
+                     
+                   }
+                 
+                }
 }  ,
 
  populate:{ route_bus: {
@@ -113,18 +124,6 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
 }
 
      });
-
-   /** const driverBuses = await strapi.entityService.findMany('api::bus-driver.bus-driver',{
-      filters:{
-        bus:{
-        id:routeTrip[0].route_bus.bus.id
-      },
-    },
-    populate :  { driver:true,helper:true}
-    }); **/
-
-    
-
      console.log("  current tirps   ",routeTrip);
 
      return routeTrip;
