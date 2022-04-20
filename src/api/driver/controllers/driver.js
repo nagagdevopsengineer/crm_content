@@ -109,6 +109,7 @@ const routeEmployees = await strapi.entityService.findMany('api::employeeotp.emp
     trip:{
     id:routeTrip[0].id
   },
+  populate :['*']
 }
 });
 
