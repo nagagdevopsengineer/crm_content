@@ -42,6 +42,11 @@ async findDriverDetils(ctx){
 
   const { uuid } = ctx.params;
 
+
+
+var dataRes = {};
+
+
   const entry = await strapi.entityService.findMany('api::driver.driver',  {
     filters: { uid : uuid }
     
@@ -108,9 +113,9 @@ const routeEmployees = await strapi.entityService.findMany('api::employeeotp.emp
   filters:{
     trip:{
     id:routeTrip[0].id
-  },
-  populate :['*']
-}
+  }
+},
+populate:{employee:{populate:'*'}}
 });
 dataRes.commuters = routeEmployees;
 
@@ -126,8 +131,6 @@ dataRes.addedPax = newPassangers;
 
 }
 
-
-var dataRes = {};
 
 dataRes.driver = entry[0];
 dataRes.bus = driverBuses[0].bus;
