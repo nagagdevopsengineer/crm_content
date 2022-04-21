@@ -103,7 +103,7 @@ poplate : {trip:true}
 });
 
 console.log(" trips   ",routeTrip);
-
+if(routeTrip != null && routeTrip != undefined && routeTrip.length > 0){
 const routeEmployees = await strapi.entityService.findMany('api::employeeotp.employeeotp',{
   filters:{
     trip:{
@@ -112,6 +112,7 @@ const routeEmployees = await strapi.entityService.findMany('api::employeeotp.emp
   populate :['*']
 }
 });
+dataRes.commuters = routeEmployees;
 
 const newPassangers = await strapi.entityService.findMany('api::newpassenger.newpassenger',{
   filters:{
@@ -121,9 +122,9 @@ const newPassangers = await strapi.entityService.findMany('api::newpassenger.new
 }
 });
 
+dataRes.addedPax = newPassangers;
 
-console.log(" routeTrip " , routeTrip);
-
+}
 
 
 var dataRes = {};
@@ -134,8 +135,8 @@ dataRes.route = routeBuses[0].route;
 dataRes.stops = routeStops;
 dataRes.trips = routeTrip;
 dataRes.currentTrip = routeTrip[0];
-dataRes.commuters = routeEmployees;
-dataRes.addedPax = newPassangers;
+
+
 console.log(dataRes);
 const { data, meta } = dataRes ;
 
