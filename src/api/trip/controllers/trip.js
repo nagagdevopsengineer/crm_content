@@ -65,12 +65,8 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
          
     };
 
-        console.log(" at last 1");
-  
         const response =  await strapi.service('api::trip.trip').create(trip); 
-        
-        console.log(" at last 2 ");
-
+       
         return response;
 
 
@@ -82,53 +78,16 @@ module.exports = createCoreController('api::trip.trip', ({ env }) =>  ({
     async findCurrentTrips(ctx){
       const {clientId} = ctx.params;
       var todayDate = new Date().toISOString().slice(0, 10);
-      console.log(todayDate);
-     const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
-          filters:{
-               /**  'route-bus' :{
-                 id:routeBuses[0].id
-               },*/
-               tripdate:{
-                 $gte : todayDate
-               },
-               isended:{
-                 $eq : false
-               },
-               isstarted :{
-                 $eq:true
-               },
-                 route_bus:{
-                   route:{
-                     client:{
-                       id:{
-                       $eq:clientId
-                       }
-                     }
-                   
-                     
-                   }
-                 
-                }
-}  ,
 
- populate:{ route_bus: {
-   populate :{route:true,bus:{
-     populate :{driver:true,helper:true}
-   }
-  }
- } ,
- bus_driver :{
-   populate:{driver:true,helper:true}
- }
+      if(clientId != null && clientId != undefined && clientId > 0){
+        return await routeTripByClient(clientId,todayDate);
+      }else{
+        return await routeTripAdmin(todayDate);
+      }
+      
+     
 
-}
-
-     });
-     console.log("  current tirps   ",routeTrip);
-
-     return routeTrip;
-
-    },
+    },  
 async findTripById(ctx){
 
   const { id } = ctx.params;
@@ -243,19 +202,12 @@ var trip = {};
 trip.data = {};
 var timeArray = routeBus[0].time.split(":");
 
-console.log(" ffffffffffff   ",timeArray);
-
-
-
 trip.data.tripdate = moment().format('YYYY-MM-DD');
 trip.data.uuid = uuid.v4();
 tDate.setHours(parseInt(timeArray[0]));
 tDate.setMinutes(parseInt(timeArray[1]));
 tDate.setSeconds(parseInt(timeArray[2]))
-
-console.log(" asdasdasdasd  converted  ",moment().format('YYYY-MM-DD hh:mm:ss'));
 trip.data.scheduledtime = moment().format('YYYY-MM-DD hh:mm:ss');
-console.log(" asdasdasdasd  converted  after ",moment().format('YYYY-MM-DD hh:mm:ss'));
 trip.data.route_bus=routeBus[0];
 trip.data.bus_driver=busDriver[0];
 trip.data.isstarted=false;
@@ -315,3 +267,84 @@ function formatDate(date) {
 function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
 }
+
+async function routeTripByClient(clientId,todayDate){
+  const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
+    filters:{
+         
+         tripdate:{
+           $gte : todayDate
+         },
+         isended:{
+           $eq : false
+         },
+         isstarted :{
+           $eq:true
+         },
+           route_bus:{
+             route:{
+               client:{
+                 id:{
+                 $eq:clientId
+                 }
+               }
+             
+               
+             }
+           
+          }
+}  ,
+
+populate:{ route_bus: {
+populate :{route:true,bus:{
+populate :{driver:true,helper:true}
+}
+}
+} ,
+bus_driver :{
+populate:{driver:true,helper:true}
+}
+
+}
+
+});
+
+return routeTrip;
+ } 
+
+
+ async function routeTripAdmin(todayDate){
+
+  console.log(todayDate);
+
+  const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
+    filters:{
+         
+         tripdate:{
+           $gte : todayDate
+         },
+         isended:{
+           $eq : false
+         },
+         isstarted :{
+           $eq:false
+         }
+}  ,
+
+populate:{ route_bus: {
+populate :{route:true,bus:{
+populate :{driver:true,helper:true}
+}
+}
+} ,
+bus_driver :{
+populate:{driver:true,helper:true}
+}
+
+}
+
+});
+
+return routeTrip;
+
+    }
