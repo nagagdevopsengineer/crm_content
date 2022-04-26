@@ -327,7 +327,7 @@ return routeTrip;
            $eq : false
          },
          isstarted :{
-           $eq:false
+           $eq:true
          }
 }  ,
 
