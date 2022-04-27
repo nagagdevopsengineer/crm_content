@@ -234,6 +234,13 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
         console.log(" employees  by stop ",employees);
         return employees;
 
+      },
+
+      async bulkupload(ctx) {
+
+       const {employee} = ctx;
+       console.log("  employee ",employee);
+
       }
 
 
