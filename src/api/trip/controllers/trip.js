@@ -126,6 +126,7 @@ async updateStartTrip(ctx){
 
 console.log("  update response  ",response);
 
+
   return response;
 
 },

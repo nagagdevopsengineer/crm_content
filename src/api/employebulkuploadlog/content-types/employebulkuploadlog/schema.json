@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employebulkuploadlogs",
+  "info": {
+    "singularName": "employebulkuploadlog",
+    "pluralName": "employebulkuploadlogs",
+    "displayName": "employebulkuploadlog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employeename": {
+      "type": "string",
+      "required": true
+    },
+    "mobile": {
+      "type": "biginteger",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "error": {
+      "type": "text"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "remarks": {
+      "type": "text"
+    },
+    "employeebulkfile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employeebulkfile.employeebulkfile"
+    },
+    "statustext": {
+      "type": "enumeration",
+      "enum": [
+        "ERROR",
+        "SUCCESS"
+      ],
+      "required": true
+    }
+  }
+}
