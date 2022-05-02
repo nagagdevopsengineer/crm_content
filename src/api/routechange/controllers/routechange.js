@@ -11,7 +11,7 @@ module.exports = createCoreController('api::routechange.routechange',() => ({
 
     async update(ctx) {
         const {id} = ctx.params;
-        console.log("  update request change   ",ctx.request.body.data);
+        //console.log("  update request change   ",ctx.request.body.data);
         const entry = await strapi.entityService.update('api::routechange.routechange', id, {
             data: {
               status: ctx.request.body.data.status,
