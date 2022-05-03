@@ -136,8 +136,10 @@ dataRes.driver = entry[0];
 dataRes.bus = driverBuses[0].bus;
 dataRes.route = routeBuses[0].route;
 dataRes.stops = routeStops;
-dataRes.trips = routeTrip;
+
 dataRes.currentTrip = routeTrip[0];
+routeTrip = routeTrip.splice(0,1);
+dataRes.trips = routeTrip;
 
 
 console.log(dataRes);
