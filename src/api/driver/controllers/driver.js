@@ -138,7 +138,7 @@ dataRes.route = routeBuses[0].route;
 dataRes.stops = routeStops;
 
 dataRes.currentTrip = routeTrip[0];
-routeTrip = routeTrip.splice(0,1);
+routeTrip.splice(0,1);
 dataRes.trips = routeTrip;
 
 
