@@ -13,7 +13,7 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
         userObj.email= ctx.request.body.data.email;
-        userObj.login= ctx.request.body.data.email;
+        userObj.login= ctx.request.body.data.mobile;
         userObj.firstName = ctx.request.body.data.name;
         userObj.lastName = ctx.request.body.data.name;
         userObj.password = 'temp';

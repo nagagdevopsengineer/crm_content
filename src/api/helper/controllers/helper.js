@@ -15,7 +15,7 @@ module.exports = createCoreController('api::helper.helper', ({ env }) =>  ({
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
         userObj.email= ctx.request.body.data.email;
-        userObj.login= ctx.request.body.data.email;
+        userObj.login= ctx.request.body.data.contact_number;
         userObj.firstName = ctx.request.body.data.name;
         userObj.lastName = ctx.request.body.data.name;
         userObj.mobile = ctx.request.body.data.contact_number;
