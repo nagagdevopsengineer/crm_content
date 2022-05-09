@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: poc_env_crm-content
-  namespace: poc_env_crm-content
+  name: poc-env-crm-content
+  namespace: poc-env-crm-content
   labels:
-    app: poc_env_crm-content
+    app: poc-env-crm-content
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: poc_env_crm-content
+      app: poc-env-crm-content
   template:
     metadata:
       labels:
-        app: poc_env_crm-content
+        app: poc-env-crm-content
     spec:
       containers:
-      - name: poc_env_crm-content
+      - name: poc-env-crm-content
         image: vapprtech/arrivnow-reactjs:latest
         imagePullPolicy: Always
         ports:
