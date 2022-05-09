@@ -21,9 +21,6 @@ docker-build-image:
     - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
     - docker tag ${CONTAINER_IMAGE} vapprtech/arrivnow-reactjs:latest
     - docker push ${CONTAINER_IMAGE}
-  environment:
-    name: dev
-    url: https://dev.arrivnow.com
   when: always
   only: 
     - poc-env
@@ -41,6 +38,9 @@ deploy-arrivnow:
       - kubectl apply -f manifest
       - kubectl get pods -n crm-content 
       - kubectl get svc -n crm-content -o wide
+  environment:
+    name: dev
+    url: https://dev.arrivnow.com
   when: always
   only: 
     - poc-env
