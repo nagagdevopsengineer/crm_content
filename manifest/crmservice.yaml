@@ -8,7 +8,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: dev.arrivnow.com
+  - name: https
     port: 1337
     targetPort: 1337
   selector:
