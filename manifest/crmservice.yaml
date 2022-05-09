@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: crm-content
+  namespace: crm-content
+  labels:
+    app: crm-content
+spec:
+  type: LoadBalancer
+  ports:
+  - name: https
+    port: 1337
+    targetPort: 1337
+  selector:
+    app: crm-content
+
