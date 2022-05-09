@@ -24,7 +24,6 @@ docker-build-image:
   when: always
   only: 
     - master
-    - poc-env
 
 
 deploy-arrivnow:
@@ -42,4 +41,3 @@ deploy-arrivnow:
   when: always
   only: 
     - master
-    - poc-env
