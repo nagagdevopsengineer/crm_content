@@ -11,7 +11,11 @@ spec:
   # - name: https
   # port: 1337
   # targetPort: 1337
-  type: ExternalCRMContentURL
-  externalName: https://dev.arrivnow.com
+  type: ExternalName
+  ports:
+  - name: https
+  port: 1337
+  targetPort: 1337
+  externalName: dev.arrivnow.com
   selector:
     app: crm-content
