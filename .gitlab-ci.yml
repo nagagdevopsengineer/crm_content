@@ -23,6 +23,7 @@ docker-build-image:
     - docker push ${CONTAINER_IMAGE}
   when: always
   only: 
+    - master
     - poc-env
 
 
@@ -40,4 +41,5 @@ deploy-arrivnow:
       - kubectl get svc -n crm-content -o wide
   when: always
   only: 
+    - master
     - poc-env
