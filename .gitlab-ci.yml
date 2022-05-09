@@ -23,7 +23,7 @@ docker-build-image:
     - docker push ${CONTAINER_IMAGE}
   when: always
   only: 
-    - poc-env"
+    - poc-env
 
 
 deploy-arrivnow:
