@@ -34,12 +34,12 @@ deploy-arrivnow:
     
     - aws eks update-kubeconfig --name arrivnow --region us-east-2 
 
-    - kubectl create namespace crm-content --dry-run=client -o yaml | kubectl apply -f -   
+    - kubectl create namespace poc_env_crm-content --dry-run=client -o yaml | kubectl apply -f -   
   script:
       - sed -i "s/<VERSION>/${CI_COMMIT_SHORT_SHA}/g" manifest/crmdeployment.yaml
       - kubectl apply -f manifest
-      - kubectl get pods -n crm-content 
-      - kubectl get svc -n crm-content -o wide
+      - kubectl get pods -n poc_env_crm-content 
+      - kubectl get svc -n poc_env_crm-content -o wide
   when: always
   only: 
     - develop
