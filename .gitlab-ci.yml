@@ -15,18 +15,11 @@ docker-build-image:
   stage: build_image
   script:
     - docker info
-    
-    - sudo systemctl daemon-reload #THIS IS RESCUE COMMAND…
-    - sleep 15s
-    - sudo systemctl restart docker
-    - sleep 15s
-    - sudo systemctl status docker
-    - sleep 15s
-
     - echo "user name = ${CI_REGISTRY_USER} password = ${CI_REGISTRY_PASSWORD} CI_REGISTRY = ${CI_REGISTRY}"
     - echo "CONTAINER_IMAGE = ${CONTAINER_IMAGE}"
-    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
-    - docker build -t $CI_REGISTRY/${CONTAINER_IMAGE} .
+    - docker login ${CI_REGISTRY} -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+    - echo "------------1"
+    - docker build -t ${CI_REGISTRY}/${CONTAINER_IMAGE} .
     - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
     - docker tag ${CONTAINER_IMAGE} vapprtech/arrivnow-reactjs:latest
     - docker push ${CONTAINER_IMAGE}
