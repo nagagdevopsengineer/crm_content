@@ -15,6 +15,7 @@ docker-build-image:
   stage: build_image
   script:
     - docker info
+    - echo "user name = -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}"
     - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker build -t ${CONTAINER_IMAGE} .
     - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
