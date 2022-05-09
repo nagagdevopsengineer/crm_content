@@ -19,7 +19,7 @@ docker-build-image:
     - echo "CONTAINER_IMAGE = ${CONTAINER_IMAGE}"
     # - docker login ${CI_REGISTRY} -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     
-    - echo "$CI_REGISTRY_PASSWORD" | docker login ${CI_REGISTRY} -u ${CI_REGISTRY_USER} --password-stdin
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u ${CI_REGISTRY_USER} --password-stdin
 
     - echo "------------1"
     - docker build -t ${CI_REGISTRY}/${CONTAINER_IMAGE} .
