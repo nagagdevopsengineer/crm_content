@@ -1,0 +1,45 @@
+image: docker:19.03.12
+
+variables:
+  CONTAINER_IMAGE: "vapprtech/arrivnow-reactjs:${CI_COMMIT_SHORT_SHA}"
+  DOCKER_TLS_CERTDIR: "/certs"
+
+services:
+  - docker:19.03.12-dind
+
+stages:          # List of stages for jobs, and their order of execution
+  - build_image
+  - deploy_arrivnow
+
+docker-build-image:
+  stage: build_image
+  script:
+    - docker info
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+    - docker build -t ${CONTAINER_IMAGE} .
+    - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
+    - docker tag ${CONTAINER_IMAGE} vapprtech/arrivnow-reactjs:latest
+    - docker push ${CONTAINER_IMAGE}
+  when: always
+  only: 
+    - develop
+
+
+deploy-arrivnow:
+  stage: deploy_arrivnow
+  #needs: ["docker-build-image"]
+  image: vapprtech/awskubectl:latest
+  before_script:
+    #- The below cluster name would be updated per branch based on some condition
+    
+    - aws eks update-kubeconfig --name arrivnow --region us-east-2 
+
+    - kubectl create namespace crm-content --dry-run=client -o yaml | kubectl apply -f -   
+  script:
+      - sed -i "s/<VERSION>/${CI_COMMIT_SHORT_SHA}/g" manifest/crmdeployment.yaml
+      - kubectl apply -f manifest
+      - kubectl get pods -n crm-content 
+      - kubectl get svc -n crm-content -o wide
+  when: always
+  only: 
+    - develop
