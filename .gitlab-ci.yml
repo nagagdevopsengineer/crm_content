@@ -15,8 +15,8 @@ docker-build-image:
   stage: build_image
   script:
     - docker info
-    - echo "user name = -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}"
-    - docker login -u ${CI_REGISTRY_USER} --password-stdin ${CI_REGISTRY_PASSWORD}
+    - echo "user name = -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}"
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
     - docker build -t ${CONTAINER_IMAGE} .
     - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
     - docker tag ${CONTAINER_IMAGE} vapprtech/arrivnow-reactjs$":latest
