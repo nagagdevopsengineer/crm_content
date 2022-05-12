@@ -6,11 +6,4 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::employebulkuploadlog.employebulkuploadlog', ({ env }) =>  ({
-    
-    async create(ctx) {
-
-
-    }
-
-}));
+module.exports = createCoreController('api::employebulkuploadlog.employebulkuploadlog');
