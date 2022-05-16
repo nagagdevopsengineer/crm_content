@@ -23,7 +23,8 @@ module.exports = createCoreController('api::employeebulkfile.employeebulkfile', 
         
       });
 
-     let filePath = "/Users/shivakanya/MyData/employee-6.xlsx";
+    // let filePath = "/Users/shivakanya/MyData/employee-6.xlsx";
+    let filePath =  "/Users/rajeevtyagi/Downloads/employeeUploadTemplate.xlsx";
      console.log(filePath, 'file')
      const exceldata=[]
       if(filePath){
@@ -39,6 +40,11 @@ module.exports = createCoreController('api::employeebulkfile.employeebulkfile', 
       }
       let finalInsertArray = [];
       for (let i = 0; i < exceldata.length; i++) {
+        let statusText = "SUCCESS";
+        let status = true;
+        let errorObj = "";
+        
+        try{
         const entry = await strapi.entityService.create('api::employee.employee', {
           data: {
             employeename: exceldata[i].Full_Name,
@@ -48,8 +54,21 @@ module.exports = createCoreController('api::employeebulkfile.employeebulkfile', 
           },
 
         });
+      }catch(error){
+       
+        statusText = "ERROR";
+        status = false;
+        let errObj = error.details;
 
-        console.log(entry,'entry')
+        console.log("error 2 ==>>>> ",errObj);
+
+        for (let i = 0; i < errObj.errors.length; i++ ){
+          errorObj = errorObj+i+"."+errObj.errors[i].path[0] +" - "+errObj.errors[i].message;
+        }
+      }
+
+      
+        //console.log(entry,'entry')
         // module.exports = createCoreController('api::employebulkuploadlog.employebulkuploadlog', ({ strapi }) =>  ({
         //   // Method 1: Creating an entirely custom action
         //   async exampleAction(ctx) {
@@ -63,21 +82,24 @@ module.exports = createCoreController('api::employeebulkfile.employeebulkfile', 
         //     }
         //   }
         // }));
+
+        try{
         const logentry =  await strapi.entityService.create('api::employebulkuploadlog.employebulkuploadlog', {
           data:{
-            employeesname:exceldata[i].Full_Name,
-            email:exceldata[i].email,
+            employeename:exceldata[i].Full_Name,
+            email:exceldata[i].Email_ID,
             mobile:exceldata[i].Contact_Number,
-            // statustext:exceldata[i].statustext,
-            //id,
-            //error
+            statustext:statusText,
+            error:errorObj,
+            status:status,
+            employeebulkfile:fileResponse.id
 
           }
         });
-        // console.log(data, 'dd')
-       
-        console.log(logentry, 'logentry')
-        // return response;
+        
+      }catch(errorl){
+        
+      }
       }
     
       return response;
