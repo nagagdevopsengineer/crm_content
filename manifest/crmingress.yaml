@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1beta1
 #apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: poc_env_crm-content
-  name: poc_env_crm-content-access
+  namespace: crm-content
+  name: crm-content-access
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -22,6 +22,6 @@ spec:
         paths:
           - path: /*
             backend:
-              serviceName: poc_env_crm-content
+              serviceName: crm-content
               servicePort: 80
 
