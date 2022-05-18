@@ -52,7 +52,7 @@ deploy-arrivnow-qa:
   before_script:
     #- The below cluster name would be updated per branch based on some condition
     
-    - aws eks update-kubeconfig --name arrivnow-dev --region us-east-2 
+    - aws eks update-kubeconfig --name arrivnow-qa --region us-east-2 
 
     - kubectl create namespace crm-content --dry-run=client -o yaml | kubectl apply -f -   
   script:
