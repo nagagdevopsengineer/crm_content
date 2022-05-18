@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employee_emergency_contacts",
+  "info": {
+    "singularName": "employee-emergency-contact",
+    "pluralName": "employee-emergency-contacts",
+    "displayName": "EmployeeEmergencyContact",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employee.employee",
+      "inversedBy": "employee_emergency_contacts"
+    },
+    "mobile": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

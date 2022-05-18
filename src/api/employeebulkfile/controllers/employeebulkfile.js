@@ -23,8 +23,8 @@ module.exports = createCoreController('api::employeebulkfile.employeebulkfile', 
         
       });
 
-    // let filePath = "/Users/shivakanya/MyData/employee-6.xlsx";
-    let filePath =  "/Users/rajeevtyagi/Downloads/employeeUploadTemplate.xlsx";
+    let filePath = "/Users/shivakanya/MyData/employee-9.xlsx";
+    // let filePath =  "/Users/rajeevtyagi/Downloads/employeeUploadTemplate.xlsx";
      console.log(filePath, 'file')
      const exceldata=[]
       if(filePath){
@@ -47,13 +47,14 @@ module.exports = createCoreController('api::employeebulkfile.employeebulkfile', 
         try{
         const entry = await strapi.entityService.create('api::employee.employee', {
           data: {
-            employeename: exceldata[i].Full_Name,
+            name: exceldata[i].Full_Name,
             email: exceldata[i].Email_ID,
             contact: exceldata[i].Contact_Number
             
           },
 
         });
+        console.log(entry,'entry')
       }catch(error){
        
         statusText = "ERROR";
