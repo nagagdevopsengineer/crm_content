@@ -1,7 +1,7 @@
 image: docker:19.03.12
 
 variables:
-  CONTAINER_IMAGE: "vapprtech/arrivnow-reactjs:${CI_COMMIT_SHORT_SHA}"
+  CONTAINER_IMAGE: "vapprtech/arrivnow-reactjs:latest"
   DOCKER_TLS_CERTDIR: "/certs"
 
 services:
@@ -9,7 +9,8 @@ services:
 
 stages:          # List of stages for jobs, and their order of execution
   - build_image
-  - deploy_arrivnow
+  - deploy_arrivnow-dev
+  - deploy_arrivnow-qa
 
 docker-build-image:
   stage: build_image
@@ -25,21 +26,40 @@ docker-build-image:
     - develop
 
 
-deploy-arrivnow:
-  stage: deploy_arrivnow
+deploy-arrivnow-dev:
+  stage: deploy_arrivnow-dev
   #needs: ["docker-build-image"]
   image: vapprtech/awskubectl:latest
   before_script:
     #- The below cluster name would be updated per branch based on some condition
     
-    - aws eks update-kubeconfig --name arrivnow --region us-east-2 
+    - aws eks update-kubeconfig --name arrivnow-dev --region us-east-2 
 
-    - kubectl create namespace poc_env_crm-content --dry-run=client -o yaml | kubectl apply -f -   
+    - kubectl create namespace crm-content --dry-run=client -o yaml | kubectl apply -f -   
   script:
-      - sed -i "s/<VERSION>/${CI_COMMIT_SHORT_SHA}/g" manifest/crmdeployment.yaml
+     # - sed -i "s/<VERSION>/${CI_COMMIT_SHORT_SHA}/g" manifest/crmdeployment.yaml
       - kubectl apply -f manifest
-      - kubectl get pods -n poc_env_crm-content 
-      - kubectl get svc -n poc_env_crm-content -o wide
+      - kubectl get pods -n crm-content 
+      - kubectl get svc -n crm-content -o wide
   when: always
   only: 
     - develop
+
+deploy-arrivnow-qa:
+  stage: deploy_arrivnow-qa
+  #needs: ["docker-build-image"]
+  image: vapprtech/awskubectl:latest
+  before_script:
+    #- The below cluster name would be updated per branch based on some condition
+    
+    - aws eks update-kubeconfig --name arrivnow-dev --region us-east-2 
+
+    - kubectl create namespace crm-content --dry-run=client -o yaml | kubectl apply -f -   
+  script:
+     # - sed -i "s/<VERSION>/${CI_COMMIT_SHORT_SHA}/g" manifest/crmdeployment.yaml
+      - kubectl apply -f manifest
+      - kubectl get pods -n crm-content 
+      - kubectl get svc -n crm-content -o wide
+  when: always
+  only: 
+    - staging    
