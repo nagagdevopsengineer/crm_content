@@ -123,6 +123,35 @@ async updateStartTrip(ctx){
     isstarted: ctx.request.body.isstarted
   }
 });
+const employeedata =  await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+  filters:{
+       
+       trip:{
+         id:{
+         $eq : response.id
+         }
+       }
+} ,populate:{employee:true}         
+
+});
+let player=[]
+console.log(employeedata, 'employeedata')
+if(employeedata){
+ employeedata.map(item=>{
+   if( item.employee.playerid!==null ){
+    player.push({
+    'playerid':item.employee.playerid,
+    'id':item.employee.id,
+    'name':item.employee.name,
+    'uuid':item.employee.uuid,
+    'employeeid':item.employee.employeeid
+  })
+   }
+  
+  
+ })
+}
+console.log(player)
 
 console.log("  update response  ",response);
 
@@ -229,7 +258,7 @@ trip.data.isended=false;
  },
  populate: ['route']
 });
-
+console.log(routeEmployees, 'routeemployee')
  routeEmployees.forEach(element => {
   var employeeOTP = {};
   employeeOTP.data = {};
@@ -243,7 +272,7 @@ trip.data.isended=false;
   strapi.service('api::employeeotp.employeeotp').create(trip);
 
 });
-
+console.log(trip, 'trip')
 
 
 
@@ -309,7 +338,7 @@ populate:{driver:true,helper:true}
 }
 
 });
-
+console.log(routeTrip, 'routeTrip')
 return routeTrip;
  } 
 

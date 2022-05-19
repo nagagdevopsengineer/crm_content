@@ -93,6 +93,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
           }          
 
           });
+          console.log(routeTrip, 'routeTrip')
          
           if(routeTrip != null && routeTrip.length > 0 ){ 
             dataRes.trip = routeTrip[0];
@@ -109,6 +110,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
        }          
 
        });
+       console.log(employeeTripOTP, 'employeeTripOTP')
        dataRes.tripOTP = employeeTripOTP[0];
 
 
