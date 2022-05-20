@@ -23,7 +23,7 @@ module.exports = createCoreController('api::employeebulkfile.employeebulkfile', 
         
       });
 
-    let filePath = "/Users/shivakanya/MyData/employee-9.xlsx";
+    let filePath = "/Users/shivakanya/MyData/newEmplydata.xlsx";
     // let filePath =  "/Users/rajeevtyagi/Downloads/employeeUploadTemplate.xlsx";
      console.log(filePath, 'file')
      const exceldata=[]

@@ -139,7 +139,13 @@ console.log(employeedata, 'employeedata')
 if(employeedata){
  employeedata.map(item=>{
    if( item.employee.playerid!==null ){
-    player.push(item.employee.playerid)
+    player.push({
+    'playerid':item.employee.playerid,
+    'id':item.employee.id,
+    'name':item.employee.name,
+    'uuid':item.employee.uuid,
+    'employeeid':item.employee.employeeid
+  })
    }
   
   

@@ -7,3 +7,4 @@
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::employee-emergency-contact.employee-emergency-contact');
+

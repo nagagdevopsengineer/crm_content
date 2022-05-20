@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "helperbulkfiles",
+  "info": {
+    "singularName": "helperbulkfile",
+    "pluralName": "helperbulkfiles",
+    "displayName": "helperbulkfile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "filename": {
+      "type": "text"
+    },
+    "filesize": {
+      "type": "biginteger"
+    },
+    "records": {
+      "type": "biginteger"
+    },
+    "remarks": {
+      "type": "text"
+    },
+    "excelfile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "contractor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contractor.contractor"
+    }
+  }
+}

@@ -119,9 +119,9 @@
     "playerid": {
       "type": "string"
     },
-    "employee_emergency_contacts": {
+    "employee_emergency_contact": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::employee-emergency-contact.employee-emergency-contact",
       "mappedBy": "employee"
     }

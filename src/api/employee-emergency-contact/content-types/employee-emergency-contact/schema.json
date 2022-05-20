@@ -14,13 +14,12 @@
   "attributes": {
     "employee": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToOne",
       "target": "api::employee.employee",
-      "inversedBy": "employee_emergency_contacts"
+      "inversedBy": "employee_emergency_contact"
     },
     "mobile": {
-      "type": "biginteger",
-      "required": true
+      "type": "biginteger"
     }
   }
 }

@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "helperbulkuploadlogs",
+  "info": {
+    "singularName": "helperbulkuploadlog",
+    "pluralName": "helperbulkuploadlogs",
+    "displayName": "helperbulkuploadlog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    },
+    "mobile": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "error": {
+      "type": "text"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "remarks": {
+      "type": "text"
+    },
+    "helperbulkfile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::helperbulkfile.helperbulkfile"
+    },
+    "statusreason": {
+      "type": "text"
+    },
+    "dob": {
+      "type": "date"
+    },
+    "drivinglicense": {
+      "type": "text"
+    },
+    "aadhar": {
+      "type": "biginteger"
+    },
+    "vaccinationstatus": {
+      "type": "enumeration",
+      "enum": [
+        "No",
+        "Partial",
+        "Vaccinated"
+      ]
+    }
+  }
+}
