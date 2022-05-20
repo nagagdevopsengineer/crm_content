@@ -124,6 +124,9 @@
       "relation": "oneToOne",
       "target": "api::employee-emergency-contact.employee-emergency-contact",
       "mappedBy": "employee"
+    },
+    "lastname": {
+      "type": "string"
     }
   }
 }

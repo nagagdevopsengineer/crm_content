@@ -15,7 +15,7 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
         userObj.email= ctx.request.body.data.email;
         userObj.login= ctx.request.body.data.mobile;
         userObj.firstName = ctx.request.body.data.name;
-        userObj.lastName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.lastname;
         userObj.password = 'temp';
         userObj.mobile = ctx.request.body.data.mobile;
         userObj.authorities = ["ROLE_DRIVER"];  

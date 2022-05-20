@@ -16,7 +16,7 @@ module.exports = createCoreController('api::client.client', ({ env }) =>  ({
         userObj.email= ctx.request.body.data.email;
         userObj.login= ctx.request.body.data.email;
         userObj.firstName = ctx.request.body.data.name;
-        userObj.lastName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.lastname;
         userObj.mobile = ctx.request.body.data.mobile;
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_CLIENT"];  

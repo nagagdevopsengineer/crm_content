@@ -17,7 +17,7 @@ module.exports = createCoreController('api::helper.helper', ({ env }) =>  ({
         userObj.email= ctx.request.body.data.email;
         userObj.login= ctx.request.body.data.contact_number;
         userObj.firstName = ctx.request.body.data.name;
-        userObj.lastName = ctx.request.body.data.name;
+        userObj.lastName = ctx.request.body.data.lastname;
         userObj.mobile = ctx.request.body.data.contact_number;
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_HELPER"];  

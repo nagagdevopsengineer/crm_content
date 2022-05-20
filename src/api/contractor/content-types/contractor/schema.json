@@ -92,6 +92,9 @@
       "relation": "oneToMany",
       "target": "api::driverbulkfile.driverbulkfile",
       "mappedBy": "contractor"
+    },
+    "lastname": {
+      "type": "string"
     }
   }
 }

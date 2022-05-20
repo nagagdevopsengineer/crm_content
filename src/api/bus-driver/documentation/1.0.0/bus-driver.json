@@ -1996,6 +1996,9 @@
                                                                       }
                                                                     }
                                                                   },
+                                                                  "lastname": {
+                                                                    "type": "string"
+                                                                  },
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -3523,6 +3526,9 @@
                                                             }
                                                           }
                                                         }
+                                                      },
+                                                      "lastname": {
+                                                        "type": "string"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -5945,6 +5951,9 @@
                                           "playerid": {
                                             "type": "string"
                                           },
+                                          "lastname": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -7575,6 +7584,9 @@
                                             "type": "string"
                                           },
                                           "playerid": {
+                                            "type": "string"
+                                          },
+                                          "lastname": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -9934,6 +9946,9 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "lastname": {
+                                                                  "type": "string"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -11461,6 +11476,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "lastname": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -13883,6 +13901,9 @@
                                         "playerid": {
                                           "type": "string"
                                         },
+                                        "lastname": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -15513,6 +15534,9 @@
                                           "type": "string"
                                         },
                                         "playerid": {
+                                          "type": "string"
+                                        },
+                                        "lastname": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -17867,6 +17891,9 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "lastname": {
+                                                                  "type": "string"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -19394,6 +19421,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "lastname": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -21816,6 +21846,9 @@
                                         "playerid": {
                                           "type": "string"
                                         },
+                                        "lastname": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -23446,6 +23479,9 @@
                                           "type": "string"
                                         },
                                         "playerid": {
+                                          "type": "string"
+                                        },
+                                        "lastname": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -25714,6 +25750,9 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "lastname": {
+                                                                  "type": "string"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -27241,6 +27280,9 @@
                                                           }
                                                         }
                                                       }
+                                                    },
+                                                    "lastname": {
+                                                      "type": "string"
                                                     },
                                                     "createdAt": {
                                                       "type": "string",
@@ -29663,6 +29705,9 @@
                                         "playerid": {
                                           "type": "string"
                                         },
+                                        "lastname": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -31293,6 +31338,9 @@
                                           "type": "string"
                                         },
                                         "playerid": {
+                                          "type": "string"
+                                        },
+                                        "lastname": {
                                           "type": "string"
                                         },
                                         "createdAt": {

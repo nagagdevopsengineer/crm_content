@@ -86,6 +86,9 @@
         "images",
         "files"
       ]
+    },
+    "lastname": {
+      "type": "string"
     }
   }
 }

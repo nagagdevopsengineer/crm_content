@@ -111,6 +111,9 @@
     },
     "playerid": {
       "type": "string"
+    },
+    "lastname": {
+      "type": "string"
     }
   }
 }
