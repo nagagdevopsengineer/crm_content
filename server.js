@@ -1,6 +1,6 @@
 const strapi = require('@strapi/strapi');
 strapi().start();
-
+/** 
 const Consul = require('consul');
 
 const consul = new Consul({
@@ -26,3 +26,4 @@ consul.agent.service.register({
 
     Console.log (servicename + 'registered successfully! ).
 })
+*/
