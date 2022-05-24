@@ -6,10 +6,10 @@ metadata:
   labels:
     app: crm-content
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - name: https
-    port: 1337
+    port: 80
     targetPort: 1337
   selector:
     app: crm-content
