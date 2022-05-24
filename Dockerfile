@@ -28,6 +28,5 @@ RUN yarn install
 
 EXPOSE 1337
 
-CMD yarn start
+CMD yarn develop
 
-npm run build
