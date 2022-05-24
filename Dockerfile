@@ -30,3 +30,4 @@ EXPOSE 1337
 
 CMD yarn start
 
+npm run build
