@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: crm-content
+  name: ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: instance
+
+spec:
+  rules:
+   - host: dev-crm.vapprtech.com
+   - http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: crm-content
+              servicePort: 80
