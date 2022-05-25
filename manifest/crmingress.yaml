@@ -16,7 +16,7 @@ spec:
         paths:
           - path: /*
             backend:
-                service:
-                Name: crm-content
+              service:
+                name: crm-content
                 Port: 
                    number: 80
