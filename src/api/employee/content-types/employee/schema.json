@@ -127,6 +127,10 @@
     },
     "lastname": {
       "type": "string"
+    },
+    "lastmile": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -9537,6 +9537,9 @@
                                           "lastname": {
                                             "type": "string"
                                           },
+                                          "lastmile": {
+                                            "type": "boolean"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -19527,6 +19530,9 @@
                                         },
                                         "lastname": {
                                           "type": "string"
+                                        },
+                                        "lastmile": {
+                                          "type": "boolean"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -29553,6 +29559,9 @@
                                         "lastname": {
                                           "type": "string"
                                         },
+                                        "lastmile": {
+                                          "type": "boolean"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -39452,6 +39461,9 @@
                                         },
                                         "lastname": {
                                           "type": "string"
+                                        },
+                                        "lastmile": {
+                                          "type": "boolean"
                                         },
                                         "createdAt": {
                                           "type": "string",
