@@ -14,10 +14,10 @@ spec:
    - host: dev-crm.vapprtech.com
    - http:
         paths:
-          - path: /*
+          - path: /
             pathType: Prefix
             backend:
               service:
                name: crm-content
                port:
-                number: 80
+                number: 80  
