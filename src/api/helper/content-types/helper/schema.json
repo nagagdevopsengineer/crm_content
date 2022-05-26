@@ -114,6 +114,9 @@
     },
     "lastname": {
       "type": "string"
+    },
+    "helperid": {
+      "type": "string"
     }
   }
 }

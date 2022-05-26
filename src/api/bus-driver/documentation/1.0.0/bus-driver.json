@@ -5954,6 +5954,9 @@
                                           "lastname": {
                                             "type": "string"
                                           },
+                                          "driverid": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -7587,6 +7590,9 @@
                                             "type": "string"
                                           },
                                           "lastname": {
+                                            "type": "string"
+                                          },
+                                          "helperid": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -13904,6 +13910,9 @@
                                         "lastname": {
                                           "type": "string"
                                         },
+                                        "driverid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -15537,6 +15546,9 @@
                                           "type": "string"
                                         },
                                         "lastname": {
+                                          "type": "string"
+                                        },
+                                        "helperid": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -21849,6 +21861,9 @@
                                         "lastname": {
                                           "type": "string"
                                         },
+                                        "driverid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -23482,6 +23497,9 @@
                                           "type": "string"
                                         },
                                         "lastname": {
+                                          "type": "string"
+                                        },
+                                        "helperid": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -29708,6 +29726,9 @@
                                         "lastname": {
                                           "type": "string"
                                         },
+                                        "driverid": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -31341,6 +31362,9 @@
                                           "type": "string"
                                         },
                                         "lastname": {
+                                          "type": "string"
+                                        },
+                                        "helperid": {
                                           "type": "string"
                                         },
                                         "createdAt": {

@@ -4721,6 +4721,9 @@
                               "lastname": {
                                 "type": "string"
                               },
+                              "helperid": {
+                                "type": "string"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -9751,6 +9754,9 @@
                             "lastname": {
                               "type": "string"
                             },
+                            "helperid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -14705,6 +14711,9 @@
                             "lastname": {
                               "type": "string"
                             },
+                            "helperid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -19644,6 +19653,9 @@
                             "lastname": {
                               "type": "string"
                             },
+                            "helperid": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -19986,6 +19998,9 @@
                         "type": "string"
                       },
                       "lastname": {
+                        "type": "string"
+                      },
+                      "helperid": {
                         "type": "string"
                       },
                       "createdAt": {
