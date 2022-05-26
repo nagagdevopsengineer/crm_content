@@ -57,7 +57,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
           
         });
 
-        const emergencyContacts = await strapi.entityService.findMany('api::employee_emergency_contact',  {
+        const emergencyContacts = await strapi.entityService.findMany('api::employee-emergency-contact.employee-emergency-contact',  {
           filters: { employee : {
            id:entry[0].id
           } 
