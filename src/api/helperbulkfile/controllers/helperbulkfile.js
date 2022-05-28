@@ -3,7 +3,7 @@
 /**
  *  helperbulkfile controller
  */
-
+ const reader = require("xlsx")
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::helperbulkfile.helperbulkfile',({ env }) =>  ({
@@ -23,7 +23,7 @@ module.exports = createCoreController('api::helperbulkfile.helperbulkfile',({ en
         
       });
 
-    let filePath = "/Users/shivakanya/MyData/newEmplydata.xlsx";
+    let filePath = "/Users/shivakanya/MyData/helperdata.xlsx";
     // let filePath =  "/Users/rajeevtyagi/Downloads/employeeUploadTemplate.xlsx";
      console.log(filePath, 'file')
      const exceldata=[]
@@ -49,7 +49,7 @@ module.exports = createCoreController('api::helperbulkfile.helperbulkfile',({ en
           data: {
             name: exceldata[i].Full_Name,
             email: exceldata[i].Email_ID,
-            contact: exceldata[i].Contact_Number
+            contact_number: exceldata[i].Contact_Number
             
           },
 
