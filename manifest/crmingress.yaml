@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 #apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: crm-content
+  namespace: crm-content-notfi
   name: ingress
   annotations:
     kubernetes.io/ingress.class: alb
@@ -11,7 +11,7 @@ metadata:
 
 spec:
   rules:
-   - host: dev-crm.vapprtech.com
+   - host: notifi-crm.vapprtech.com
    - http:
         paths:
           - path: /

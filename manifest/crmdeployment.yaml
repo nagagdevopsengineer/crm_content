@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: crm-content
-  namespace: crm-content
+  namespace: crm-content-notifi
   labels:
     app: crm-content
 spec:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: crm-content
-        image: vapprtech/crm:latest
+        image: vapprtech/crm-notifi:latest
         imagePullPolicy: Always
         ports:
         - name: https

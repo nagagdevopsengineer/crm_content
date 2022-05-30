@@ -2,7 +2,7 @@ image: docker:19.03.12
 
 variables:
 
-  CONTAINER_IMAGE: "vapprtech/crm:latest"
+  CONTAINER_IMAGE: "vapprtech/crm-notifi:latest"
 
   DOCKER_TLS_CERTDIR: "/certs"
 
@@ -23,11 +23,11 @@ docker-build-image:
     - docker build -t ${CONTAINER_IMAGE} .
     - docker images
     - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
-    - docker tag ${CONTAINER_IMAGE} vapprtech/crm:latest
+    - docker tag ${CONTAINER_IMAGE} vapprtech/crm-notifi:latest
     - docker push ${CONTAINER_IMAGE}
   when: always
   only: 
-    - develop
+    - notifications
 
 
 deploy-arrivnow-dev:
@@ -39,16 +39,16 @@ deploy-arrivnow-dev:
     
     - aws eks update-kubeconfig --name arrivnow-dev --region us-east-2 
 
-    - kubectl create namespace crm-content --dry-run=client -o yaml | kubectl apply -f -   
+    - kubectl create namespace crm-content-notifi --dry-run=client -o yaml | kubectl apply -f -   
   script:
      # - sed -i "s/<VERSION>/${CI_COMMIT_SHORT_SHA}/g" manifest/crmdeployment.yaml
       - kubectl apply -f manifest
       - kubectl rollout restart deployment crm-content -n crm-content
-      - kubectl get pods -n crm-content 
-      - kubectl get svc -n crm-content -o wide
+      - kubectl get pods -n crm-content-notifi
+      - kubectl get svc -n crm-content-notifi -o wide
   when: always
   only: 
-    - develop
+    - notifications
 
 deploy-arrivnow-qa:
   stage: deploy_arrivnow-qa

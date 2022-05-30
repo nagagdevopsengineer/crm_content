@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: crm-content
-  namespace: crm-content
+  namespace: crm-content-notifi
   labels:
     app: crm-content
 spec:
