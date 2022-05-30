@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 #apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  namespace: crm-content-notfi
+  namespace: crm-content-notifi
   name: ingress
   annotations:
     kubernetes.io/ingress.class: alb
