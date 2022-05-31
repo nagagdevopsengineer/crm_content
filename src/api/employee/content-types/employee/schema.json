@@ -131,6 +131,12 @@
     "lastmile": {
       "type": "boolean",
       "default": false
+    },
+    "sos_log": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sos-log.sos-log",
+      "inversedBy": "employee"
     }
   }
 }

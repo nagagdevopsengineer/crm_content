@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sos_logs",
+  "info": {
+    "singularName": "sos-log",
+    "pluralName": "sos-logs",
+    "displayName": "SOSLog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sms": {
+      "type": "string"
+    },
+    "location": {
+      "type": "text"
+    },
+    "lat": {
+      "type": "decimal"
+    },
+    "long": {
+      "type": "decimal"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee",
+      "inversedBy": "sos_log"
+    }
+  }
+}
