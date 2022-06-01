@@ -1,7 +1,7 @@
 image: docker:19.03.12
 
 variables:
-  CONTAINER_IMAGE: "vapprtech/arrivnow-reactjs:latest"
+  CONTAINER_IMAGE: "vapprtech/crm:latest"
   DOCKER_TLS_CERTDIR: "/certs"
 
 services:
@@ -19,7 +19,7 @@ docker-build-image:
     - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker build -t ${CONTAINER_IMAGE} .
     - docker tag ${CONTAINER_IMAGE} ${CONTAINER_IMAGE}
-    - docker tag ${CONTAINER_IMAGE} vapprtech/arrivnow-reactjs:latest
+    - docker tag ${CONTAINER_IMAGE} vapprtech/crm:latest
     - docker push ${CONTAINER_IMAGE}
   when: always
   only: 

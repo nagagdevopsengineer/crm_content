@@ -17,7 +17,7 @@ metadata:
 
 spec:
   rules:
-   - host: dev.crm.arrivnow.com
+   - host: qa.crm.arrivnow.com
    - http:
         paths:
           - path: /*
