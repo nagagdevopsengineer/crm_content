@@ -8603,6 +8603,15 @@
                                                         "isboardedwotp": {
                                                           "type": "boolean"
                                                         },
+                                                        "ratings": {
+                                                          "type": "integer"
+                                                        },
+                                                        "ratingfeedback": {
+                                                          "type": "string"
+                                                        },
+                                                        "isratinggiven": {
+                                                          "type": "boolean"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -18595,6 +18604,15 @@
                                                         }
                                                       },
                                                       "isboardedwotp": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "ratings": {
+                                                        "type": "integer"
+                                                      },
+                                                      "ratingfeedback": {
+                                                        "type": "string"
+                                                      },
+                                                      "isratinggiven": {
                                                         "type": "boolean"
                                                       },
                                                       "createdAt": {
@@ -28625,6 +28643,15 @@
                                                       "isboardedwotp": {
                                                         "type": "boolean"
                                                       },
+                                                      "ratings": {
+                                                        "type": "integer"
+                                                      },
+                                                      "ratingfeedback": {
+                                                        "type": "string"
+                                                      },
+                                                      "isratinggiven": {
+                                                        "type": "boolean"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -38526,6 +38553,15 @@
                                                         }
                                                       },
                                                       "isboardedwotp": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "ratings": {
+                                                        "type": "integer"
+                                                      },
+                                                      "ratingfeedback": {
+                                                        "type": "string"
+                                                      },
+                                                      "isratinggiven": {
                                                         "type": "boolean"
                                                       },
                                                       "createdAt": {

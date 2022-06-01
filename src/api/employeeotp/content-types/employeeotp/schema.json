@@ -49,6 +49,19 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "ratings": {
+      "type": "integer",
+      "max": 5,
+      "min": 0,
+      "default": 0
+    },
+    "ratingfeedback": {
+      "type": "string"
+    },
+    "isratinggiven": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
