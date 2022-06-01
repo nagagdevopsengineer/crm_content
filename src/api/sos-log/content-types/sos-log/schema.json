@@ -19,10 +19,10 @@
       "type": "text"
     },
     "lat": {
-      "type": "decimal"
+      "type": "float"
     },
     "long": {
-      "type": "decimal"
+      "type": "float"
     },
     "employee": {
       "type": "relation",
@@ -30,7 +30,7 @@
       "target": "api::employee.employee"
     },
     "mobile": {
-      "type": "integer"
+      "type": "biginteger"
     }
   }
 }
