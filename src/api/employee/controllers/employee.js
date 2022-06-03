@@ -115,11 +115,11 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                    },
                    isended:{
                     $eq : true
-                    },
-                    orderBy: { id: 'desc' },
-                    limit: 1
+                    }
                  }
-       }          
+       } ,
+       orderBy: { id: 'desc' },
+       limit: 1         
 
        });
 
