@@ -19,6 +19,7 @@
     "dotenv": "^16.0.1",
     "moment": "^2.29.2",
     "pg": "8.6.0",
+    "react-onesignal": "^2.0.4",
     "socket.io": "^4.4.1",
     "strapi-plugin-entity-relationship-chart": "^4.0.2",
     "uuid": "^8.3.2",

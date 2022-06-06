@@ -3,11 +3,13 @@
 /**
  *  trip controller
  */
- const dotenv = require("dotenv").config();
+const dotenv = require("dotenv").config();
 const { createCoreController } = require("@strapi/strapi").factories;
 const uuid = require("uuid");
 var moment = require("moment");
 const axios = require("axios");
+const { latitude, longitude } = require("./value");
+const OneSignal = require("react-onesignal");
 // import axios from 'axios'
 
 module.exports = createCoreController("api::trip.trip", ({ env }) => ({
@@ -84,7 +86,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
   },
   async findTripById(ctx) {
     const { id } = ctx.params;
-    console.log(" id ", id);
+
     const trip = await strapi.entityService.findOne("api::trip.trip", id, {
       populate: {
         route_bus: {
@@ -107,14 +109,25 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
   async updateStartTrip(ctx) {
     const { id } = ctx.params;
 
-    console.log(" id ", ctx.request.body.isstarted);
-
     const response = await strapi.entityService.update("api::trip.trip", id, {
       data: {
         starttime: new Date(),
         isstarted: ctx.request.body.isstarted,
       },
+      populate: {
+        route_bus: { populate: { route: { populate: { stops: true } } } },
+      },
     });
+
+    const stops = await strapi.entityService.findMany("api::stop.stop", {
+      filters: {
+        route: {
+          id: response.route_bus.route.id,
+        },
+      },
+      orderBy: { order: "asc" },
+    });
+
     const employeedata = await strapi.entityService.findMany(
       "api::employeeotp.employeeotp",
       {
@@ -129,19 +142,20 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
       }
     );
     let player = [];
-    console.log(employeedata, "employeedata");
+
     if (employeedata) {
       employeedata.map((item) => {
         player.push({
           playerid: item.employee.playerid,
           // 'employeeid':item.employee.id,
           name: item.employee.name,
-          employeeId: item.employee.employeeid,
+          employeeId: item.employee.id,
           notificationtype: "Start trip notification",
           contenttype: "Your trip  has started",
+          newDate: new Date().toISOString().slice(0, 10),
         });
       });
-      console.log(process.env.BASE_URL)
+
       const message = axios
         .post(`${process.env.BASE_URL}/bulknotifications`, player, {
           headers: {
@@ -153,13 +167,185 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
           console.log("here");
         })
         .catch((err) => {
-          console.log("error", err);
+          console.log("error");
         });
     }
 
-    console.log(player, "player");
+    const vechiclelocation = await axios.get(
+      `http://65.0.139.196:3000/vehiclelocations?filter[where][tripId]=${id}&filter[order]=timestamp%20DESC`
+    );
+
+    let calTimeDiffAchived = (currentTime) => {
+      let firstTimestamp =
+        vechiclelocation.data[vechiclelocation.data.length - 1].timestamp;
+
+      let diff = new Date(firstTimestamp) - new Date(currentTime);
+
+      let diffmin = Math.abs(Math.ceil(diff / 1000 / 60 / 60));
+
+      if (diffmin >= 10) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    for (let i = vechiclelocation.data.length - 1; i >= 0; i--) {
+      if (parseInt(vechiclelocation.data[i].speed) === 0) {
+        if (calTimeDiffAchived(vechiclelocation.data[i].timestamp)) {
+          console.log("Push Notification");
+          break;
+          // await OneSignal.init({ appId: 'f1de68f0-1267-442a-ba63-41659f65541e', allowLocalhostAsSecureOrigin: true});
+          //   OneSignal.showSlidedownPrompt();
+        }
+      } else {
+        break;
+      }
+    }
 
     return response;
+  },
+
+  async busTracking(ctx) {
+    const { tripId, lat, long } = ctx.params;
+
+    const trip = await strapi.entityService.findOne("api::trip.trip", tripId, {
+      populate: {
+        route_bus: {
+          populate: {
+            route: { populate: { stops: true } },
+          },
+        },
+      },
+    });
+
+    const stops = await strapi.entityService.findMany("api::stop.stop", {
+      filters: {
+        route: {
+          id: trip.route_bus.route.id,
+        },
+      },
+      orderBy: { order: "asc" },
+    });
+
+    for (let i = 0; i < stops.length; i++) {
+      let stopLat = stops[i].latitude;
+      let stopLong = stops[i].longitude;
+      let vehicleLat = 28.409142326590054;
+      let vehicleLong = 77.10422982468931;
+      let api_key = "AIzaSyDD8zp_hulyclcTqNRaB_LS4cE5z9cXJ6o";
+
+      const result = await axios.get(
+        `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${stopLat}+${stopLong}&origins=${vehicleLat}+${vehicleLong}&key=${api_key}`
+      );
+      // console.log(result.data,'result')
+
+      let distance = result.data.rows[0].elements[0].distance.text;
+
+      if (parseFloat(distance, 10) <= 15) {
+        const employeedata = await axios.get(
+          `http://dev-crmcontent.vapprtech.com/api/employees/es/${stops[i].id}/${tripId}`
+        );
+
+        let details = [];
+        employeedata.data.map((item) => {
+          details.push({
+            playerid: item.employee.playerid,
+            // 'employeeid':item.employee.id,
+            name: item.employee.name,
+            employeeId: item.employee.id,
+            notificationtype: "Notification",
+            contenttype: "Your trip  has started",
+          });
+        });
+
+        const message = axios
+          .post(`${process.env.BASE_URL}/bulknotifications`, details, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+
+          .then((res) => {
+            console.log("Notification sent");
+          })
+          .catch((err) => {
+            console.log("error");
+          });
+      } else {
+        console.log("in else");
+      }
+    }
+  },
+  async employeeTracking(ctx) {
+    const { tripId, lat, long } = ctx.params;
+
+    const trip = await strapi.entityService.findOne("api::trip.trip", tripId, {
+      populate: {
+        route_bus: {
+          populate: {
+            route: true,
+          },
+        },
+      },
+    });
+
+    const stops = await strapi.entityService.findMany("api::stop.stop", {
+      filters: {
+        route: {
+          id: trip.route_bus.route.id,
+        },
+      },
+      orderBy: { order: "asc" },
+    });
+
+    for (let i = 0; i < stops.length; i++) {
+      let stopLat = stops[i].latitude;
+      let stopLong = stops[i].longitude;
+      let employeeLat = 28.409142326590054;
+      let employeeLong = 77.10422982468931;
+      let api_key = "AIzaSyDD8zp_hulyclcTqNRaB_LS4cE5z9cXJ6o";
+
+      const result = await axios.get(
+        `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${stopLat}+${stopLong}&origins=${employeeLat}+${employeeLong}&key=${api_key}`
+      );
+
+      let distance = result.data.rows[0].elements[0].distance.text;
+
+      if (parseFloat(distance, 10) <= 15) {
+        const employeedata = await axios.get(
+          `http://dev-crmcontent.vapprtech.com/api/employees/es/${stops[i].id}/${tripId}`
+        );
+
+        let details = [];
+        employeedata.data.map((item) => {
+          details.push({
+            playerid: item.employee.playerid,
+
+            name: item.employee.name,
+            employeeId: item.employee.id,
+            notificationtype: "Notification",
+            contenttype: "Your trip  has started",
+          });
+        });
+
+        const message = axios
+          .post(`${process.env.BASE_URL}/bulknotifications`, details, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+
+          .then((res) => {
+            console.log("Notification sent");
+          })
+          .catch((err) => {
+            console.log("Something went wrong");
+          });
+      } else {
+        console.log("in else");
+      }
+    }
   },
 
   async endTrip(ctx) {
@@ -238,8 +424,6 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
 
       const response = await strapi.service("api::trip.trip").create(trip);
 
-      console.log(" trip  ", trip);
-
       const routeEmployees = await strapi.entityService.findMany(
         "api::employee.employee",
         {
@@ -253,7 +437,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
           populate: ["route"],
         }
       );
-      console.log(routeEmployees, "routeemployee");
+
       routeEmployees.forEach((element) => {
         var employeeOTP = {};
         employeeOTP.data = {};
@@ -268,7 +452,6 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
         employeeOTP.data.isboardedwotp = false;
         strapi.service("api::employeeotp.employeeotp").create(trip);
       });
-      console.log(trip, "trip");
     } else {
       console.log(" Trip exist no need to create ");
     }
@@ -323,13 +506,11 @@ async function routeTripByClient(clientId, todayDate) {
       },
     },
   });
-  console.log(routeTrip, "routeTrip");
+
   return routeTrip;
 }
 
 async function routeTripAdmin(todayDate) {
-  console.log(todayDate);
-
   const routeTrip = await strapi.entityService.findMany("api::trip.trip", {
     filters: {
       tripdate: {
