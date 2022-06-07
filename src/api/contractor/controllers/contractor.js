@@ -21,7 +21,7 @@ module.exports = createCoreController('api::contractor.contractor', ({ env }) =>
         userObj.mobile = ctx.request.body.data.contactnumber;
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_CONTRACTOR"];  
-        const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
+        const API_URL = strapi.config.get('remote.remotehost')
         +strapi.config.get('remote.userapi');
        
       await  axios.post(API_URL , userObj)
