@@ -15,8 +15,7 @@
     "employee": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::employee.employee",
-      "inversedBy": "employee_emergency_contact"
+      "target": "api::employee.employee"
     },
     "mobile": {
       "type": "biginteger"

@@ -119,12 +119,6 @@
     "playerid": {
       "type": "string"
     },
-    "employee_emergency_contact": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::employee-emergency-contact.employee-emergency-contact",
-      "mappedBy": "employee"
-    },
     "lastname": {
       "type": "string"
     },
