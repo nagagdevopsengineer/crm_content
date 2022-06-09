@@ -17,9 +17,8 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
             subject :ctx.request.body.data.subject,
             email:ctx.request.body.data.email,
             priority:1,
-            status:2,
-            //to_emails:['rajeev@vapprtech.com',ctx.request.body.data.email],
-            cc_emails:['rajeev@vapprtech.com']};
+            status:2
+        }
 
         await  axios.post(API_URL , ticketObj,{
             auth: {
