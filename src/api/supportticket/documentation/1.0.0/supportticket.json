@@ -42,6 +42,9 @@
                               "requestername": {
                                 "type": "string"
                               },
+                              "status": {
+                                "type": "integer"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -644,6 +647,9 @@
                             "requestername": {
                               "type": "string"
                             },
+                            "status": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -1135,6 +1141,9 @@
                       "requestername": {
                         "type": "string"
                       },
+                      "status": {
+                        "type": "integer"
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -1217,6 +1226,9 @@
                             },
                             "requestername": {
                               "type": "string"
+                            },
+                            "status": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -1729,6 +1741,9 @@
                             "requestername": {
                               "type": "string"
                             },
+                            "status": {
+                              "type": "integer"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -2230,6 +2245,9 @@
                       },
                       "requestername": {
                         "type": "string"
+                      },
+                      "status": {
+                        "type": "integer"
                       },
                       "createdAt": {
                         "type": "string",

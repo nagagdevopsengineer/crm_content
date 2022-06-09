@@ -30,6 +30,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
             return  Promise.reject(error);
         }).then(function(ticketData){
             ctx.request.body.data.freshdeskid = ticketData.data.id;
+            ctx.request.body.data.status = ticketData.data.status;
           
         });
 
