@@ -1,6 +1,6 @@
 {
   "kind": "collectionType",
-  "collectionName": "employee_emergency_contact",
+  "collectionName": "employee_emergency_contacts",
   "info": {
     "singularName": "employee-emergency-contact",
     "pluralName": "employee-emergency-contacts",
