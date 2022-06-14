@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supportticket",
+  "info": {
+    "singularName": "supportticket",
+    "pluralName": "supporttickets",
+    "displayName": "supportticket",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "freshdeskid": {
+      "type": "biginteger"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "issue": {
+      "type": "richtext"
+    },
+    "email": {
+      "type": "email"
+    },
+    "mobile": {
+      "type": "biginteger"
+    },
+    "requestername": {
+      "type": "string"
+    },
+    "status": {
+      "type": "integer"
+    }
+  }
+}

@@ -20,7 +20,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
         userObj.password = 'temp';
         userObj.authorities = ["ROLE_EMPLOYEE"];  
 
-        const API_URL = strapi.config.get('remote.remotehost')+ ":"+strapi.config.get('remote.port')
+        const API_URL = strapi.config.get('remote.remotehost')
         +strapi.config.get('remote.userapi');
         
       await  axios.post(API_URL , userObj)
@@ -103,6 +103,28 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
 
           });
           console.log(routeTrip, 'routeTrip')
+
+          const employeeTripFeedback =  await strapi.entityService.findMany('api::employeeotp.employeeotp',{
+            filters:{
+                  employee :{
+                   id:dataRes.employee.id
+                 },
+                 trip:{
+                  isstarted:{
+                   $eq : true
+                   },
+                   isended:{
+                    $eq : true
+                    }
+                 }
+       } ,
+       orderBy: { id: 'desc' },
+       limit: 1         
+
+       });
+
+       dataRes.tripFeedBack = employeeTripFeedback;
+          
          
           if(routeTrip != null && routeTrip.length > 0 ){ 
             dataRes.trip = routeTrip[0];
@@ -164,7 +186,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
        console.log("  upcomgin trip    ",upcomingTrips);
 
        dataRes.upcomingTrip = upcomingTrips[0];
-
+       
         return dataRes;
       },
 
