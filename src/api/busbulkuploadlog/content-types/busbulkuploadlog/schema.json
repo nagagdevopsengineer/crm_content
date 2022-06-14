@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "busbulkuploadlogs",
+  "info": {
+    "singularName": "busbulkuploadlog",
+    "pluralName": "busbulkuploadlogs",
+    "displayName": "busbulkuploadlog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vehicle_number": {
+      "type": "text"
+    },
+    "color": {
+      "type": "text"
+    },
+    "seating_capacity": {
+      "type": "biginteger"
+    },
+    "puc": {
+      "type": "text"
+    },
+    "busbulkfile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::busbulkfile.busbulkfile"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "remarks": {
+      "type": "text"
+    },
+    "statustext": {
+      "type": "enumeration",
+      "enum": [
+        "statustext"
+      ]
+    }
+  }
+}

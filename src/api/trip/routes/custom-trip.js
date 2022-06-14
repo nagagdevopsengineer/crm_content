@@ -24,6 +24,16 @@ module.exports = {
         method: 'POST',
         path: '/trips/createtrip/:driveid',
         handler: 'trip.createTrip',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/trips/bustracking/:tripId/:lat/:long',
+        handler: 'trip.busTracking',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/trips/employeetracking/:tripId/:lat/:long',
+        handler: 'trip.employeeTracking',
       }
     ]
   }
