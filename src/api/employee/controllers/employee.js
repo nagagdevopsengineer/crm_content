@@ -274,8 +274,27 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
        const {employee} = ctx;
        console.log("  employee ",employee);
 
-      }
+      },
 
+      async employeesCount(ctx) {
+        const {clientid} = ctx.params;
+        const [entries, count] = await strapi.db.query('api::employee.employee').findWithCount({
+          select: [],
+          where: { client:  {id : clientid} },
+        });
+        console.log("count == ",count);
+        return count;
+      },
+
+      async employeesAllCount(ctx) {
+      
+        const [entries, count] = await strapi.db.query('api::employee.employee').findWithCount({
+          select: [],
+          
+        });
+        console.log("count == ",count);
+        return count;
+      }
 
 
 

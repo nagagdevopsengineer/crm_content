@@ -189,6 +189,15 @@ async findAvailableDrivers(ctx){
   });
 
 return availableDrivers;
+},
+async allDrivers(ctx) {
+
+  const [entries, count] = await strapi.db.query('api::driver.driver').findWithCount({
+    select: [],
+    
+  });
+  console.log("count == ",count);
+  return count;
 }
 
 }));

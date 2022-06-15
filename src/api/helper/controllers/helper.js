@@ -177,6 +177,15 @@ return dataRes;
       
       return availableHelpers;
 
+      },
+      async allHelper(ctx) {
+      
+        const [entries, count] = await strapi.db.query('api::helper.helper').findWithCount({
+          select: [],
+        
+        });
+        console.log("count == ",count);
+        return count;
       }
 
 }));

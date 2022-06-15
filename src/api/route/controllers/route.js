@@ -79,6 +79,25 @@ module.exports = createCoreController('api::route.route', ({ env }) =>  ({
       return { data, meta };
     },
 
+    async allRoute(ctx) {
+     
+      const [entries, count] = await strapi.db.query('api::route.route').findWithCount({
+        select: [],
+      
+      });
+      console.log("count == ",count);
+      return count;
+    },
+    async clientRoute(ctx) {
+      const {clientid} = ctx.params;
+      const [entries, count] = await strapi.db.query('api::route.route').findWithCount({
+        select: [],
+        where: { client:  {id : clientid} },
+      });
+      console.log("count == ",count);
+      return count;
+    }
+
 
 
 }));

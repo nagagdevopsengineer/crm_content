@@ -9,6 +9,11 @@ module.exports = {
         method: 'GET',
         path: '/helpers/nmherpers/:contractorid',
         handler: 'helper.findAvailableHelpers',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/helpers/allcount',
+        handler: 'helper.allHelper',
       }
     ]
   }

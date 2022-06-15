@@ -42,7 +42,49 @@ module.exports = createCoreController('api::contractor.contractor', ({ env }) =>
          response = await super.create(ctx);
     
         return response;
-      }
+      },
+
+      async contractorCount(ctx) {
+        const {clientid} = ctx.params;
+        const [entries, count] = await strapi.db.query('api::contractor.contractor').findWithCount({
+          select: [],
+          where: { client:  {id : clientid} },
+        });
+        console.log("count == ",count);
+        return count;
+      },
+      async contractorAllCount(ctx) {
+      
+        const [entries, count] = await strapi.db.query('api::contractor.contractor').findWithCount({
+          select: [],
+         
+        });
+        console.log("count == ",count);
+        return count;
+      },
+
+      async contractorByClient(ctx) {
+
+        const { clientid} = ctx.params;
+        const contractor = await strapi.entityService.findMany('api::contractor.contractor',{
+          filters:{
+                client :{ 
+                  id : clientid
+              },
+              
+        },
+        populate:{client:{populate:'*'}}
+      
+
+        });
+
+        console.log(" contractor  by stop ",contractor);
+        return contractor;
+      
+      },
+
+      
+
 
 
       

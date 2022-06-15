@@ -19,6 +19,17 @@ module.exports = {
         method: 'POST',
         path: '/employees/bulkupload',
         handler: 'employee.bulkupload',
-      }
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/employees/count/:clientid',
+        handler: 'employee.employeesCount',
+      },
+
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/employees/allcount',
+        handler: 'employee.employeesAllCount',
+      },
     ]
   }
