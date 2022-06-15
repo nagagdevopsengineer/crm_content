@@ -9,6 +9,11 @@ module.exports = {
         method: 'GET',
         path: '/drivers/nmdrivers/:contractorid',
         handler: 'driver.findAvailableDrivers',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/drivers/allcount',
+        handler: 'driver.allDrivers',
       }
     ]
   }

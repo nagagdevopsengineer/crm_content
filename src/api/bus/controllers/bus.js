@@ -89,7 +89,50 @@ module.exports = createCoreController('api::bus.bus', ({ env }) =>  ({
         });
       
       return avaialbeBuses;
-    }
+    },
+
+    async allBus(ctx) {
+       const [entries, count] = await strapi.db.query('api::bus.bus').findWithCount({
+        select: [],
+      
+      });
+      console.log("count == ",count);
+      return count;
+    },
+    async buscountbyclient(ctx){
+      const {clientid} = ctx.params;
+      console.log(" client id  ",clientid);
+      const [responseBus,countBus] =  await strapi.db.query('api::bus.bus').findWithCount({
+        where:{
+          contractor:{ client : {
+            id:clientid
+          }
+          },
+        }
+      });
+      const [responsedriver,countDriver] =  await strapi.db.query('api::driver.driver').findWithCount({
+        where:{
+          contractor:{ client : {
+            id:clientid
+          }
+          },
+        }
+      });
+      const [responsehelper, countHelper] =  await strapi.db.query('api::helper.helper').findWithCount({
+        where:{
+          contractor:{ client : {
+            id:clientid
+          }
+          },
+        }
+      });
+      var response = {
+        buses : countBus,
+        helpers : countHelper,
+        drivers : countDriver
+      }
+      return response;
+      }
 
     })
     );

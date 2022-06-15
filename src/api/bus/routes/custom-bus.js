@@ -9,6 +9,16 @@ module.exports = {
         method: 'GET',
         path: '/buses/nmbusesroutes/:contractorid',
         handler: 'bus.findAvailableBusesForRoutes',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/buses/allcount',
+        handler: 'bus.allBus',
+      },
+      {
+        method: 'GET',
+        path: '/buses/count/:clientid',
+        handler: 'bus.buscountbyclient',
       }
     ]
   }
