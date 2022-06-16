@@ -208,6 +208,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
 
   async busTracking(ctx) {
     const { tripId, lat, long } = ctx.params;
+    console.log("bus tracking", tripId,lat, long)
 
     const trip = await strapi.entityService.findOne("api::trip.trip", tripId, {
       populate: {
