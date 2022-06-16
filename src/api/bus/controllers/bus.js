@@ -91,7 +91,16 @@ module.exports = createCoreController('api::bus.bus', ({ env }) =>  ({
       return avaialbeBuses;
     },
 
-    async allBus(ctx) {
+    async buscountbycontractor(ctx) {
+      const {contid} = ctx.params;
+      const [entries, count] = await strapi.db.query('api::bus.bus').findWithCount({
+        select: [],
+        where: { contractor:  {id : contid} },
+      });
+      console.log("count == ",count);
+      return count;
+    },
+    async allBuses(ctx) {
        const [entries, count] = await strapi.db.query('api::bus.bus').findWithCount({
         select: [],
       

@@ -14,6 +14,11 @@ module.exports = {
         method: 'GET',
         path: '/drivers/allcount',
         handler: 'driver.allDrivers',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/drivers/contractorcount/:contid',
+        handler: 'driver.contractorDrivers',
       }
     ]
   }
