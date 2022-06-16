@@ -172,7 +172,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
     }
 
     const vechiclelocation = await axios.get(
-      `http://65.0.139.196:3000/vehiclelocations?filter[where][tripId]=${id}&filter[order]=timestamp%20DESC`
+      `http://dev-tracking.vapprtech.com/vehiclelocations?filter[where][tripId]=${id}&filter[order]=timestamp%20DESC`
     );
 
     let calTimeDiffAchived = (currentTime) => {
