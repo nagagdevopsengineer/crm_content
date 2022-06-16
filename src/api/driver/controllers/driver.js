@@ -198,6 +198,16 @@ async allDrivers(ctx) {
   });
   console.log("count == ",count);
   return count;
+},
+async contractorDrivers(ctx) {
+  const {contid} = ctx.params;
+  const [entries, count] = await strapi.db.query('api::driver.driver').findWithCount({
+    select: [],
+    where: { contractor:  {id : contid} },
+    
+  });
+  console.log("count == ",count);
+  return count;
 }
 
 }));

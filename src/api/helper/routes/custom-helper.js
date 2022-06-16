@@ -14,6 +14,11 @@ module.exports = {
         method: 'GET',
         path: '/helpers/allcount',
         handler: 'helper.allHelper',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/helpers/contractorcount/:contid',
+        handler: 'helper.contractorHelper',
       }
     ]
   }

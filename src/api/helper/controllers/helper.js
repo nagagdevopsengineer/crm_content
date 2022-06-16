@@ -186,6 +186,15 @@ return dataRes;
         });
         console.log("count == ",count);
         return count;
+      },
+      async contractorHelper(ctx) {
+        const {contid} = ctx.params;
+        const [entries, count] = await strapi.db.query('api::helper.helper').findWithCount({
+          select: [],
+          where: { contractor:  {id : contid} },
+        });
+        console.log("count == ",count);
+        return count;
       }
 
 }));
