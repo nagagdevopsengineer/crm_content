@@ -172,7 +172,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
     }
 
     const vechiclelocation = await axios.get(
-      `http://65.0.139.196:3000/vehiclelocations?filter[where][tripId]=${id}&filter[order]=timestamp%20DESC`
+      `http://dev-tracking.vapprtech.com/vehiclelocations?filter[where][tripId]=${id}&filter[order]=timestamp%20DESC`
     );
 
     let calTimeDiffAchived = (currentTime) => {
@@ -231,8 +231,8 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
     for (let i = 0; i < stops.length; i++) {
       let stopLat = stops[i].latitude;
       let stopLong = stops[i].longitude;
-      let vehicleLat = 28.409142326590054;
-      let vehicleLong = 77.10422982468931;
+      let vehicleLat = lat;
+      let vehicleLong = long;
       let api_key = "AIzaSyDD8zp_hulyclcTqNRaB_LS4cE5z9cXJ6o";
 
       const result = await axios.get(
