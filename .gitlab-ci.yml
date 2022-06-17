@@ -19,6 +19,8 @@ docker-build-image:
   stage: build_image
   script:
     - docker info
+    - sed -i "s|_URL_|$NOTIFICATION_DEV|g" ./crm_content/.env
+    - cat ./crm_content/.env
     - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker build -t ${CONTAINER_IMAGE} .
     - docker images
