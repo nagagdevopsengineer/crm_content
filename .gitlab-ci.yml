@@ -20,6 +20,11 @@ docker-build-image:
   script:
     - docker info
     - sed -i "s|_URL_|$NOTIFICATION_DEV|g" ./.env
+    - sed -i "s|_HOST_|$HOST_DEV|g" ./.env
+    - sed -i "s|_PORT_|$PORT_DEV|g" ./.env
+    - sed -i "s|_APP_KEYS_|$APP_KEYS_DEV|g" ./.env
+    - sed -i "s|_JWT_SECRET_|$JWT_SECRET_DEV|g" ./.env
+    - sed -i "s|_API_TOKEN_SALT_|$API_TOKEN_SALT_DEV|g" ./.env
     - cat ./.env
     - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker build -t ${CONTAINER_IMAGE} .
