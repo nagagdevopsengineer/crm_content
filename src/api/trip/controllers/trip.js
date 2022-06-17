@@ -243,7 +243,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
 
       let distance = result.data.rows[0].elements[0].distance.text;
 
-      if (parseFloat(distance, 10) <= 15) {
+      if (parseFloat(distance, 10) <= 1500) {
         const employeedata = await axios.get(
           `http://dev-crmcontent.vapprtech.com/api/employees/es/${stops[i].id}/${tripId}`
         );
@@ -256,7 +256,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
             name: item.employee.name,
             employeeId: item.employee.id,
             notificationtype: "Notification",
-            contenttype: "Your trip  has started",
+            contenttype: "Bus Tracking  has started",
           });
         });
 
@@ -313,7 +313,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
 
       let distance = result.data.rows[0].elements[0].distance.text;
 
-      if (parseFloat(distance, 10) <= 15) {
+      if (parseFloat(distance, 10) <= 1500) {
         const employeedata = await axios.get(
           `http://dev-crmcontent.vapprtech.com/api/employees/es/${stops[i].id}/${tripId}`
         );
@@ -326,7 +326,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
             name: item.employee.name,
             employeeId: item.employee.id,
             notificationtype: "Notification",
-            contenttype: "Your trip  has started",
+            contenttype: "Employee Tracking  has started",
           });
         });
 
