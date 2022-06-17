@@ -277,6 +277,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
         console.log("in else");
       }
     }
+    return "SUCCESS"
   },
   async employeeTracking(ctx) {
     const { tripId, lat, long } = ctx.params;
@@ -347,6 +348,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
         console.log("in else");
       }
     }
+    return "SUCCESS"
   },
 
   async endTrip(ctx) {
