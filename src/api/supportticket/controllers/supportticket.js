@@ -15,9 +15,9 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
 
         const API_URL = strapi.config.get('remote.freshdesktickets');
         const ticketObj = {description  :ctx.request.body.data.issue, 
-            subject :ctx.request.body.data.subject,
-            email:ctx.request.body.data.email,
-            phone:request.body.data.mobile,
+            subject: ctx.request.body.data.subject,
+            email: ctx.request.body.data.email,
+            phone: ctx.request.body.data.mobile+"",
             priority:1,
             status:2
         }
