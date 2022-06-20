@@ -31,7 +31,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
             console.log(" exception  ",error);
             return  Promise.reject(error);
         }).then(function(ticketData){
-            response = ticketData;
+            response = ticketData,data;
             ctx.request.body.data.freshdeskid = ticketData.data.id;
             ctx.request.body.data.status = ticketData.data.status;
           
@@ -58,7 +58,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
             console.log(" exception  ",error);
             return  Promise.reject(error);
         }).then(function(ticketData){
-            response = ticketData;
+            response = ticketData.data;
             
         });
      return response;
@@ -80,7 +80,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
             console.log(" exception  ",error);
             return  Promise.reject(error);
         }).then(function(ticketData){
-            response = ticketData;
+            response = ticketData.data;
             
         });
      return response;
@@ -103,7 +103,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
             console.log(" exception  ",error);
             return  Promise.reject(error);
         }).then(function(ticketData){
-            response = ticketData;
+            response = ticketData.data;
             
         });
      return response;
