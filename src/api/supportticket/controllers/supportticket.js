@@ -31,7 +31,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
             console.log(" exception  ",error);
             return  Promise.reject(error);
         }).then(function(ticketData){
-            response = ticketData,data;
+            response = ticketData.data;
             ctx.request.body.data.freshdeskid = ticketData.data.id;
             ctx.request.body.data.status = ticketData.data.status;
           
@@ -47,7 +47,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
         const { id } = ctx.params;
         const API_URL = strapi.config.get('remote.freshdesktickets');
         
-        var reponse;
+        var response;
 
         await  axios.get(API_URL+"/"+id+"?include=conversations" ,{
             auth: {
