@@ -256,7 +256,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
             name: item.employee.name,
             employeeId: item.employee.id,
             notificationtype: "Notification",
-            contenttype: "Bus Tracking  has started",
+            contenttype: "Your bus about to reach",
           });
         });
 
@@ -271,13 +271,14 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
             console.log("Notification sent");
           })
           .catch((err) => {
-            console.log("error");
+            console.log("error", err);
           });
       } else {
         console.log("in else");
       }
     }
-    return "SUCCESS"
+
+    return "SUCCESS";
   },
   async employeeTracking(ctx) {
     const { tripId, lat, long } = ctx.params;
@@ -327,7 +328,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
             name: item.employee.name,
             employeeId: item.employee.id,
             notificationtype: "Notification",
-            contenttype: "Employee Tracking  has started",
+            contenttype: "You are about to reach your stop.",
           });
         });
 
@@ -348,7 +349,8 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
         console.log("in else");
       }
     }
-    return "SUCCESS"
+
+    return "SUCCESS";
   },
 
   async endTrip(ctx) {
