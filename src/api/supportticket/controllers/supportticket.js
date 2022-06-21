@@ -64,28 +64,6 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
      return response;
     },
 
-    async ticketdetails (ctx){
-
-        const { id } = ctx.params;
-        const API_URL = strapi.config.get('remote.freshdesktickets');
-        
-        var response;
-
-        await  axios.get(API_URL+"/"+id+"?include=conversations" ,{
-            auth: {
-              username: strapi.config.get('remote.freshdeskusername'),
-              password: strapi.config.get('remote.freshdeskpassword')
-            }})
-        .catch((error) => {
-            console.log(" exception  ",error);
-            return  Promise.reject(error);
-        }).then(function(ticketData){
-            response = ticketData.data;
-            
-        });
-     return response;
-    },
-
 
     async getTickets (ctx){
 
@@ -94,7 +72,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
         
         var response;
 
-        await  axios.get(API_URL+"?email="+email ,{
+        await  axios.get(API_URL+"?email="+email+"&include=description" ,{
             auth: {
               username: strapi.config.get('remote.freshdeskusername'),
               password: strapi.config.get('remote.freshdeskpassword')
