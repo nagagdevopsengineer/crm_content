@@ -38,7 +38,7 @@ module.exports = createCoreController('api::supportticket.supportticket', ({ env
         });
 
 
-        //const response = await super.create(ctx);
+        await super.create(ctx);
         return response;
     },
 
