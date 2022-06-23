@@ -409,7 +409,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
       populate: { route: true },
     });
 
-    if (tripExist != null && tripExist.length > 0) {
+    if (tripExist != null && tripExist.length < 0) {
       console.log(" trip not exist creating new  ");
       var trip = {};
 
