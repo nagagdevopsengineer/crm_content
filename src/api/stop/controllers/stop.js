@@ -14,12 +14,13 @@ async findStopsByRouteWithEmpCount(ctx){
     var resArray = [];
 
     const stops = await strapi.entityService.findMany('api::stop.stop',  {
-        populate:['employee'],
+       
         filters:{
           route:{
              id:routeid
         }
-      }
+      },
+        orderBy: { order: 'asc' },
       });
 
       for(var i =0 ; i<stops.length-1;i++){
@@ -27,7 +28,8 @@ async findStopsByRouteWithEmpCount(ctx){
         var stop = stops[i];
       await strapi.entityService.findMany('api::employee.employee',{
        
-        filters:{stop:{id:stopid}}
+        filters:{stop:{id:stopid}},
+         
       }).then((entries) => {
         console.log( stopid,"employee count == >>" ,entries.length);
         stop.passengers = entries.length;
