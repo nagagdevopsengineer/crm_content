@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "siteconfigs",
+  "info": {
+    "singularName": "siteconfig",
+    "pluralName": "siteconfigs",
+    "displayName": "siteconfig"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "configkey": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "textvalue": {
+      "type": "string"
+    },
+    "numericvalue": {
+      "type": "biginteger"
+    }
+  }
+}
