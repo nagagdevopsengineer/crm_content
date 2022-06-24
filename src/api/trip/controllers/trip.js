@@ -243,7 +243,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
 
       let distance = result.data.rows[0].elements[0].distance.text;
 
-      if (parseFloat(distance, 10) <= 1500) {
+      if (parseFloat(distance, 10) <= 15) {
         const employeedata = await axios.get(
           `http://dev-crmcontent.vapprtech.com/api/employees/es/${stops[i].id}/${tripId}`
         );
@@ -315,7 +315,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
 
       let distance = result.data.rows[0].elements[0].distance.text;
 
-      if (parseFloat(distance, 10) <= 1500) {
+      if (parseFloat(distance, 10) <= 15) {
         const employeedata = await axios.get(
           `http://dev-crmcontent.vapprtech.com/api/employees/es/${stops[i].id}/${tripId}`
         );
