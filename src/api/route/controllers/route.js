@@ -65,7 +65,7 @@ module.exports = createCoreController('api::route.route', ({ env }) =>  ({
                 id :  data2[i].id
               },
           },
-          orderBy :{order:'asc'}
+          sort :{order:'asc'}
       });
 
       

@@ -20,7 +20,7 @@ async findStopsByRouteWithEmpCount(ctx){
              id:routeid
         }
       },
-        orderBy: { order: 'asc' },
+        sort: { order: 'asc' },
       });
 
       for(var i =0 ; i<stops.length-1;i++){

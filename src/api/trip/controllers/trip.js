@@ -125,7 +125,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
           id: response.route_bus.route.id,
         },
       },
-      orderBy: { order: "asc" },
+      sort: { order: "asc" },
     });
 
     const employeedata = await strapi.entityService.findMany(
@@ -226,7 +226,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
           id: trip.route_bus.route.id,
         },
       },
-      orderBy: { order: "asc" },
+      sort: { order: "asc" },
     });
 
     for (let i = 0; i < stops.length; i++) {
@@ -299,7 +299,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
           id: trip.route_bus.route.id,
         },
       },
-      orderBy: { order: "asc" },
+      sort: { order: "asc" },
     });
 
     for (let i = 0; i < stops.length; i++) {

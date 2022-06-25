@@ -27,7 +27,7 @@ module.exports = createCoreController('api::route-bus.route-bus', ({ env }) =>  
                   id :  data2[i].attributes.route.data.id 
                 },
             },
-            orderBy :{order:'asc'}
+            sort :{order:'asc'}
         });
   
         
