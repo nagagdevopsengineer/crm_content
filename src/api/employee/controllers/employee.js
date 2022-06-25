@@ -118,7 +118,7 @@ module.exports = createCoreController('api::employee.employee', ({ env }) =>  ({
                     }
                  }
        } ,
-       orderBy: { id: 'desc' },
+       sort: { id: 'DESC' },
        limit: 1         
 
        });
