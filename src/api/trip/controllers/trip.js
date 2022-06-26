@@ -234,7 +234,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
       let stopLong = stops[i].longitude;
       let vehicleLat = lat;
       let vehicleLong = long;
-      let api_key = "AIzaSyDD8zp_hulyclcTqNRaB_LS4cE5z9cXJ6o";
+      let api_key = "";
 
       const result = await axios.get(
         `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${stopLat}+${stopLong}&origins=${vehicleLat}+${vehicleLong}&key=${api_key}`
@@ -307,7 +307,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
       let stopLong = stops[i].longitude;
       let employeeLat = 28.409142326590054;
       let employeeLong = 77.10422982468931;
-      let api_key = "AIzaSyDD8zp_hulyclcTqNRaB_LS4cE5z9cXJ6o";
+      let api_key = "";
 
       const result = await axios.get(
         `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${stopLat}+${stopLong}&origins=${employeeLat}+${employeeLong}&key=${api_key}`
