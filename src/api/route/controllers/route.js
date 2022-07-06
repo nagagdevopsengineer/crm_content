@@ -3,7 +3,7 @@
 /**
  *  route controller
  */
-
+ const { default: axios } = require("axios");
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::route.route', ({ env }) =>  ({
@@ -96,8 +96,14 @@ module.exports = createCoreController('api::route.route', ({ env }) =>  ({
       });
       console.log("count == ",count);
       return count;
-    }
+    },
 
+    async monthCountRoute() {
+      const count= await axios.get(`${process.env.NODE_URL}/routesall`)
+    
+      return count.data;
+      
+    }
 
 
 }));
