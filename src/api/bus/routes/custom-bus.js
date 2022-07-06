@@ -30,5 +30,15 @@ module.exports = {
         path: '/buses/contractorcount/:contid',
         handler: 'bus.buscountbycontractor',
       },
+      {
+        method: 'GET',
+        path: '/buses/month',
+        handler: 'bus.busByMonth',
+      },
+      {
+        method: 'GET',
+        path: '/buses/month/monthcount',
+        handler: 'bus.busByMonthCount',
+      },
     ]
   }

@@ -14,6 +14,11 @@ module.exports = {
         method: 'GET',
         path: '/routes/count/:clientid',
         handler: 'route.clientRoute',
+      },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/routes/monthcount',
+        handler: 'route.monthCountRoute',
       }
     ]
   }
