@@ -107,11 +107,8 @@ module.exports = createCoreController("api::bus.bus", ({ env }) => ({
   },
 
   async busByMonth() {
-
     const avaialbeBuses = await strapi.entityService.findMany("api::bus.bus", {
       filters: {
-       
-
         id: {
           $notIn: buses,
         },
@@ -119,16 +116,18 @@ module.exports = createCoreController("api::bus.bus", ({ env }) => ({
     });
 
     return avaialbeBuses;
-    
   },
 
   async busByMonthCount(ctx) {
-    // const { clientid } = ctx.params;
-  
-    const avaialbeBuses = await axios.get(`${process.env.NODE_URL}/all`)
-    
+    const avaialbeBuses = await axios.get(`${process.env.NODE_URL}/all`);
+
     return avaialbeBuses.data;
-    
+  },
+  async customerRating(ctx) {
+    console.log("tetsts");
+    const data = await axios.get(`${process.env.NODE_URL}/ratings`);
+
+    return data.data;
   },
 
   async buscountbyclient(ctx) {
