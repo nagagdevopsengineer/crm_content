@@ -40,5 +40,10 @@ module.exports = {
         path: '/buses/month/monthcount',
         handler: 'bus.busByMonthCount',
       },
+      {
+        method: 'GET',
+        path: '/buses/customer/ratings',
+        handler: 'bus.customerRating',
+      },
     ]
   }

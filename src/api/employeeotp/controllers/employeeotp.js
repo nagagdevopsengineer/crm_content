@@ -61,5 +61,14 @@ module.exports = createCoreController(
      
       return response;
     },
+
+    // async ratings() {
+     
+    
+    //   const data = await axios.get(`${process.env.NODE_URL}/ratings`)
+      
+    //   return data.data;
+      
+    // },
   })
 );
