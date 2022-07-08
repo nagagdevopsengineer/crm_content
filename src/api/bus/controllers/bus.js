@@ -1,6 +1,7 @@
 "use strict";
 
 const { default: axios } = require("axios");
+const moment = require("moment");
 
 /**
  *  bus controller
@@ -118,15 +119,25 @@ module.exports = createCoreController("api::bus.bus", ({ env }) => ({
     return avaialbeBuses;
   },
 
-  async busByMonthCount(ctx) {
+  async busByMonthCount() {
     const avaialbeBuses = await axios.get(`${process.env.NODE_URL}/all`);
 
     return avaialbeBuses.data;
   },
-  async customerRating(ctx) {
+  async customerRating() {
     console.log("tetsts");
     const data = await axios.get(`${process.env.NODE_URL}/ratings`);
 
+    return data.data;
+  },
+  async otpData() {
+    console.log("tetsts");
+    const data = await axios.get(`${process.env.NODE_URL}/employeeotps`);
+    return data.data;
+  },
+  async boardedEmp() {
+    console.log("tetsts");
+    const data = await axios.get(`${process.env.NODE_URL}/boardedemp`);
     return data.data;
   },
 
