@@ -45,5 +45,15 @@ module.exports = {
         path: '/buses/customer/ratings',
         handler: 'bus.customerRating',
       },
+      {
+        method: 'GET',
+        path: '/buses/employee/otps',
+        handler: 'bus.otpData',
+      },
+      {
+        method: 'GET',
+        path: '/buses/employee/boarded',
+        handler: 'bus.boardedEmp',
+      },
     ]
   }
