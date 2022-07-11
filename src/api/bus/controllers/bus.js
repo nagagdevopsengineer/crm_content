@@ -140,6 +140,16 @@ module.exports = createCoreController("api::bus.bus", ({ env }) => ({
     const data = await axios.get(`${process.env.NODE_URL}/boardedemp`);
     return data.data;
   },
+  async totalEmployeeTrips() {
+    console.log("tetsts");
+    const data = await axios.get(`${process.env.NODE_URL}/totaltrips`);
+    return data.data;
+  },
+  async timelyTrips() {
+    console.log("tetsts");
+    const data = await axios.get(`${process.env.NODE_URL}/alltrips`);
+    return data.data;
+  },
 
   async buscountbyclient(ctx) {
     const { clientid } = ctx.params;
