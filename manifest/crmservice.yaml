@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: crm-content
-  namespace: crm-content
+  name: demo-crm-content
+  namespace: demo-crm-content
   labels:
-    app: crm-content
+    app: demo-crm-content
 spec:
   type: NodePort
   ports:
@@ -12,4 +12,4 @@ spec:
     port: 80
     targetPort: 1337
   selector:
-    app: crm-content
+    app: demo-crm-content

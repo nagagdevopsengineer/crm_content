@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: crm-content
-  namespace: crm-content
+  name: demo-crm-content
+  namespace: demo-crm-content
   labels:
-    app: crm-content
+    app: demo-crm-content
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: crm-content
+      app: demo-crm-content
   template:
     metadata:
       labels:
-        app: crm-content
+        app: demo-crm-content
     spec:
       containers:
-      - name: crm-content
-        image: vapprtech/crm:latest
+      - name: demo-crm-content
+        image: vapprtech/demo:latest
         imagePullPolicy: Always
         ports:
         - name: https
