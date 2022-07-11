@@ -16,6 +16,7 @@
     "@strapi/plugin-users-permissions": "4.1.1",
     "@strapi/provider-upload-aws-s3": "^4.1.12",
     "@strapi/strapi": "4.1.1",
+    "aws-sdk": "^2.1170.0",
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "moment": "^2.29.2",

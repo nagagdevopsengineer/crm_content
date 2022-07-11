@@ -3982,6 +3982,21 @@
   "resolved" "https://registry.npmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz"
   "version" "1.0.5"
 
+"aws-sdk@^2.1170.0":
+  "integrity" "sha512-0hbXILJ6EvLJk9cBqkPwgXu+RLZ1B5lK3RyCh56oKbr+uIu4pXlqhj3CH9QVvWji8dmvn5/W5n+Sifnl8ISrOA=="
+  "resolved" "https://registry.npmjs.org/aws-sdk/-/aws-sdk-2.1170.0.tgz"
+  "version" "2.1170.0"
+  dependencies:
+    "buffer" "4.9.2"
+    "events" "1.1.1"
+    "ieee754" "1.1.13"
+    "jmespath" "0.16.0"
+    "querystring" "0.2.0"
+    "sax" "1.2.1"
+    "url" "0.10.3"
+    "uuid" "8.0.0"
+    "xml2js" "0.4.19"
+
 "aws-sdk@2.892.0":
   "integrity" "sha512-OOXJ15AnJJMHZYXJQVy22Wjnp5GrZCfvCxmoZuXdsLNs8M+BL4mfBqma82+UkM2NhJgLYuAhDfvFUBob6VGIWw=="
   "resolved" "https://registry.npmjs.org/aws-sdk/-/aws-sdk-2.892.0.tgz"
@@ -9686,6 +9701,11 @@
   "resolved" "https://registry.npmjs.org/jmespath/-/jmespath-0.15.0.tgz"
   "version" "0.15.0"
 
+"jmespath@0.16.0":
+  "integrity" "sha512-9FzQjJ7MATs1tSpnco1K6ayiYE3figslrXA72G2HQ/n76RzvYlofyi5QM+iX4YRs/pu3yzxlVQSST23+dMDknw=="
+  "resolved" "https://registry.npmjs.org/jmespath/-/jmespath-0.16.0.tgz"
+  "version" "0.16.0"
+
 "js-cookie@2.2.1":
   "integrity" "sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ=="
   "resolved" "https://registry.npmjs.org/js-cookie/-/js-cookie-2.2.1.tgz"
@@ -15000,6 +15020,11 @@
   "integrity" "sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA=="
   "resolved" "https://registry.npmjs.org/uuid/-/uuid-3.3.2.tgz"
   "version" "3.3.2"
+
+"uuid@8.0.0":
+  "integrity" "sha512-jOXGuXZAWdsTH7eZLtyXMqUb9EcWMGZNbL9YcGBJl4MH4nrxHmZJhEHvyLFrkxo+28uLb/NYRcStH48fnD0Vzw=="
+  "resolved" "https://registry.npmjs.org/uuid/-/uuid-8.0.0.tgz"
+  "version" "8.0.0"
 
 "v8-compile-cache@^2.0.3":
   "integrity" "sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q=="
