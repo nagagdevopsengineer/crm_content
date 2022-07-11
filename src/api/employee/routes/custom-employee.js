@@ -31,5 +31,10 @@ module.exports = {
         path: '/employees/allcount',
         handler: 'employee.employeesAllCount',
       },
+      { // Path defined with a URL parameter
+        method: 'GET',
+        path: '/employees/stops',
+        handler: 'employee.employeesStop',
+      },
     ]
   }

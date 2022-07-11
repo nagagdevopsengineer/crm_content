@@ -55,5 +55,15 @@ module.exports = {
         path: '/buses/employee/boarded',
         handler: 'bus.boardedEmp',
       },
+      {
+        method: 'GET',
+        path: '/buses/employee/total/trips',
+        handler: 'bus.totalEmployeeTrips',
+      },
+      {
+        method: 'GET',
+        path: '/buses/employee/timetrips',
+        handler: 'bus.timelyTrips',
+      },
     ]
   }
