@@ -344,12 +344,13 @@ module.exports = createCoreController("api::employee.employee", ({ env }) => ({
       console.log(requiredObj, 'hhh')
       return requiredObj;
    };
-   pickHighest(occurrences, 5)
+  return  pickHighest(occurrences, 5)
   
-    // console.log(pickHighest, 'HHII')
+    // console.log(pickHighest(occurrences,5), 'HHII')
     // console.log(requiredObj, 'hhh')
     // console.log(" employees  by stop ", employees);
-    return employees;
+    // return pickHighest();
+    // return 0
   },
 
 }));
