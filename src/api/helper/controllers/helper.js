@@ -46,8 +46,8 @@ module.exports = createCoreController('api::helper.helper', ({ env }) =>  ({
   console.log(" sdsdfdsfdsf ",uuid);
 
   const entry = await strapi.entityService.findMany('api::helper.helper',  {
-    filters: { uuid : uuid }
-    
+    filters: { uuid : uuid },
+    populate:{contractor:{populate:{client:{populate:'*'}}}}
   });
 
 const driverBuses = await strapi.entityService.findMany('api::bus-driver.bus-driver',{
@@ -100,7 +100,7 @@ const routeTrip = await strapi.entityService.findMany('api::trip.trip',{
 
 },
 sort: { id: 'asc' },
-poplate : {trip:true}
+populate : {trip:true}
 });
 
 console.log(" trips   ",routeTrip);

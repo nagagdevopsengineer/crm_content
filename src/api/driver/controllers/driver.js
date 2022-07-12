@@ -48,7 +48,8 @@ var dataRes = {};
 
 
   const entry = await strapi.entityService.findMany('api::driver.driver',  {
-    filters: { uid : uuid }
+    filters: { uid : uuid },
+    populate:{contractor:{populate:{client:{populate:'*'}}}}
     
   });
 
