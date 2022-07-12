@@ -26,8 +26,7 @@ COPY . /crm_content_ws
 
 RUN yarn install
 
-
 EXPOSE 1337
 
-CMD yarn develop
-
+# yarn develop
+CMD yarn start && tail -f /dev/null
