@@ -26,6 +26,8 @@ COPY . /crm_content_ws
 
 RUN yarn install
 
+RUN yarn start
+
 EXPOSE 1337
 
 CMD yarn develop
