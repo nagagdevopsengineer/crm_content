@@ -28,5 +28,5 @@ RUN yarn install
 
 EXPOSE 1337
 
-# yarn develop
-CMD yarn start && tail -f /dev/null
+CMD yarn develop
+
