@@ -11,7 +11,7 @@ metadata:
 
 spec:
   rules:
-   - host: salesdemo-crm.vapprtech.com
+   - host: sales-demo.vapprtech.com
    - http:
         paths:
           - path: /
