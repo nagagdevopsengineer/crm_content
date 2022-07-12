@@ -8450,9 +8450,6 @@
                                                                                     }
                                                                                   }
                                                                                 },
-                                                                                "lastname": {
-                                                                                  "type": "string"
-                                                                                },
                                                                                 "createdAt": {
                                                                                   "type": "string",
                                                                                   "format": "date-time"
@@ -18265,9 +18262,6 @@
                                                                                   }
                                                                                 }
                                                                               },
-                                                                              "lastname": {
-                                                                                "type": "string"
-                                                                              },
                                                                               "createdAt": {
                                                                                 "type": "string",
                                                                                 "format": "date-time"
@@ -28045,9 +28039,6 @@
                                                                                   }
                                                                                 }
                                                                               },
-                                                                              "lastname": {
-                                                                                "type": "string"
-                                                                              },
                                                                               "createdAt": {
                                                                                 "type": "string",
                                                                                 "format": "date-time"
@@ -37768,9 +37759,6 @@
                                                                                     }
                                                                                   }
                                                                                 }
-                                                                              },
-                                                                              "lastname": {
-                                                                                "type": "string"
                                                                               },
                                                                               "createdAt": {
                                                                                 "type": "string",

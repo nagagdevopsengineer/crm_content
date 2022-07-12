@@ -35,9 +35,6 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::helper.helper"
-    },
-    "lastname": {
-      "type": "string"
     }
   }
 }

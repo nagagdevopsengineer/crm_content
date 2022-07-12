@@ -7894,9 +7894,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "lastname": {
-                                                        "type": "string"
-                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -8486,6 +8483,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "lastname": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -16690,9 +16690,6 @@
                                                         }
                                                       }
                                                     },
-                                                    "lastname": {
-                                                      "type": "string"
-                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -17282,6 +17279,9 @@
                                   }
                                 }
                               }
+                            },
+                            "lastname": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -25409,9 +25409,6 @@
                                                         }
                                                       }
                                                     },
-                                                    "lastname": {
-                                                      "type": "string"
-                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -26001,6 +25998,9 @@
                                   }
                                 }
                               }
+                            },
+                            "lastname": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -34114,9 +34114,6 @@
                                                         }
                                                       }
                                                     },
-                                                    "lastname": {
-                                                      "type": "string"
-                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -34707,6 +34704,9 @@
                                 }
                               }
                             },
+                            "lastname": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -34999,6 +34999,9 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "lastname": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
