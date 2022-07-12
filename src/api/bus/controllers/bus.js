@@ -150,6 +150,65 @@ module.exports = createCoreController("api::bus.bus", ({ env }) => ({
     const data = await axios.get(`${process.env.NODE_URL}/alltrips`);
     return data.data;
   },
+  async allBusesbyClient(ctx) {
+    const { clientid } = ctx.params;
+    console.log(clientid)
+    console.log("HERE")
+    const entries = await strapi.entityService.findMany('api::bus.bus',{
+      filter: {
+        client:{
+          id:clientid
+         }
+      }
+    })
+    let busData = []
+    entries?.map(item =>{
+      busData.push(moment(item.createdAt).format("MM"))
+    })
+    console.log("count == ", busData);
+
+
+    const obj = {
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 0,
+      "08": 0,
+      "09": 0,
+      10: 0,
+      11: 0,
+      12: 0
+    }
+
+    busData?.map((item) => {
+      obj[item] = obj[item] + 1
+    })
+    
+
+    let index = Object.keys(obj).sort()
+
+    // iterate method
+    let details = []
+    index.forEach((key) => {
+      console.log(key, obj[key])
+      details.push(obj[key])
+    })
+console.log(details, 'details')
+   
+    return details;
+    // const avaialbeBuses = await strapi.entityService.findMany("api::bus.bus", {
+    //   filters: {
+    //     client: {
+    //       id: clientid,
+    //     },
+    //   },
+    // });
+
+    // return avaialbeBuses;
+  },
 
   async buscountbyclient(ctx) {
     const { clientid } = ctx.params;
