@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const faker = require('faker');
 
 const bootstrap =  async () => {
-
+  console.log("Current environment", process.env.NODE_ENV);
   if (process.env.NODE_ENV == 'sales-demo') {
   
     const status = ['pending', 'approved', 'rejected']
