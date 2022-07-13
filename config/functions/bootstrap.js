@@ -4,7 +4,7 @@ const faker = require('faker');
 
 const bootstrap =  async () => {
   console.log("Current environment", process.env.NODE_ENV);
-  if (process.env.NODE_ENV == 'sales-demo') {
+  // if (process.env.NODE_ENV == 'sales-demo') {
   
     const status = ['pending', 'approved', 'rejected']
     const vaccinationstatus = ['No', 'Partial', 'Vaccinated']
@@ -303,7 +303,7 @@ const bootstrap =  async () => {
         console.log("Error while synthetic data for bus-driver", err)
       }
     }
-  }
+  // }
 }
 
 module.exports =  bootstrap
