@@ -32,7 +32,7 @@ module.exports = createCoreController(
         console.log(employeeboadingdata, "testing in otp");
       let employeeboarded = [];
 
-      if (employeeboadingdata) {
+      if (employeeboadingdata[0].ratings == null) {
         employeeboadingdata.map((item) => {
           employeeboarded.push({
             playerid: item.employee.playerid,
