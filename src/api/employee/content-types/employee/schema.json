@@ -125,6 +125,11 @@
     "lastmile": {
       "type": "boolean",
       "default": false
+    },
+    "client_shift_timing": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client-shift-timing.client-shift-timing"
     }
   }
 }
