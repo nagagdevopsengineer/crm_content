@@ -30,5 +30,45 @@ module.exports = {
         path: '/buses/contractorcount/:contid',
         handler: 'bus.buscountbycontractor',
       },
+      {
+        method: 'GET',
+        path: '/buses/month',
+        handler: 'bus.busByMonth',
+      },
+      {
+        method: 'GET',
+        path: '/buses/month/monthcount',
+        handler: 'bus.busByMonthCount',
+      },
+      {
+        method: 'GET',
+        path: '/buses/customer/ratings',
+        handler: 'bus.customerRating',
+      },
+      {
+        method: 'GET',
+        path: '/buses/employee/otps',
+        handler: 'bus.otpData',
+      },
+      {
+        method: 'GET',
+        path: '/buses/employee/boarded',
+        handler: 'bus.boardedEmp',
+      },
+      {
+        method: 'GET',
+        path: '/buses/employee/total/trips',
+        handler: 'bus.totalEmployeeTrips',
+      },
+      {
+        method: 'GET',
+        path: '/buses/employee/timetrips',
+        handler: 'bus.timelyTrips',
+      },
+      {
+        method: 'GET',
+        path: '/buses/allbuses/count/:clientid',
+        handler: 'bus.allBusesbyClient',
+      },
     ]
   }

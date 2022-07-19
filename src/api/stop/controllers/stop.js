@@ -23,7 +23,7 @@ async findStopsByRouteWithEmpCount(ctx){
         sort: { order: 'asc' },
       });
 
-      for(var i =0 ; i<stops.length-1;i++){
+      for(var i =0 ; i<stops.length;i++){
        var stopid = stops[i].id;
         var stop = stops[i];
       await strapi.entityService.findMany('api::employee.employee',{
