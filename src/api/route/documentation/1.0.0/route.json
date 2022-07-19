@@ -1497,6 +1497,10 @@
                                   }
                                 }
                               },
+                              "Km": {
+                                "type": "number",
+                                "format": "float"
+                              },
                               "createdAt": {
                                 "type": "string",
                                 "format": "date-time"
@@ -3303,6 +3307,10 @@
                                 }
                               }
                             },
+                            "Km": {
+                              "type": "number",
+                              "format": "float"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -3536,6 +3544,10 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "Km": {
+                        "type": "number",
+                        "format": "float"
                       },
                       "createdAt": {
                         "type": "string",
@@ -5074,6 +5086,10 @@
                                   }
                                 }
                               }
+                            },
+                            "Km": {
+                              "type": "number",
+                              "format": "float"
                             },
                             "createdAt": {
                               "type": "string",
@@ -6790,6 +6806,10 @@
                                 }
                               }
                             },
+                            "Km": {
+                              "type": "number",
+                              "format": "float"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -7034,6 +7054,10 @@
                           }
                         ],
                         "example": "string or id"
+                      },
+                      "Km": {
+                        "type": "number",
+                        "format": "float"
                       },
                       "createdAt": {
                         "type": "string",

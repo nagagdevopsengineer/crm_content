@@ -22,6 +22,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::client.client"
+    },
+    "Km": {
+      "type": "float"
     }
   }
 }

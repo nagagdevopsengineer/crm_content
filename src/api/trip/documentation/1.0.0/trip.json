@@ -4445,6 +4445,10 @@
                                                           }
                                                         }
                                                       },
+                                                      "Km": {
+                                                        "type": "number",
+                                                        "format": "float"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -7916,6 +7920,11 @@
                               "scheduledtime": {
                                 "type": "string",
                                 "format": "date-time"
+                              },
+                              "Km": {
+                                "type": "string",
+                                "pattern": "^\\d*$",
+                                "example": "123456789"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -12671,6 +12680,10 @@
                                                         }
                                                       }
                                                     },
+                                                    "Km": {
+                                                      "type": "number",
+                                                      "format": "float"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -16142,6 +16155,11 @@
                             "scheduledtime": {
                               "type": "string",
                               "format": "date-time"
+                            },
+                            "Km": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -20822,6 +20840,10 @@
                                                         }
                                                       }
                                                     },
+                                                    "Km": {
+                                                      "type": "number",
+                                                      "format": "float"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -24293,6 +24315,11 @@
                             "scheduledtime": {
                               "type": "string",
                               "format": "date-time"
+                            },
+                            "Km": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
                             },
                             "createdAt": {
                               "type": "string",
@@ -28957,6 +28984,10 @@
                                                         }
                                                       }
                                                     },
+                                                    "Km": {
+                                                      "type": "number",
+                                                      "format": "float"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -32429,6 +32460,11 @@
                               "type": "string",
                               "format": "date-time"
                             },
+                            "Km": {
+                              "type": "string",
+                              "pattern": "^\\d*$",
+                              "example": "123456789"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -32703,6 +32739,11 @@
                       "scheduledtime": {
                         "type": "string",
                         "format": "date-time"
+                      },
+                      "Km": {
+                        "type": "string",
+                        "pattern": "^\\d*$",
+                        "example": "123456789"
                       },
                       "createdAt": {
                         "type": "string",

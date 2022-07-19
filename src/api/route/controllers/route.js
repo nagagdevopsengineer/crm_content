@@ -8,6 +8,44 @@ const { createCoreController } = require("@strapi/strapi").factories;
 const moment = require("moment");
 
 module.exports = createCoreController("api::route.route", ({ env }) => ({
+  async create(ctx) {
+    try {
+      let postdata = ctx.request.body;
+      let data = postdata.data.stops;
+
+      let sum = 0;
+      const calDistance = async (src, dest) => {
+        try {
+          console.log(src, dest, "gg");
+          const value = await axios.get(
+            `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${src.lat}+${src.lng}&origins=${dest.lat}+${dest.lng}&key=AIzaSyA7jKr8cUZnMXeuccPPztmG1Ucp-RfBxVY`
+          );
+
+          const distance = parseFloat(
+            value.data.rows[0].elements[0].distance.text
+          );
+
+          return distance;
+        } catch (err) {
+          console.log("err", err);
+        }
+      };
+      for (let i = 0; i < data.length - 1; i++) {
+        const result = await calDistance(data[i], data[i + 1]);
+
+        sum += result;
+      }
+
+      ctx.request.body.data.Km = sum.toFixed(2);
+
+      const response = await super.create(ctx);
+
+      return response;
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
   async findAvailableRoutes(ctx) {
     const { clientid } = ctx.params;
 
