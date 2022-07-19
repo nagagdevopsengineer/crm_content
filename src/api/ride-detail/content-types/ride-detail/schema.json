@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ride_details",
+  "info": {
+    "singularName": "ride-detail",
+    "pluralName": "ride-details",
+    "displayName": "RideDetail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ride": {
+      "type": "text"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "date": {
+      "type": "datetime"
+    }
+  }
+}

@@ -48,6 +48,9 @@
     "scheduledtime": {
       "type": "datetime",
       "required": true
+    },
+    "Km": {
+      "type": "biginteger"
     }
   }
 }
