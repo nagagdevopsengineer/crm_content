@@ -13,6 +13,7 @@ const bootstrap =  async () => {
     const shiftName = ['morning', 'afternoon', 'evening', 'night']
     const rideDetailType = ['ola', 'uber']
     const routeNames = ['Sanjay Gram To RPS', 'EmaarIndia To OM Sweet', 'Magnum Tower To Samsung Office', 'Sector Fifty Three Rapid Metro to Magnum Towers', 'Huda Metro to Guru Dronacharya Metro']
+    const ratingFeedback = ['un-satisfactory', 'satisfactory', 'good', 'better', 'very-satisfied']
 
     //Deleting any existing data in the database for clients
     let entries = await strapi.entityService.findMany('api::client.client', {
@@ -202,7 +203,17 @@ const bootstrap =  async () => {
       })
     }
 
-    
+    //Deleting any existing data in the database for employee otp
+    entries = await strapi.entityService.findMany('api::employeeotp.employeeotp', {
+      fields: ['id']    
+    });
+    if (entries && entries.length) {
+      console.log("Deleting any existing data in the database for employee otp")
+      entries.forEach( async (entry) => {
+        await strapi.entityService.delete('api::employeeotp.employeeotp', entry.id);
+      })
+    }
+
     //Creating synthetic data for client
     console.log("Creating synthetic data for client")
     const start_index = 1
@@ -596,7 +607,7 @@ const bootstrap =  async () => {
     // Creating synthetic data for trips
     console.log("Creating synthetic data for trips")
     for (let index = start_index ; index < 201; index++) {
-      let date = faker.date.past().toISOString();
+      let date = new Date().toISOString();
       try {
         await strapi.entityService.create('api::trip.trip', {
           data: {
@@ -616,6 +627,34 @@ const bootstrap =  async () => {
         })}
       catch(err) {
         console.log("Error while synthetic data for trips", err)
+      }
+    }
+
+    // Creating synthetic data for employee otp
+    console.log("Creating synthetic data for employee otp")
+    for (let index = start_index ; index < 201; index++) {
+      let date = new Date().toISOString();
+      try {
+        await strapi.entityService.create('api::employeeotp.employeeotp', {
+          data: {
+            id: index,
+            otp_date: date.split('T')[0],
+            employee: Math.floor(Math.random() * (50 - 1 + 1)) + 1,
+            isBoarded: flag[Math.floor(Math.random()*flag.length)],
+            boardedtime: new Date().toISOString(),
+            trip: Math.floor(Math.random() * (200 - 1 + 1)) + 1,
+            otp: Math.floor(1000 + Math.random() * 9000),
+            helperid: Math.floor(Math.random() * (50 - 1 + 1)) + 1,
+            stop: Math.floor(Math.random() * (25 - 1 + 1)) + 1,
+            isboardedwotp: flag[Math.floor(Math.random()*flag.length)],
+            ratings: Math.floor(Math.random() * (5 - 1 + 1)) + 1,
+            ratingfeedback: ratingFeedback[Math.floor(Math.random()*ratingFeedback.length)],
+            isratinggiven: flag[Math.floor(Math.random()*flag.length)],
+            publishedAt: new Date().toISOString() 
+          }
+        })}
+      catch(err) {
+        console.log("Error while synthetic data for employee otp", err)
       }
     }
 
