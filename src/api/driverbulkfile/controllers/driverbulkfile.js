@@ -94,6 +94,7 @@ module.exports = createCoreController(
                 age:dataArray[i].Age,
                 driving_licenses_number:dataArray[i].DLN,
                 aadhar:dataArray[i].Aadhar,
+                publishedAt: new Date().toISOString()
               },
             }
           );

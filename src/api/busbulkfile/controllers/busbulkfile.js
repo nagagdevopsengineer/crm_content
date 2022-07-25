@@ -92,6 +92,7 @@ module.exports = createCoreController(
               vehicle_number: dataArray[i].Vehicle_Number,
               seating_capacity: dataArray[i].Seating_Capacity,
               colour: dataArray[i].Color,
+              publishedAt: new Date().toISOString()
             },
           });
         } catch (error) {
