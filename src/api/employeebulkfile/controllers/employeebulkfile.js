@@ -28,6 +28,7 @@ module.exports = createCoreController(
         }
       );
       const fileName = response.data.attributes.filename;
+      const clientId = response.data.attributes.client;
     
       const s3 = new AWS.S3();
 
@@ -90,9 +91,11 @@ module.exports = createCoreController(
             "api::employee.employee",
             {
               data: {
-                name: dataArray[i].Full_Name,
+                name: dataArray[i].Full_Name.split(' ')[0],
+                lastname: dataArray[i].Full_Name.split(' ')[1],
                 email: dataArray[i].Email_ID,
                 contact: dataArray[i].Contact_Number,
+                client: clientId,
                 publishedAt: new Date().toISOString()
               },
             }
