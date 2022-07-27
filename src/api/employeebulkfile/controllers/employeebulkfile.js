@@ -28,7 +28,7 @@ module.exports = createCoreController(
         }
       );
       const fileName = response.data.attributes.filename;
-      const clientId = response.data.attributes.client;
+      const clientId = response.data.attributes.remarks;
       console.log("Response Data", response.data)
     
       const s3 = new AWS.S3();
