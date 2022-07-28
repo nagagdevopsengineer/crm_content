@@ -27,6 +27,7 @@ module.exports = createCoreController(
       );
 
       const fileName = response.data.attributes.filename;
+      const contractorId = response.data.attributes.remarks;
      
       const s3 = new AWS.S3();
 
@@ -88,12 +89,14 @@ module.exports = createCoreController(
             "api::driver.driver",
             {
               data: {
-                name:dataArray[i].Full_Name,
+                name: dataArray[i].Full_Name.split(' ')[0],
+                lastname: dataArray[i].Full_Name.split(' ')[1],
                 email:dataArray[i].Email_ID,
                 mobile:dataArray[i].Contact_Number,
                 age:dataArray[i].Age,
                 driving_licenses_number:dataArray[i].DLN,
                 aadhar:dataArray[i].Aadhar,
+                contractor: contractorId,
                 publishedAt: new Date().toISOString()
               },
             }

@@ -30,7 +30,7 @@ module.exports = createCoreController(
 
      
       const fileName = response.data.attributes.filename;
-      console.log(fileName, "filehhjhjhf");
+      const contractorId = response.data.attributes.remarks;
       const s3 = new AWS.S3();
 
       s3.config.update({
@@ -92,6 +92,7 @@ module.exports = createCoreController(
               vehicle_number: dataArray[i].Vehicle_Number,
               seating_capacity: dataArray[i].Seating_Capacity,
               colour: dataArray[i].Color,
+              contractor: contractorId,
               publishedAt: new Date().toISOString()
             },
           });

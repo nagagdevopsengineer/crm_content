@@ -27,6 +27,7 @@ module.exports = createCoreController(
       );
 
       const fileName = response.data.attributes.filename;
+      const contractorId = response.data.attributes.remarks;
 
       const s3 = new AWS.S3();
 
@@ -88,9 +89,11 @@ module.exports = createCoreController(
             "api::helper.helper",
             {
               data: {
-                name: dataArray[i].Full_Name,
+                name: dataArray[i].Full_Name.split(' ')[0],
+                lastname: dataArray[i].Full_Name.split(' ')[1],
                 email: dataArray[i].Email_ID,
                 contact_number: dataArray[i].Contact_Number,
+                contractor: contractorId,
                 publishedAt: new Date().toISOString()
               },
             }
