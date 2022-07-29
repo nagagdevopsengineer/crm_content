@@ -9978,10 +9978,6 @@
                         "type": "string",
                         "pattern": "^\\d*$",
                         "example": "123456789"
-                      },
-                      "email": {
-                        "type": "string",
-                        "format": "email"
                       }
                     }
                   }
