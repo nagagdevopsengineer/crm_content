@@ -96,6 +96,8 @@ module.exports = createCoreController(
                 email: dataArray[i].Email_ID,
                 contact: dataArray[i].Contact_Number,
                 client: clientId,
+                address: dataArray[i].Address,
+                dob: dataArray[i].DOB,
                 publishedAt: new Date().toISOString()
               },
             }

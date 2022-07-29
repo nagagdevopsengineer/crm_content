@@ -119,7 +119,7 @@ module.exports = createCoreController(
               data: {
                 vehicle_number: dataArray[i].Vehicle_Number,
                 seating_capacitu: dataArray[i].Seating_Capacity,
-                color: dataArray[i].color,
+                colour: dataArray[i].Color,
                 statustext: statusText,
                 error: errorObj,
                 status: status,

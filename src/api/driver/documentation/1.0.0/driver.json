@@ -9976,10 +9976,6 @@
                   "data": {
                     "type": "object",
                     "properties": {
-                      "email": {
-                        "type": "string",
-                        "format": "email"
-                      },
                       "mobile": {
                         "type": "string",
                         "pattern": "^\\d*$",

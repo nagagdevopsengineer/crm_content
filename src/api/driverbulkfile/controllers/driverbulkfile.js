@@ -91,11 +91,10 @@ module.exports = createCoreController(
               data: {
                 name: dataArray[i].Full_Name.split(' ')[0],
                 lastname: dataArray[i].Full_Name.split(' ')[1],
-                email:dataArray[i].Email_ID,
                 mobile:dataArray[i].Contact_Number,
                 age:dataArray[i].Age,
                 driving_licenses_number:dataArray[i].DLN,
-                aadhar:dataArray[i].Aadhar,
+                aadhar: dataArray[i].Aadhar.toString(),
                 contractor: contractorId,
                 publishedAt: new Date().toISOString()
               },
@@ -126,11 +125,10 @@ module.exports = createCoreController(
             {
               data: {
                 drivername:dataArray[i].Full_Name,
-                email:dataArray[i].Email_ID,
                 mobile:dataArray[i].Contact_Number,
                 age:dataArray[i].Age,
                 driving_licenses_number:dataArray[i].DLN,
-                aadhar:dataArray[i].Aadhar,
+                aadhar:dataArray[i].Aadhar.toString(),
                 statustext: statusText,
                 error: errorObj,
                 status: status,
