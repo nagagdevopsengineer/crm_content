@@ -14,7 +14,8 @@ module.exports = createCoreController(
   ({ env }) => ({
     async update(ctx) {
       const { id } = ctx.params;
-
+      const boarding = ctx.request.body.data;
+      
       const response = await super.update(ctx);
       console.log(response, "responsedata");
 
@@ -29,10 +30,10 @@ module.exports = createCoreController(
           populate: { employee: true, stop: { populate: "*" } },
         }
       );
-        console.log(employeeboadingdata, "testing in otp");
+      
       let employeeboarded = [];
 
-      if (employeeboadingdata[0].ratings == null) {
+      if ('isBoarded' in boarding === true) {
         employeeboadingdata.map((item) => {
           employeeboarded.push({
             playerid: item.employee.playerid,
