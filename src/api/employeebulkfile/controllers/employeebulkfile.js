@@ -14,6 +14,7 @@ module.exports = createCoreController(
   "api::employeebulkfile.employeebulkfile",
   ({ env }) => ({
     async create(ctx) {
+      console.log("Testing bulk upload for employees")
       const response = await super.create(ctx);
 
       console.log(response);
@@ -81,6 +82,8 @@ module.exports = createCoreController(
 
     
       let finalInsertArray = [];
+
+      console.log("Creating bulk employee records")
       for (let i = 0; i < dataArray.length; i++) {
         let statusText = "SUCCESS";
         let status = true;
@@ -98,6 +101,8 @@ module.exports = createCoreController(
                 client: clientId,
                 address: dataArray[i].Address,
                 dob: dataArray[i].DOB,
+                employeeid: dataArray[i].Employee_ID,
+                employeeid: dataArray[i].Status,
                 publishedAt: new Date().toISOString()
               },
             }
