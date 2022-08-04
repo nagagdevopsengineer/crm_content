@@ -115,17 +115,17 @@ module.exports = createCoreController(
 
           console.log("error 2 ==>>>> ", errObj);
 
-          if (errObj.errors.length) {
-            for (let i = 0; i < errObj.errors.length; i++) {
-              errorObj =
-                errorObj +
-                i +
-                "." +
-                errObj.errors[i].path[0] +
-                " - " +
-                errObj.errors[i].message;
-            }
-          }
+          // if (errObj.errors.length) {
+          //   for (let i = 0; i < errObj.errors.length; i++) {
+          //     errorObj =
+          //       errorObj +
+          //       i +
+          //       "." +
+          //       errObj.errors[i].path[0] +
+          //       " - " +
+          //       errObj.errors[i].message;
+          //   }
+          // }
         }
 
 
