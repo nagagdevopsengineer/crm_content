@@ -101,7 +101,7 @@ module.exports = createCoreController(
                 client: clientId,
                 address: dataArray[i].Address,
                 dob: dataArray[i].DOB,
-                employeeid: dataArray[i].Employee_ID,
+                employeeid: dataArray[i].Employee_ID.toString(),
                 publishedAt: new Date().toISOString()
               },
             }
