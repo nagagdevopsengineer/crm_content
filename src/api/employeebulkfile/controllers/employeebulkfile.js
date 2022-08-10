@@ -7,7 +7,6 @@ const reader = require("xlsx");
 const AWS = require("aws-sdk");
 const xlsx = require("xlsx");
 
-const employees = require("../../employee/content-types/employee/schema.json");
 const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController(
@@ -73,25 +72,17 @@ module.exports = createCoreController(
         name,
         data: xlsx.utils.sheet_to_json(excelData.Sheets[name]),
       }));
-     
-      test.forEach((element) => {
-        console.log(element.data);
-      });
-      dataArray = test[0].data;
-     
-
-    
+      
+      dataArray = test[0].data;    
       let finalInsertArray = [];
 
-      console.log("Creating bulk employee records")
       for (let i = 0; i < dataArray.length; i++) {
         let statusText = "SUCCESS";
         let status = true;
         let errorObj = "";
 
         try {
-          const entry = await strapi.entityService.create(
-            "api::employee.employee",
+          const entry = await strapi.entityService.create('api::employee.employee',
             {
               data: {
                 name: dataArray[i].Full_Name.split(' ')[0],
@@ -100,7 +91,6 @@ module.exports = createCoreController(
                 contact: dataArray[i].Contact_Number,
                 client: clientId,
                 address: dataArray[i].Address,
-                dob: dataArray[i].DOB,
                 employeeid: dataArray[i].Employee_ID.toString(),
                 publishedAt: new Date().toISOString()
               },
@@ -108,27 +98,21 @@ module.exports = createCoreController(
           );
           console.log(entry, "entry");
         } catch (error) {
-          statusText = "ERROR";
-          status = false;
-          let errObj = error.details;
+            statusText = "ERROR";
+            status = false;
+            let errObj = error.details;
+            console.log("ERROR", error);
+            for (let i = 0; i < errObj.errors.length; i++) {
+              errorObj =
+              errorObj +
+              i +
+              "." +
+              errObj.errors[i].path[0] +
+              " - " +
+              errObj.errors[i].message;
+            }
+          }
 
-          console.log("error 2 ==>>>> ", errObj);
-
-          // if (errObj.errors.length) {
-          //   for (let i = 0; i < errObj.errors.length; i++) {
-          //     errorObj =
-          //       errorObj +
-          //       i +
-          //       "." +
-          //       errObj.errors[i].path[0] +
-          //       " - " +
-          //       errObj.errors[i].message;
-          //   }
-          // }
-        }
-
-
-       
         try {
           const logentry = await strapi.entityService.create(
             "api::employebulkuploadlog.employebulkuploadlog",
@@ -146,7 +130,6 @@ module.exports = createCoreController(
           );
         } catch (errorl) {}
       }
-
       return dataArray;
     },
   })
