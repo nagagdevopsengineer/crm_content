@@ -93,7 +93,10 @@ module.exports = createCoreController(
                 lastname: dataArray[i].Full_Name.split(' ')[1],
                 contact_number: dataArray[i].Contact_Number,
                 contractor: contractorId,
-                aadhar: dataArray[i].Aadhar.toString(),
+                aadharnumber: dataArray[i].Aadhar.toString(),
+                email: dataArray[i].Email_ID,
+                status: dataArray[i].Status,
+                drivinglicense: dataArray[i].DLN,
                 publishedAt: new Date().toISOString()
               },
             }
