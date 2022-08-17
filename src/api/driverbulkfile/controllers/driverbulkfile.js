@@ -93,7 +93,7 @@ module.exports = createCoreController(
                 lastname: dataArray[i].Full_Name.split(' ')[1],
                 mobile: dataArray[i].Contact_Number,
                 age: dataArray[i].Age,
-                driving_licenses_number: dataArray[i].DLN,
+                driving_licence_number: dataArray[i].DLN,
                 aadhar: dataArray[i].Aadhar.toString(),
                 contractor: contractorId,
                 email: dataArray[i].Email_ID,
