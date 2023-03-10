@@ -22,11 +22,11 @@ module.exports = ({ env }) => ({
         },
         provider: 'aws-s3',
         providerOptions: {
-          accessKeyId: 'AKIAS3SGCEIKIAV5VH2E',
-          secretAccessKey: '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',
-          region: 'us-east-2',
+          accessKeyId: 'AKIAUXZPX2IZRSLMWC3S',
+          secretAccessKey: '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',
+          region: 'ap-south-1',
           params: {
-            Bucket: 'arrivnowcontents',
+            Bucket: 'g4s-bucket1',
           },
         },
         actionOptions: {
