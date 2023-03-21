@@ -18,7 +18,9 @@ module.exports = createCoreController("api::route.route", ({ env }) => ({
         try {
           console.log(src, dest, "gg");
           const value = await axios.get(
-            `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${src.lat}+${src.lng}&origins=${dest.lat}+${dest.lng}&key=AIzaSyA7jKr8cUZnMXeuccPPztmG1Ucp-RfBxVY`
+           // `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${src.lat}+${src.lng}&origins=${dest.lat}+${dest.lng}&key=AIzaSyA7jKr8cUZnMXeuccPPztmG1Ucp-RfBxVY`
+
+           `https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${src.lat}+${src.lng}&origins=${dest.lat}+${dest.lng}&key=AIzaSyBnr9FiEbgZho6HokE2akAMG08v0KCHEUU`
           );
 
           const distance = parseFloat(
