@@ -37,12 +37,12 @@ module.exports = createCoreController("api::route.route", ({ env }) => ({
       };
       if(data != null && data != undefined){
       for (let i = 0; i < data.length - 1; i++) {
-        const result = await calDistance(data[i], data[i + 1]);
+        //const result = await calDistance(data[i], data[i + 1]);
 
-        sum += result;
+        //sum += result;
       }
 
-      ctx.request.body.data.Km = sum.toFixed(2);
+      //ctx.request.body.data.Km = sum.toFixed(2);
       }
       const response = await super.create(ctx);
 
