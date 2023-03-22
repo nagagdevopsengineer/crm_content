@@ -46,6 +46,8 @@ module.exports = createCoreController("api::route.route", ({ env }) => ({
     } catch (err) {
       console.log(err);
     }
+
+    return null;
   },
 
   async findAvailableRoutes(ctx) {
