@@ -17,6 +17,7 @@ module.exports = createCoreController("api::route.route", ({ env }) => ({
       let data = postdata.data.stops;
       
       let sum = 0;
+      /*** 
       const calDistance = async (src, dest) => {
         try {
           console.log(src, dest, "gg");
@@ -44,6 +45,7 @@ module.exports = createCoreController("api::route.route", ({ env }) => ({
 
       //ctx.request.body.data.Km = sum.toFixed(2);
       }
+      */
       const response = await super.create(ctx);
 
       return response;
