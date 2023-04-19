@@ -112,7 +112,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
     const response = await strapi.entityService.update("api::trip.trip", id, {
       data: {
         starttime: new Date(),
-        isstarted: ctx.request.body.isstarted,
+        isstarted: true,
       },
       populate: {
         route_bus: { populate: { route: { populate: { stops: true } } } },
