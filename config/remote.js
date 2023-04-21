@@ -1,5 +1,5 @@
 module.exports = ({ env }) => ({
-    remotehost: 'http://dev-usermgmt.vapprtech.com', 
+    remotehost: 'http://user.arrivnow.com', 
     port: '',
     userapi: '/api/users/register',
     consulhost: '0.0.0.0',
