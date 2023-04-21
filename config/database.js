@@ -2,11 +2,11 @@ module.exports = ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {
-      host: env('DATABASE_HOST', 'arrivnow.cnscjbmeyzwl.us-east-1.rds.amazonaws.com'),
+      host: env('DATABASE_HOST', 'localhost'),
       port: env.int('DATABASE_PORT', 5432),
-      database: env('DATABASE_NAME', 'crm-backend'),
+      database: env('DATABASE_NAME', 'crmcontent'),
       user: env('DATABASE_USERNAME', 'postgres'),
-      password: env('DATABASE_PASSWORD', 'welcome2arrivnow'),
+      password: env('DATABASE_PASSWORD', 'P@ssw0rd@123'),
       ssl: env.bool('DATABASE_SSL', false),
     },
   },
