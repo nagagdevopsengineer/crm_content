@@ -137,6 +137,7 @@ dataRes.driver = entry[0];
 dataRes.bus = driverBuses[0].bus;
 dataRes.route = routeBuses[0].route;
 dataRes.stops = routeStops;
+dataRes.helper = driverBuses[0].helper;
 
 dataRes.currentTrip = routeTrip[0];
 //routeTrip.splice(0,1);
