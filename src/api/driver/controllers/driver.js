@@ -59,7 +59,7 @@ const driverBuses = await strapi.entityService.findMany('api::bus-driver.bus-dri
     id:entry[0].id
   },
 },
-populate :  { bus:true}
+populate :  { bus:true,helper:true}
 });
 
 const routeBuses = await strapi.entityService.findMany('api::route-bus.route-bus',{
