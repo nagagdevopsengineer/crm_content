@@ -7,9 +7,9 @@
 const { createCoreController } = require('@strapi/strapi').factories;
 const axios = require('axios');
 module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
-    
+
     async create(ctx) {
-      
+
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
 
         userObj.email= ctx.request.body.data.email;
@@ -18,10 +18,10 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
         userObj.lastName = ctx.request.body.data.lastname;
         userObj.password = 'temp';
         userObj.mobile = ctx.request.body.data.mobile;
-        userObj.authorities = ["ROLE_DRIVER"];  
+        userObj.authorities = ["ROLE_DRIVER"];
         const API_URL = strapi.config.get('remote.remotehost')
         +strapi.config.get('remote.userapi');
-       
+
       await  axios.post(API_URL , userObj)
         .catch((error) => {
             console.log(" exception  ",error);
@@ -30,11 +30,11 @@ module.exports = createCoreController('api::driver.driver', ({ env }) =>  ({
 
             console.log("  response from user mgmt ==== >> ",dataUser);
             ctx.request.body.data.uid = dataUser.data.userId;
-            //updateObj.attributes.uuid=dataUser.data.userId; 
+            //updateObj.attributes.uuid=dataUser.data.userId;
         });
 
         const response = await super.create(ctx);
-    
+
         return response;
       },
 
@@ -50,7 +50,7 @@ var dataRes = {};
   const entry = await strapi.entityService.findMany('api::driver.driver',  {
     filters: { uid : uuid },
     populate:{contractor:{populate:{client:{populate:'*'}}}}
-    
+
   });
 
 const driverBuses = await strapi.entityService.findMany('api::bus-driver.bus-driver',{
@@ -82,13 +82,13 @@ const routeStops = await strapi.entityService.findMany('api::stop.stop',{
 });
 
 
-/**const routeEmployees = await strapi.entityService.findMany('api::employee.employee',{
+const routeEmployees = await strapi.entityService.findMany('api::employee.employee',{
   filters:{
     route:{
     id:routeBuses[0].route.id
   },
 }
-});**/
+});
 
 var todayDate = new Date().toISOString().slice(0, 10);
 console.log(todayDate);
@@ -142,6 +142,7 @@ dataRes.helper = driverBuses[0].helper;
 dataRes.currentTrip = routeTrip[0];
 //routeTrip.splice(0,1);
 dataRes.trips = routeTrip;
+dataRes.totalemployees=routeEmployees;
 
 
 console.log(dataRes);
@@ -169,12 +170,12 @@ async findAvailableDrivers(ctx){
   let drivers = [];
   let helpers = [];
   await    mappedDriversAndHelpers.forEach(element => {
-  
+
     drivers.push(element.driver.id);
     helpers.push(element.helper.id);
 
   });
-  
+
 
   const availableDrivers  = await strapi.entityService.findMany('api::driver.driver',  {
     filters:{
@@ -196,7 +197,7 @@ async allDrivers(ctx) {
 
   const [entries, count] = await strapi.db.query('api::driver.driver').findWithCount({
     select: [],
-    
+
   });
   console.log("count == ",count);
   return count;
@@ -206,7 +207,7 @@ async contractorDrivers(ctx) {
   const [entries, count] = await strapi.db.query('api::driver.driver').findWithCount({
     select: [],
     where: { contractor:  {id : contid} },
-    
+
   });
   console.log("count == ",count);
   return count;
