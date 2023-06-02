@@ -11,8 +11,9 @@ module.exports = createCoreController('api::client.client', ({ env }) =>  ({
     
     async create(ctx) {
 
+      //console.log(email,"email")
         const userObj = {firstName:"", lastName :"",email:"",login:"",password:"",mobile:0,authorities:[]};
-
+        console.log("bodyyyyy",ctx.request.body.data)
         userObj.email= ctx.request.body.data.email;
         userObj.login= ctx.request.body.data.email;
         userObj.firstName = ctx.request.body.data.name;

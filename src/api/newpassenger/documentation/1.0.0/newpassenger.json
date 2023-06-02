@@ -4547,6 +4547,9 @@
                                                         "format": "time",
                                                         "example": "12:54.000"
                                                       },
+                                                      "repeat": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -7898,6 +7901,9 @@
                                                           }
                                                         }
                                                       },
+                                                      "repeat": {
+                                                        "type": "integer"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -7958,6 +7964,9 @@
                                             "type": "string",
                                             "pattern": "^\\d*$",
                                             "example": "123456789"
+                                          },
+                                          "repeat": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -13352,6 +13361,9 @@
                                                       "format": "time",
                                                       "example": "12:54.000"
                                                     },
+                                                    "repeat": {
+                                                      "type": "integer"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -16703,6 +16715,9 @@
                                                         }
                                                       }
                                                     },
+                                                    "repeat": {
+                                                      "type": "integer"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -16763,6 +16778,9 @@
                                           "type": "string",
                                           "pattern": "^\\d*$",
                                           "example": "123456789"
+                                        },
+                                        "repeat": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -22080,6 +22098,9 @@
                                                       "format": "time",
                                                       "example": "12:54.000"
                                                     },
+                                                    "repeat": {
+                                                      "type": "integer"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -25431,6 +25452,9 @@
                                                         }
                                                       }
                                                     },
+                                                    "repeat": {
+                                                      "type": "integer"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -25491,6 +25515,9 @@
                                           "type": "string",
                                           "pattern": "^\\d*$",
                                           "example": "123456789"
+                                        },
+                                        "repeat": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -30794,6 +30821,9 @@
                                                       "format": "time",
                                                       "example": "12:54.000"
                                                     },
+                                                    "repeat": {
+                                                      "type": "integer"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -34145,6 +34175,9 @@
                                                         }
                                                       }
                                                     },
+                                                    "repeat": {
+                                                      "type": "integer"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -34205,6 +34238,9 @@
                                           "type": "string",
                                           "pattern": "^\\d*$",
                                           "example": "123456789"
+                                        },
+                                        "repeat": {
+                                          "type": "integer"
                                         },
                                         "createdAt": {
                                           "type": "string",

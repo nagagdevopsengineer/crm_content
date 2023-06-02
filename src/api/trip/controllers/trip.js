@@ -108,6 +108,7 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
 
   async updateStartTrip(ctx) {
     const { id } = ctx.params;
+    //const {angle} = ctx.params;
 
     const response = await strapi.entityService.update("api::trip.trip", id, {
       data: {
@@ -202,8 +203,14 @@ module.exports = createCoreController("api::trip.trip", ({ env }) => ({
         break;
       }
     }
+    const angle = 45;
+    ctx.set('Angle', angle.toString());
+  
+    // Add other custom headers to the response
+    ctx.set('Custom-Header', 'Custom Value');
+    ctx.set('Another-Header', 'Another Value');
 
-    return response;
+    return {response};
   },
 
   async busTracking(ctx) {

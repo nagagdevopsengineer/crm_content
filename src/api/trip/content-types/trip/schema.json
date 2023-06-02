@@ -51,6 +51,10 @@
     },
     "Km": {
       "type": "biginteger"
+    },
+    "repeat": {
+      "type": "integer",
+      "default": 1
     }
   }
 }
