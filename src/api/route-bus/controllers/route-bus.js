@@ -17,9 +17,10 @@ module.exports = createCoreController('api::route-bus.route-bus', ({ env }) =>  
         const { data, meta } = await super.find(ctx);
         var routIds = [];
         var data2 = data;
-
+        console.log(data[0].id);
+        
         for(let i=0; i< data2.length; i++) {
-       console.log(data2[i].attributes.route.data.id);
+       //console.log(data2[i].attributes.route.data.id);
             
         const stops = await strapi.entityService.findMany('api::stop.stop',{
             filters :{ 
